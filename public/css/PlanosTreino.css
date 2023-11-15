@@ -1,20 +1,318 @@
-*{
-    font-family: 'Courier New', Courier, monospace;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --ff--montserrat: 'Montserrat', sans-serif;
+    --ff--Roboto: 'Roboto', sans-serif;
+
+    --fw--400: 400;
+    --fw--500: 500;
+    --fw--600: 600;
+    --fw--700: 700;
+    --fw--800: 800;
+    --fw--900: 900;
+
+    --cl--yellow: #FF8606;
+    --cl--white: #ffffff;
+    --cl--black: #000000;
+
 }
 
-body{
+/*
+    1. Use a more-intuitive box-sizing model.
+  */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+      2. Remove default margin
+    */
+* {
+    margin: 0;
+}
+
+/*
+      Typographic tweaks!
+      3. Add accessible line-height
+      4. Improve text rendering
+    */
+body {
+    line-height: 1.5;
+
+}
+
+/*
+      5. Improve media defaults
+    */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+      6. Remove built-in form typography styles
+    */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+      7. Avoid text overflows
+    */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    font-family: var(--ff--montserrat);
+    color: var(--cl--yellow);
+}
+
+/* p {
+    font-family: var(--ff--source-pro);
+    color: white;
+  } */
+
+/*
+      8. Create a root stacking context
+    */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* ////////////////////Banner ///////////////////*/
+
+.banner {
+    background-image: url('../img/tryout.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+    position: relative;
+
+}
+
+.content {
+    max-width: 1280px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    color: var(--cl--white);
+    font-family: var(--ff--montserrat);
+    font-size: 72pt;
+    font-style: normal;
+    font-weight: var(--fw--900);
+    line-height: normal;
+    letter-spacing: 0.38rem;
+}
+
+.baq {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cta-button {
+
+    padding: 10px 30px 10px 30px;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #ff8606;
+    margin-top: 20px;
+
+}
+
+/* ////////////////////Cards de treino ///////////////////*/
+
+.cardspeq{
+    padding-top: 150px;
+    padding-bottom: 100px;
+    max-width: 1400px;
     margin: auto;
-    width: auto;
 }
 
+.card-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding-top: 40px;
+}
 
+.cardtreino{
+    max-width: 420px;
+    height: 620px;
+    gap: 1rem;
+    transition: transform 1s ease;
+}
 
-.btitulo{
+.card-img{
+max-width: 420px;
+    max-height: 270px;
+}
+
+.card-img img{
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.card-texto{
+   height: 351px;
+   border: 3px solid #ff8606;
+   border-top: none;
+   position: relative;
+}
+
+.card-texto h2{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.card-texto p{
+    font-family: var(--ff--Roboto);
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-top: 7px;
+    font-size: 13pt;
+    text-align: justify;
+    position: relative;
+}
+
+.bot {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.cta-button2{
+    padding: 10px 35px 10px 35px;
+    font-size: 16pt;
     font-weight: bold;
-    color: red;
-    font-size: 60pt;
+    text-decoration: none;
+    color: white;
+    background-color: #ff8606;
+    font-family: var(--ff--Roboto);
 }
 
-.bimg{
+.cardtreino:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+/* ////////////////////Cards Profissionais ///////////////////*/
+
+
+
+.profissionais {
+    background-color: #000000;
+}
+
+.cards {
+    padding-top: 100px;
+    max-width: 1700px;
+    margin: auto;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cardprof {
     height: 700px;
+    width: 400px;
+    position: relative;
+}
+
+.profimg {
+    height: 100%;
+}
+
+.profimg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.botao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cta-button3 {
+    padding: 10px 0;
+    flex: 1;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #ff8606;
+    font-family: var(--ff--Roboto);
+}
+
+
+/* ////////////////////Responsivo ///////////////////*/
+
+@media (max-width: 1320px) {
+    .card-row {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .cardtreino {
+        max-width: 420px;
+        height: 620px;
+    }
+
+    .card-img img{
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+    }
+
+}
+    @media (max-width: 1000px) {
+    .cardprof {
+        height: 700px;
+    width: 500px;
+    padding-top: 20px;
+    }
+
+    .profimg img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }

@@ -1,8 +1,7 @@
 /* Reset de margens e preenchimentos */
-body,
-html {
-    margin: auto;
-    padding: auto;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
 /* Estilo para o banner */
@@ -53,4 +52,101 @@ html {
 .custom-button img {
     width: 60px;
     height: auto;
+}
+
+
+/* Estilo para o título em h2 abaixo do banner */
+.bottom-title {
+    text-align: center;
+    padding-top: 60px;
+    /* Espaçamento superior entre o banner e o título */
+}
+
+.bottom-title h2 {
+    color: black;
+    /* Cor do texto preto */
+    /* Outros estilos conforme necessário */
+}
+
+/* Estilos personalizados para as imagens dos cards */
+.card-img-top {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Manter a proporção da imagem */
+
+}
+
+/* Estilo para remover o fundo dos botões */
+.carousel-control-prev, .carousel-control-next {
+    background: none;
+    border: none;
+    outline: none;
+    width: 60px; /* Defina a largura dos botões */
+    height: 60px; /* Defina a altura dos botões */
+}
+
+/* Estilo para a imagem nos botões */
+.carousel-control-img {
+    width: 40px; /* Defina a largura das imagens */
+    height: auto;
+}
+
+.modalidade {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Para alinhar verticalmente */
+    text-align: center; /* Para alinhar o texto centralmente */
+    background-color: rgb(34, 34, 34);
+}
+
+.modalidade .image {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.modalidade .image img {
+    width: 400px;
+    height: auto;
+}
+
+.modalidade .content-1,  .modalidade .content-2{
+    display: flex;
+    align-items: center
+}
+
+.modalidade .text{
+    text-align: left; /* Para alinhar o texto esquerda */
+    color: white;
+    margin-top: -30px;
+
+}
+
+.modalidade .content-1 .image, .modalidade .content-2 .text{
+    order: 1;
+}
+
+.modalidade .content-2 .image, .modalidade .content-1 .text{
+    order: 2;
+}
+
+.modalidade .text p{
+    padding-top: 30px;
+    padding-bottom: 90px;
+}
+
+.modalidade button {
+    padding: 10px 20px;
+    background-color: #FF8606;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modalidade button:hover {
+    background-color: #e67905;
 }

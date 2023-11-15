@@ -5,7 +5,7 @@
 
 @endsection
 
-@section('title','......')
+@section('title','PulseHub')
 
 @section('content')
 <h1>index</h1>
