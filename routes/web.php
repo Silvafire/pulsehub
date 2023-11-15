@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +21,4 @@ Route::get('planostreino', [PageController::class, 'planostreino'])->name('plano
 Route::get('blog', [PageController::class, 'blog'])->name('blog');
 Route::get('modalidades', [PageController::class, 'modalidades'])->name('modalidades');
 Route::get('servicos', [PageController::class, 'servicos'])->name('servicos');
+Route::get('staff', [PageController::class, 'staff'])->name('staff');

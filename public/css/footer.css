@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --ff--montserrat: 'Montserrat', sans-serif;
+    --ff--Roboto: 'Roboto', sans-serif;
+
+    --fw--400: 400;
+    --fw--500: 500;
+    --fw--600: 600;
+    --fw--700: 700;
+    --fw--800: 800;
+    --fw--900: 900;
+
+    --cl--yellow: #FF8606;
+    --cl--white: #ffffff;
+    --cl--black: #000000;
+
+}
+
+/*
+    1. Use a more-intuitive box-sizing model.
+  */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+      2. Remove default margin
+    */
+* {
+    margin: 0;
+}
+
+/*
+      Typographic tweaks!
+      3. Add accessible line-height
+      4. Improve text rendering
+    */
+body {
+    line-height: 1.5;
+
+}
+
+/*
+      5. Improve media defaults
+    */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+      6. Remove built-in form typography styles
+    */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+      7. Avoid text overflows
+    */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    font-family: var(--ff--montserrat);
+    color: var(--cl--yellow);
+}
+
+/* p {
+    font-family: var(--ff--source-pro);
+    color: white;
+  } */
+
+/*
+      8. Create a root stacking context
+    */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.footer{
+    background-color: var(--cl--black);
+}
+.container-footer{
+    max-width: 1280px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    justify-content: center;
+    padding: 4rem 5%;
+}
+.logo{
+    width: 150px;
+}
+.list-footer{
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    align-items: center;
+   
+}
+.list-footer a{
+    color: #9E9E9E;
+font-family: var(--ff--Roboto);
+font-size: 12px;
+font-weight: 500;
+letter-spacing: 0.13125rem;
+text-transform: uppercase;
+text-decoration: none;
+
+}
+.list-footer a:hover{
+    color: var(--cl--yellow);
+}
+.social-footer{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.upper-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower-footer{
+    display: flex;
+    justify-content: center;
+}
+.lower-footer p {
+    color: #9E9E9E;
+font-family:var(--ff--Roboto);
+font-size: 0.8125rem;
+font-weight: 500;
+letter-spacing: 0.12188rem;
+}
+.line{
+    width: 100%;
+}
+@media(max-width:840px){
+    .upper-footer{
+         flex-direction: column;
+        align-items: center;
+        gap: 1.5rem; 
+    }
+    .list-footer{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .container-footer{
+        padding: 2rem 5%;
+    }
+}
