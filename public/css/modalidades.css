@@ -54,3 +54,14 @@ html {
     width: 60px;
     height: auto;
 }
+
+/* Estilo para o título em h2 abaixo do banner */
+.bottom-title {
+    text-align: center;
+    padding-top: 60px; /* Espaçamento superior entre o banner e o título */
+}
+
+.bottom-title h2 {
+    color: black; /* Cor do texto preto */
+    /* Outros estilos conforme necessário */
+}
