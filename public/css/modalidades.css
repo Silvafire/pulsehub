@@ -54,6 +54,7 @@ html, body {
     height: auto;
 }
 
+
 /* Estilo para o título em h2 abaixo do banner */
 .bottom-title {
     text-align: center;
@@ -123,20 +124,12 @@ html, body {
 
 }
 
-.modalidade .content-1 .image{
+.modalidade .content-1 .image, .modalidade .content-2 .text{
     order: 1;
 }
 
-.modalidade .content-1 .text{
+.modalidade .content-2 .image, .modalidade .content-1 .text{
     order: 2;
-}
-
-.modalidade .content-2 .image{
-    order: 2;
-}
-
-.modalidade .content-2 .text{
-    order: 1;
 }
 
 .modalidade .text p{

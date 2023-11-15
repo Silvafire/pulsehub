@@ -22,6 +22,11 @@
         <h2>Categorias de modalidades</h2>
         <!-- Carrossel de cards -->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <!-- Botão para ir para o slide anterior -->
+                <img src="{{ asset('img/icons8-arrow-100-l.png') }}" alt="Anterior" class="carousel-control-img">
+            </button> 
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
@@ -109,11 +114,6 @@
                 </div>
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <!-- Botão para ir para o slide anterior -->
-                <img src="{{ asset('img/icons8-arrow-100-l.png') }}" alt="Anterior" class="carousel-control-img">
-            </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="next">
                 <!-- Botão para ir para o próximo slide -->
