@@ -58,10 +58,34 @@ html {
 /* Estilo para o título em h2 abaixo do banner */
 .bottom-title {
     text-align: center;
-    padding-top: 60px; /* Espaçamento superior entre o banner e o título */
+    padding-top: 60px;
+    /* Espaçamento superior entre o banner e o título */
 }
 
 .bottom-title h2 {
-    color: black; /* Cor do texto preto */
+    color: black;
+    /* Cor do texto preto */
     /* Outros estilos conforme necessário */
+}
+
+/* Estilos personalizados para as imagens dos cards */
+.card-img-top {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Manter a proporção da imagem */
+}
+
+/* Estilo para remover o fundo dos botões */
+.carousel-control-prev, .carousel-control-next {
+    background: none;
+    border: none;
+    outline: none;
+    width: 60px; /* Defina a largura dos botões */
+    height: 60px; /* Defina a altura dos botões */
+}
+
+/* Estilo para a imagem nos botões */
+.carousel-control-img {
+    width: 40px; /* Defina a largura das imagens */
+    height: auto;
 }
