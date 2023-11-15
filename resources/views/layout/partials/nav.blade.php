@@ -11,7 +11,7 @@
                         <li><a href="#">Staff</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Planos</a></li>
-                        <li><a href="#">Modalidades</a></li>
+                        <li><a class="nav-link scrollto @if (Route::currentRouteName()=='modalidades') active @endif" href="{{ route('modalidades') }}">Modalidades</a></li>
                         <li><a href="#">Eventos</a></li>
                         <li><a href="#">Loja</a></li>
 
@@ -33,7 +33,7 @@
                         <li><a href="#">Staff</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Planos</a></li>
-                        <li><a href="#">Modalidades</a></li>
+                        <li><a class="nav-link scrollto @if (Route::currentRouteName()=='modalidades') active @endif" href="{{ route('modalidades') }}">Modalidades</a></li>
                         <li><a href="#">Eventos</a></li>
                         <li><a href="#">Loja</a></li>
 
