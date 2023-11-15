@@ -25,7 +25,7 @@
         <div class="cardtreino">
 
             <div class="card-img">
-                <img src="{{ asset('Img/macho.jpg') }}" alt="Musculação">
+                <img src="{{ asset('img/macho.jpg') }}" alt="Musculação">
             </div>
 
             <div class="card-texto">
@@ -45,7 +45,7 @@
         <div class="cardtreino">
 
             <div class="card-img">
-                <img src="{{ asset('Img/bodybuildinguy.jpg') }}" alt="Bodybuilder">
+                <img src="{{ asset('img/bodybuildinguy.jpg') }}" alt="Bodybuilder">
             </div>
 
             <div class="card-texto">
@@ -64,7 +64,7 @@
         <div class="cardtreino">
 
             <div class="card-img">
-                <img src="{{ asset('Img/cardioplan.jpg') }}" alt="Musculação">
+                <img src="{{ asset('img/cardioplan.jpg') }}" alt="Musculação">
             </div>
 
             <div class="card-texto">
@@ -85,7 +85,7 @@
         <div class="cardtreino">
 
             <div class="card-img">
-                <img src="{{ asset('Img/macho.jpg') }}" alt="Musculação">
+                <img src="{{ asset('img/macho.jpg') }}" alt="Musculação">
             </div>
 
             <div class="card-texto">
@@ -105,7 +105,7 @@
         <div class="cardtreino">
 
             <div class="card-img">
-                <img src="{{ asset('Img/bodybuildinguy.jpg') }}" alt="Musculação">
+                <img src="{{ asset('img/bodybuildinguy.jpg') }}" alt="Musculação">
             </div>
 
             <div class="card-texto">
@@ -124,7 +124,7 @@
         <div class="cardtreino">
 
             <div class="card-img">
-                <img src="{{ asset('Img/cardioplan.jpg') }}" alt="Musculação">
+                <img src="{{ asset('img/cardioplan.jpg') }}" alt="Musculação">
             </div>
 
             <div class="card-texto">
@@ -148,7 +148,7 @@
     <div class="cardprof">
 
         <div class="profimg">
-            <img src="{{ asset('Img/carlos alcaraz.jpg') }}" alt="">
+            <img src="{{ asset('img/carlos alcaraz.jpg') }}" alt="">
         </div>
         <div class="botao">
             <a  class="cta-button3">Ler Mais</a>
@@ -159,7 +159,7 @@
     <div class="cardprof">
 
         <div class="profimg">
-            <img src="{{ asset('Img/David Laid.jpg') }}" alt="">
+            <img src="{{ asset('img/David Laid.jpg') }}" alt="">
         </div>
         <div class="botao">
             <a  class="cta-button3">Ler Mais</a>
@@ -170,7 +170,7 @@
     <div class="cardprof">
 
         <div class="profimg">
-            <img src="{{ asset('Img/LeBron James.jpg') }}" alt="">
+            <img src="{{ asset('img/LeBron James.jpg') }}" alt="">
         </div>
         <div class="botao">
             <a  class="cta-button3">Ler Mais</a>
@@ -181,7 +181,7 @@
     <div class="cardprof">
 
         <div class="profimg">
-            <img src="{{ asset('Img/noah_lyles.jpg') }}" alt="">
+            <img src="{{ asset('img/noah_lyles.jpg') }}" alt="">
         </div>
         <div class="botao">
             <a  class="cta-button3">Ler Mais</a>
