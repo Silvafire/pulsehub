@@ -105,7 +105,7 @@ h6 {
 /*---BANNER---*/
 
 .banner {
-    background-image: url('{{ asset("img/banner.jpg") }}');
+    background-image: url('../img/banner.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
