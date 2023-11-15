@@ -1,0 +1,20 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    margin: auto;
+    width: auto;
+}
+
+
+
+.btitulo{
+    font-weight: bold;
+    color: red;
+    font-size: 60pt;
+}
+
+.bimg{
+    height: 700px;
+}
