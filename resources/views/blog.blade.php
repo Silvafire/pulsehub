@@ -17,7 +17,7 @@
 
 <section id="main1">
     <div id="post1">
-        <img src="img/consistenciaobjetivos.jpg" alt="Consistência Objetivos" id="imgpost1">
+        <img src="{{asset('img/consistenciaobjetivos.jpg')}}" alt="Consistência Objetivos" id="imgpost1">
         <div id="infopost1">
             <h6 id="nomepost1">DA CONSISTÊNCIA AOS TEUS OBJETIVOS</h6>
             <div class="divisorbloco">
@@ -44,13 +44,13 @@
         </div>
         <a href="#" class="vermais2">Ver mais ></a>
     </div>
-    <img src="img/personaltrainer.jpg" alt="Personal Trainer" id="imgpost2">
+    <img src="{{asset('img/personaltrainer.jpg')}}" alt="Personal Trainer" id="imgpost2">
 </div>
 </section>
 
 <section id="main3">
     <div id="post3">
-        <img src="img/transpirartreino.jpg" alt="Transpirar Treino" id="imgpost3">
+        <img src="{{asset('img/transpirartreino.jpg')}}" alt="Transpirar Treino" id="imgpost3">
         <div id="infopost3">
             <h6 id="nomepost3">TRANSPIRAR MUITO DURANTE O TREINO SIGNIFICA PERCA DE PESO?</h6>
             <div class="divisorbloco">
@@ -77,13 +77,13 @@
             </div>
             <a href="#" class="vermais4">Ver mais ></a>
         </div>
-        <img src="img/bodypump.jpg" alt="BodyPump" id="imgpost4">
+        <img src="{{asset('img/bodypump.jpg')}}" alt="BodyPump" id="imgpost4">
     </div>
     </section>
 
 <section id="main5">
     <div id="post5">
-        <img src="img/fisioterapia.jpg" alt="Fisioterapia" id="imgpost5">
+        <img src="{{asset('img/fisioterapia.jpg')}}" alt="Fisioterapia" id="imgpost5">
         <div id="infopost5">
             <h6 id="nomepost5">A IMPORTÂNCIA DA FISIOTERAPIA NA PRÁTICA DESPORTIVA</h6>
             <div class="divisorbloco">
