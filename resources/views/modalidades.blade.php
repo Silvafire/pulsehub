@@ -109,61 +109,69 @@
                 </div>
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
                 <!-- Botão para ir para o slide anterior -->
                 <img src="{{ asset('img/icons8-arrow-100-l.png') }}" alt="Anterior" class="carousel-control-img">
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
                 <!-- Botão para ir para o próximo slide -->
                 <img src="{{ asset('img/icons8-arrow-100-r.png') }}" alt="Próximo" class="carousel-control-img">
             </button>
         </div>
     </div>
-    <div class="modalidade">
-        <div class="content-1">
-            <div class="image">
-                <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
-            </div>
-            <div class="text">
-                <h2>Ciclismo</h2>
-                <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e poderosas!</p>
-                <button>Mais informação</button>
-            </div>
-        </div>
-    </div>
-    <div class="modalidade">
-        <div class="content-2">
-            <div class="image">
-                <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
-            </div>
-            <div class="text">
-                <h2>Ciclismo</h2>
-                <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e poderosas!</p>
-                <button>Mais informação</button>
+    <div class="modalidades">
+        <div class="modalidade">
+            <div class="content-1">
+                <div class="image">
+                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
+                </div>
+                <div class="text">
+                    <h2>Ciclismo</h2>
+                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e poderosas!
+                    </p>
+                    <button>Mais informação</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="modalidade">
-        <div class="content-1">
-            <div class="image">
-                <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
-            </div>
-            <div class="text">
-                <h2>Ciclismo</h2>
-                <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e poderosas!</p>
-                <button>Mais informação</button>
+        <div class="modalidade">
+            <div class="content-2">
+                <div class="image">
+                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
+                </div>
+                <div class="text">
+                    <h2>Ciclismo</h2>
+                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e
+                        poderosas!</p>
+                    <button>Mais informação</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="modalidade">
-        <div class="content-2">
-            <div class="image">
-                <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
+        <div class="modalidade">
+            <div class="content-1">
+                <div class="image">
+                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
+                </div>
+                <div class="text">
+                    <h2>Ciclismo</h2>
+                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e
+                        poderosas!</p>
+                    <button>Mais informação</button>
+                </div>
             </div>
-            <div class="text">
-                <h2>Ciclismo</h2>
-                <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e poderosas!</p>
-                <button>Mais informação</button>
+        </div>
+        <div class="modalidade">
+            <div class="content-2">
+                <div class="image">
+                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
+                </div>
+                <div class="text">
+                    <h2>Ciclismo</h2>
+                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e
+                        poderosas!</p>
+                    <button>Mais informação</button>
+                </div>
             </div>
         </div>
     </div>
