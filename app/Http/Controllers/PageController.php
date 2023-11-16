@@ -25,6 +25,9 @@ class PageController extends Controller
     public function servicos(){
         return view('servicos');
     }
+    public function eventos(){
+        return view('eventos');
+    }
 
     public function staff(){
         return view('staff');
