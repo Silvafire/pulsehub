@@ -12,7 +12,7 @@
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='blog') active @endif" href="{{ route('blog') }}">Blog</a></li>
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='planostreino') active @endif" href="{{ route('planostreino') }}">Planos</a></li>
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='modalidades') active @endif" href="{{ route('modalidades') }}">Modalidades</a></li>
-                <li><a href="#">Eventos</a></li>
+                <li><a class="nav-link scrollto @if (Route::currentRouteName()=='eventos') active @endif" href="{{ route('eventos') }}">Eventos</a></li>
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='servicos') active @endif" href="{{ route('servicos') }}">Serviços</a></li>
                 <li><a href="#">Loja</a></li>
             </ul>
@@ -34,7 +34,7 @@
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='blog') active @endif" href="{{ route('blog') }}">Blog</a></li>
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='planostreino') active @endif" href="{{ route('planostreino') }}">Planos</a></li>
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='modalidades') active @endif" href="{{ route('modalidades') }}">Modalidades</a></li>
-                <li><a href="#">Eventos</a></li>
+                <li><a class="nav-link scrollto @if (Route::currentRouteName()=='eventos') active @endif" href="{{ route('eventos') }}">Eventos</a></li>
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='servicos') active @endif" href="{{ route('servicos') }}">Serviços</a></li>
                 <li><a href="#">Loja</a></li>
 

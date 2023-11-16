@@ -21,4 +21,5 @@ Route::get('planostreino', [PageController::class, 'planostreino'])->name('plano
 Route::get('blog', [PageController::class, 'blog'])->name('blog');
 Route::get('modalidades', [PageController::class, 'modalidades'])->name('modalidades');
 Route::get('servicos', [PageController::class, 'servicos'])->name('servicos');
+Route::get('eventos', [PageController::class, 'eventos'])->name('eventos');
 Route::get('staff', [PageController::class, 'staff'])->name('staff');
