@@ -26,7 +26,6 @@
 .img-card img {
     max-width: 270px;
     max-height: 340px;
-    border: 1px solid var(--cl--yellow);
 }
 
 .servicos-card {

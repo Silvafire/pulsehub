@@ -21,7 +21,7 @@
     <div class="container-grid">
         <div class="servicos-card">
             <div class="img-card">
-                <img src="{{asset('img/sandra-staff.png')}}" alt="#">
+                <img src="{{asset('img/servicos (3).png')}}" alt="#">
             </div>
             <div class="servicos-tag">
                 <h5>Sandra Silva</h5>
@@ -36,7 +36,7 @@
 
         <div class="servicos-card">
             <div class="img-card">
-                <img src="{{asset('img/sandra-staff.png')}}" alt="#">
+                <img src="{{asset('img/servicos (2).png')}}" alt="#">
             </div>
             <div class="servicos-tag">
                 <h5>Sandra Silva</h5>
@@ -51,7 +51,7 @@
 
         <div class="servicos-card">
             <div class="img-card">
-                <img src="{{asset('img/sandra-staff.png')}}" alt="#">
+                <img src="{{asset('img/servicos (1).png')}}" alt="#">
             </div>
             <div class="servicos-tag">
                 <h5>Sandra Silva</h5>

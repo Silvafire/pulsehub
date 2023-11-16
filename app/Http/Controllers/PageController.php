@@ -6,30 +6,36 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('index');
     }
 
-    public function planostreino(){
+    public function planostreino()
+    {
         return view('planostreino');
     }
 
-    public function blog(){
+    public function blog()
+    {
         return view('blog');
     }
 
-    public function modalidades(){
+    public function modalidades()
+    {
         return view('modalidades');
     }
 
-    public function servicos(){
+    public function servicos()
+    {
         return view('servicos');
     }
     public function eventos(){
         return view('eventos');
     }
 
-    public function staff(){
+    public function staff()
+    {
         return view('staff');
     }
 }
