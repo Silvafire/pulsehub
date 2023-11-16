@@ -38,7 +38,6 @@
                 <li><a class="nav-link scrollto @if (Route::currentRouteName()=='servicos') active @endif" href="{{ route('servicos') }}">Serviços</a></li>
                 <li><a href="#">Loja</a></li>
 
-
             </ul>
         </div>
     </div>
