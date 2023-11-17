@@ -29,7 +29,7 @@
                     <div class="carousel-item active">
                         <div class="row justify-content-center">
                             <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center"">
+                                <div class="card d-flex align-items-center justify-content-center">
                                     <img src="{{ asset('img/cardio.svg') }}" class="card-img-top" alt="card_1">
                                     <div class="card-body">
                                         <h5 class="card-title">Cardio</h5>

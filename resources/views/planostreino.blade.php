@@ -1,7 +1,6 @@
 @extends('layout.master')
 
 @section('moreCSS')
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/PlanosTreino.css') }}">
 @endsection
 
