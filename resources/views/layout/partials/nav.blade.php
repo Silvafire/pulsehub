@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="container-nav">
         <div class="logo">
-            <img src="{{asset('img/Logo-PulseHub-Branco.png')}}" alt="logo website branco">
+            <img src="{{asset('img/Logo-PulseHub-Branco.png')}}"  alt="logo website branco">
 
 
         </div>

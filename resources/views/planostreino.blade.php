@@ -1,6 +1,7 @@
 @extends('layout.master')
 
 @section('moreCSS')
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/PlanosTreino.css') }}">
 @endsection
 
@@ -15,7 +16,7 @@
 
     </div>
     <div class="baq">
-        
+
     </div>
 </section>
 
@@ -147,7 +148,7 @@
     <h1>Planos de Atletas</h1>
     <div class="cards" >
 
-    
+
 
     <div class="cardprof">
 
@@ -194,6 +195,7 @@
     </div>
 </div>
 
-</div>
-
 @endsection
+
+
+
