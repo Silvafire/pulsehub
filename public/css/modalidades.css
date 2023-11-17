@@ -59,6 +59,7 @@ html, body {
 .bottom-title {
     text-align: center;
     padding-top: 60px;
+    height: 400px;
     /* Espaçamento superior entre o banner e o título */
 }
 
@@ -67,28 +68,40 @@ html, body {
     /* Cor do texto preto */
     /* Outros estilos conforme necessário */
 }
+.card{
+    height: 200px;
+    border-radius: 5px;
+    border-color: #FF8606;
+}
+
+
 
 /* Estilos personalizados para as imagens dos cards */
 .card-img-top {
     width: 100px;
     height: 100px;
+    margin-top: 5%;
     object-fit: cover; /* Manter a proporção da imagem */
-
 }
 
 /* Estilo para remover o fundo dos botões */
-.carousel-control-prev, .carousel-control-next {
-    background: none;
-    border: none;
-    outline: none;
-    width: 60px; /* Defina a largura dos botões */
-    height: 60px; /* Defina a altura dos botões */
+.carousel-control-prev,
+.carousel-control-next {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    background: rgb(255, 255, 255); /* Altere o fundo das setas se necessário */
+    /* Adicione mais estilos conforme necessário */
 }
 
-/* Estilo para a imagem nos botões */
-.carousel-control-img {
-    width: 40px; /* Defina a largura das imagens */
-    height: auto;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: inline-block;
+    width: 20px; /* Largura das setas */
+    height: 20px; /* Altura das setas */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .modalidade {
