@@ -15,7 +15,7 @@
 
     </div>
     <div class="baq">
-        <a href="#nome" class="cta-button">Experimente</a>
+        
     </div>
 </section>
 
@@ -144,7 +144,11 @@
 </div>
 
 <div class="profissionais">
+    <h1>Planos de Atletas</h1>
     <div class="cards" >
+
+    
+
     <div class="cardprof">
 
         <div class="profimg">
