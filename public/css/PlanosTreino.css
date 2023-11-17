@@ -232,10 +232,17 @@ max-width: 420px;
 
 .profissionais {
     background-color: #000000;
+    padding-top: 150px;
+}
+
+.profissionais h1{
+    text-align: center;
+    color: var(--cl--white);
+    font-family: var(--ff--montserrat);
 }
 
 .cards {
-    padding-top: 100px;
+    padding-top: 150px;
     max-width: 1700px;
     margin: auto;
     padding-bottom: 100px;
