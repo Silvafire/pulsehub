@@ -9,7 +9,7 @@
 
 @section('content')
 <!-- Hero -->
-<img class="p-5 text-center bg-image" src="{{ asset('img/bannerservicos.jpg') }}" style="
+<img class="bg-image" src="{{ asset('img/bannerservicos.jpg') }}" style="
         background-size: cover;
         object-fit: cover;
         height: 700px;
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <img class="p-5 text-center bg-image" src="{{ asset('img/dividerservicos.jpg') }}" style="
+    <img class="bg-image" src="{{ asset('img/dividerservicos.jpg') }}" style="
         background-size: cover;
         object-fit: cover;
         height: 600px;

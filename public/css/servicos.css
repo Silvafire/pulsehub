@@ -1,3 +1,7 @@
+html,
+body {
+    width: 100%;
+}
 .container {
     max-width: 1280px;
     margin-inline: auto;
@@ -118,4 +122,3 @@
 .btn-1:hover {
     color: #999;
 }
-
