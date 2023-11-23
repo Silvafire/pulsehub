@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tipo_eventos', function (Blueprint $table) {
             $table->id();
-            $table->tipo();
+            $table->string('tipo',15);
         });
     }
 
