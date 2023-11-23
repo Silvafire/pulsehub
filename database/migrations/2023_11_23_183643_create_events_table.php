@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',100);
+            $table->string('nome', 100);
             $table->text('descrição');
             $table->string('img')->nullable();
             $table->dateTime('data');
+            $table->unsignedBigInteger('tipo_eventos_id'); // Chave estrangeira
+            $table->foreign('tipo_eventos_id')->references('id')->on('tipo_eventos');
             $table->softDeletes(); // Adiciona a coluna deleted_at para soft deletes
         });
     }
