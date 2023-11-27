@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('descricao',45);
             $table->text('informacao');
             $table->foreign('id_tipopost')->references('id')->on('tipo_post');
+            $table->softDeletes();
         });
     }
 
