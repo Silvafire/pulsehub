@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('imagem')->nullable();
+            $table->string('titulo',45);
+            $table->string('descricao',45);
+            $table->text('informacao');
+            $table->foreign('id_tipopost')->references('id')->on('tipo_post');
         });
     }
 
