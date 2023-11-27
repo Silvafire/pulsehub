@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_post', function (Blueprint $table) {
+        Schema::create('staff', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->string('nome',45);
-            $table->foreign('id_users')->references('id')->on('users');
-            $table->softDeletes();
+            $table->string('apelido',50);
+            $table->string('Especialização',45);
+            $table->string('link_facebook', 200);
+            $table->string('link_instagram', 200);
+            $table->string('link_email', 200);
+            $table->string('img');
         });
     }
 
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_post');
+        Schema::dropIfExists('staff');
     }
 };

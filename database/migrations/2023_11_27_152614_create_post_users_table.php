@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_post', function (Blueprint $table) {
+        Schema::create('post_users', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',45);
+            $table->foreign('id_post')->references('id')->on('post');
             $table->foreign('id_users')->references('id')->on('users');
             $table->softDeletes();
         });
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_post');
+        Schema::dropIfExists('post_users');
     }
 };

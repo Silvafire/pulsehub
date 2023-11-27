@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('tipo_plano', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nome', 100);
+            $table->text('descricao');
+            $table->string('imagem');
+            $table->unsignedBigInteger('plano_id'); // Chave estrangeira
+            $table->foreign('plano_id')->references('id')->on('plano');
+            $table->softDeletes(); // Adiciona a coluna deleted_at para soft deletes
         });
     }
 
