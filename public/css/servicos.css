@@ -2,6 +2,7 @@ html,
 body {
     width: 100%;
 }
+
 .container {
     max-width: 1280px;
     margin-inline: auto;
@@ -33,12 +34,15 @@ body {
 }
 
 .servicos-card {
+    position: relative; /* Added */
     max-width: 270px;
-    max-height: 440px;
+    max-height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between; /* Ensure space between items */
     gap: 1rem;
+    margin-bottom: 20px; /* Adjust margin if needed */
 }
 
 .servicos-tag {
@@ -46,6 +50,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    flex-grow: 1; /* Added to allow the content to grow */
 }
 
 .servicos-tag h5 {
@@ -85,21 +90,24 @@ body {
     border: 0 solid;
     box-sizing: border-box;
 }
+
 .btn-1 {
-    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    bottom: 0px; /* Move all buttons 30px up from the bottom */
+    transform: translateY(50%);
+    border-radius: 99rem;
+    border-width: 2px;
+    padding: 0.8rem 3rem;
     background-color: #000;
-    background-image: none;
     color: #fff;
-    cursor: pointer;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
         Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-size: 100%;
     font-weight: 900;
     line-height: 1.5;
-    margin: 0;
-    padding: 0;
     text-transform: uppercase;
+    cursor: pointer;
 }
 .btn-1:disabled {
     cursor: default;
@@ -122,4 +130,3 @@ body {
 .btn-1:hover {
     color: #999;
 }
-
