@@ -35,7 +35,7 @@
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
-                  <i class="fas fa-trash fa-xs"></i></button>
+                    <i class="fas fa-trash fa-xs"></i></button>
                 </form>
               </td>
             </tr>
@@ -54,15 +54,18 @@
 @section("scripts")
 
 <script>
-  $('#dataTable').dataTable( {
-  destroy: true,
-    "order": [[ 0, 'asc' ]],
-	"columns": [
-	  null,
-    null,
-    { "orderable": false }
-  ]
-} );
-
+  $('#dataTable').dataTable({
+    destroy: true,
+    "order": [
+      [0, 'asc']
+    ],
+    "columns": [
+      null,
+      null,
+      {
+        "orderable": false
+      }
+    ]
+  });
 </script>
 @endsection

@@ -12,7 +12,7 @@ class Services extends Model
     {
         $services = Services::all();
         return view('_admin.services.create', compact(
-            "evento"
+            "Serviços"
         ));
     }
 }
