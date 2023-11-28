@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tipo_post', function (Blueprint $table) {
             $table->id();
             $table->string('nome',45);
+            $table->unsignedBigInteger('id_users');
             $table->foreign('id_users')->references('id')->on('users');
             $table->softDeletes();
         });

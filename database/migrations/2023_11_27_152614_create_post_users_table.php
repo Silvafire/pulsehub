@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('post_users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_post');
+            $table->unsignedBigInteger('id_users');
             $table->foreign('id_post')->references('id')->on('post');
             $table->foreign('id_users')->references('id')->on('users');
             $table->softDeletes();
