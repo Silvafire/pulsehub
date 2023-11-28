@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('modalidades', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 45);
+            $table->string('categoria', 45);
+            $table->text('descricao');
+            $table->string('imagem');
+            $table->unsignedBigInteger('staff_id');
+            $table->foreign('staff_id')->references('id')->on('staff');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
