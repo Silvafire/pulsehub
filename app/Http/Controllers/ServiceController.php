@@ -42,11 +42,19 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Services $services) // front end
-    {
-        return view('_admin.services.show', compact('services'));
-    }
 
+     public function show($id) // front end
+     {
+         $service = Services::find($id);
+         if ($service) {
+             return view('_admin.services.show', compact('service'));
+         } else {
+             // Handle the case where the service with the given ID is not found
+             return redirect()->route('some.route.to.redirect'); // Redirect to a suitable page or show an error
+         }
+     }
+     
+ 
     /**
      * Show the form for editing the specified resource.
      */
@@ -63,7 +71,7 @@ class ServiceController extends Controller
         $fields = $request->validated();
         $services->fill($fields);
         $services->save();
-        return redirect()->route('admin.categories.index')->with('success', 'Categoria atualizada com sucesso');
+        return redirect()->route('admin.services.index')->with('success', 'Serviço atualizado com sucesso');
     }
 
 
