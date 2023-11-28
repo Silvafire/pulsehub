@@ -24,7 +24,7 @@ body {
     column-gap: 1rem;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    height: 500px;
+    height: 600px;
 }
 
 .img-card img {
@@ -122,3 +122,4 @@ body {
 .btn-1:hover {
     color: #999;
 }
+
