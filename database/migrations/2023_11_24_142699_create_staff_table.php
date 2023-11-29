@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('link_instagram', 200);
             $table->string('link_email', 200);
             $table->string('img');
+            $table->softDeletes();
         });
     }
 
