@@ -101,6 +101,7 @@ h6 {
     background-color: var(--cl--black);
     position: fixed;
     width: 100%;
+    z-index: 999;
 
 
 }
