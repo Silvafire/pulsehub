@@ -38,3 +38,6 @@ Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
