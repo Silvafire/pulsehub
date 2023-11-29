@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -28,6 +30,11 @@ Route::get('staff', [PageController::class, 'staff'])->name('staff');
 
 
 Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
+Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -19,8 +19,8 @@
                             placeholder="Email address" value="" />
                     </div>
                     <div class="form-group col-3">
-                        <label for="inputRole">Role</label>
-                        <select name="role" id="inputRole" class="form-control mx-2">
+                        <label for="inputRole">Perm</label>
+                        <select name="perm" id="inputRole" class="form-control mx-2">
                             <option value="">All</option>
                             <option value="A">Admin</option>
                             <option value="N">Normal</option>
@@ -47,7 +47,7 @@
                                         <th>Photo</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Role</th>
+                                        <th>perm</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -67,7 +67,7 @@
                                                 href="{{ route('admin.users.edit', $user) }}"><i
                                                     class="fas fa-pen fa-xs"></i></a>
                                             <form method="POST" action="{{ route('admin.users.destroy', $user) }}"
-                                                role="form" class="inline"
+                                                perm="form" class="inline"
                                                 onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                 @csrf
                                                 @method('DELETE')

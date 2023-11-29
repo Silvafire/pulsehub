@@ -16,7 +16,7 @@
 
 			<div><strong>Nome:</strong>{{$user->name}}</div>
 			<div><strong>E-mail:</strong>{{$user->email}}</div>
-            <div><strong>Role:</strong>{{$user->role}}</div>
+            <div><strong>Role:</strong>{{$user->roleToStr()}}</div>
 		</div>
 	</div>
 </div>
