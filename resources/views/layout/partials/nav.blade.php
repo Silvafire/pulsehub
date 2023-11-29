@@ -18,7 +18,7 @@
             </ul>
 
         </div>
-        <a href="#" class="button-nav">Login</a>
+        <a href="{{ route('login') }}" class="button-nav">Login</a>
 
 
         <div class="dropdown_menu open">

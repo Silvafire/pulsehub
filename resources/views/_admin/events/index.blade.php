@@ -42,7 +42,7 @@
         </table>
       </div>
       @else
-      <h6>Não existem categorias registadas</h6>
+      <h6>Não existem Eventos registados</h6>
       @endif
     </div>
   </div>

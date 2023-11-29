@@ -33,6 +33,19 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function roleToStr()
+    {
+        switch ($this->perm) {
+            case 'A':
+                return 'Administrador';
+            case 'N':
+                return 'Normal';
+            default:
+                # code...
+                break;
+        }
+    }
+
     /**
      * The attributes that should be cast.
      *
