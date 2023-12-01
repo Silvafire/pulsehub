@@ -11,6 +11,9 @@
       <a class="btn btn-primary" href="{{route('admin.events.create')}}">
         <i class="fas fa-plus"></i> Novo Evento
       </a>
+      <a class="btn btn-primary" href="#">
+        <i class="fas fa-plus"></i> Novo Tipo Evento
+      </a>
     </div>
     <div class="card-body">
       @if (count($events))
@@ -20,12 +23,14 @@
             <tr>
               <th>Nome</th>
               <th>Descrição</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             @foreach($events as $event)
             <tr>
               <td>{{$event->nome}}</td>
+              <td>{{$event->Descricao}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.events.show',$event)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.events.edit',$event)}}"><i class="fas fa-pen fa-xs"></i></a>
