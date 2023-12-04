@@ -34,6 +34,7 @@ Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dash
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
+Route::resource('admin/modalidades', EventController::class, ['as' => 'admin']);
 
 Auth::routes();
 

@@ -5,7 +5,7 @@
 
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
-			Informação do Serviço
+			Informação da Modalidade
 		</div>
 		<div class="card-body">
 
