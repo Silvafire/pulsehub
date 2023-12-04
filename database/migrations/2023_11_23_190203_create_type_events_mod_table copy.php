@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tipo_eventos_mod', function (Blueprint $table) {
             $table->id();
             $table->string('tipo',30);
+            $table->string('imagem')->nullable();
         });
     }
 
