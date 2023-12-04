@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('descricao');
             $table->string('img')->nullable();
             $table->dateTime('data');
-            $table->unsignedBigInteger('tipo_eventos_id'); // Chave estrangeira
-            $table->foreign('tipo_eventos_id')->references('id')->on('tipo_eventos');
+            $table->unsignedBigInteger('tipo_eventos_mod_id'); // Chave estrangeira
+            $table->foreign('tipo_eventos_mod_id')->references('id')->on('tipo_eventos_mod');
             $table->softDeletes(); // Adiciona a coluna deleted_at para soft deletes
         });
     }
