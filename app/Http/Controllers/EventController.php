@@ -66,7 +66,7 @@ class EventController extends Controller
 
     public function update(EventRequest $request, Event $event)
     {
-        $fields = $request->validate(); 
+        $fields = $request->validated(); 
         $event->save();
         return redirect()->route('_admin.events.index')->with('success', 'Evento atualizado com sucesso');
     }
