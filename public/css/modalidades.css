@@ -59,17 +59,18 @@ html, body {
 .bottom-title {
     text-align: center;
     padding-top: 120px;
-    height: 500px;
+    height: 700px;
     /* Espaçamento superior entre o banner e o título */
 }
 
 .bottom-title h2 {
     color: black;
+    padding-bottom: 50px;
     /* Cor do texto preto */
     /* Outros estilos conforme necessário */
 }
 .card{
-    height: 200px;
+    height: 300px;
     border-radius: 5px;
     border-color: #FF8606;
 }
@@ -80,7 +81,8 @@ html, body {
 .card-img-top {
     width: 100px;
     height: 100px;
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-bottom: 20%;
     object-fit: cover; /* Manter a proporção da imagem */
 }
 
