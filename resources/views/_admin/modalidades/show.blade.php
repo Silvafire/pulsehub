@@ -10,7 +10,6 @@
 		<div class="card-body">
 
 			<div><strong>Nome:</strong>{{$modalidade->nome}}</div>
-			<div><strong>Descrição:</strong>{{$modalidade->descricao}}</div>
 		</div>
 	</div>
 </div>
