@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plano', function (Blueprint $table) {
+        Schema::create('tipo_planos', function (Blueprint $table) {
             $table->id();
-            $table->integer('Series');
-            $table->datetime('Duracao_Total');
-            $table->datetime('Tmp_Exercicio');
-            $table->integer('Repeticoes');
-            $table->unsignedBigInteger('modalidades_id'); // Chave estrangeira
-            $table->foreign('modalidades_id')->references('id')->on('modalidades');
+            $table->string('nome', 100);
+            $table->text('descricao');
+            $table->string('imagem');
+            $table->unsignedBigInteger('planos_id'); // Chave estrangeira
+            $table->foreign('planos_id')->references('id')->on('planos');
             $table->softDeletes(); // Adiciona a coluna deleted_at para soft deletes
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('plano');
+        Schema::dropIfExists('tipo_planos');
     }
 };

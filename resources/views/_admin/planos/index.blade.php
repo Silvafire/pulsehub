@@ -4,19 +4,16 @@
 @section("content")
 <div class="container-fluid">
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Modalidades</h1>
+  <h1 class="h3 mb-2 text-gray-800">Planos</h1>
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <a class="btn btn-primary" href="{{route('admin.modalidades.create')}}">
-        <i class="fas fa-plus"></i> Nova Modalidade
-      </a>
-      <a class="btn btn-primary" href="#">
-        <i class="fas fa-plus"></i> Novo Tipo Modalidade
+      <a class="btn btn-primary" href="{{route('admin.planos.create')}}">
+        <i class="fas fa-plus"></i> Nova Planos
       </a>
     </div>
     <div class="card-body">
-      @if (count($modalidades))
+      @if (count($planos))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -27,14 +24,14 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($modalidades as $modalidade)
+            @foreach($planos as $plano)
             <tr>
-              <td>{{$modalidade->nome}}</td>
-              <td>{{$modalidade->descricao}}</td>
+              <td>{{$plano->nome}}</td>
+              <td>{{$plano->descricao}}</td>
               <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.modalidades.show',$modalidade)}}"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.modalidades.edit',$modalidade)}}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{route('admin.modalidades.destroy',$modalidade)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar esta modalidade?');">
+                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.planos.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
+                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.planos.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
+                <form method="POST" action="{{route('admin.planos.destroy',$plano)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar esta modalidade?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
@@ -47,7 +44,7 @@
         </table>
       </div>
       @else
-      <h6>Não existem modalidades registados</h6>
+      <h6>Não existem planos registados</h6>
       @endif
     </div>
   </div>
