@@ -80,8 +80,8 @@
                         <a class="collapse-item" href="{{ route('admin.modalidades.index') }}">Listagem</a>
                         <a class="collapse-item" href="{{ route('admin.modalidades.index') }}">Nova Modalidade</a>
                         <h6 class="collapse-header">Planos:</h6>
-                        <a class="collapse-item" href="{{ route('admin.plano.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.plano.index') }}">Novo Plano</a>
+                        <a class="collapse-item" href="{{ route('admin.planos.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.planos.index') }}">Novo Plano</a>
                     </div>
                 </div>
             </li>

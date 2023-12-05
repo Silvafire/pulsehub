@@ -5,7 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ModalidadesController;
-use App\Http\Controllers\PlanoController;
+use App\Http\Controllers\PlanosController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,7 +37,7 @@ Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
-Route::resource('admin/plano', PlanoController::class, ['as' => 'admin']);
+Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
 
 Auth::routes();
 

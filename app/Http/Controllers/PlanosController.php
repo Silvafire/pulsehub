@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Plano;
 use Illuminate\Http\Request;
-use App\Http\Requests\PlanoRequest;
+use App\Http\Requests\PlanosRequest;
 
-class PlanoController extends Controller
+class PlanosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,7 +32,7 @@ class PlanoController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(PlanoRequest $request)
+    public function store(PlanosRequest $request)
     {
         $fields = $request->validated();
         $plano = new Plano();
@@ -64,7 +64,7 @@ class PlanoController extends Controller
      * Update the specified resource in storage.
      */
 
-    public function update(PlanoRequest $request, Plano $plano)
+    public function update(PlanosRequest $request, Plano $plano)
     {
         $fields = $request->validated();
         $plano->save();
