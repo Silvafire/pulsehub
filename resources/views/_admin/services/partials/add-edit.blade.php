@@ -5,5 +5,5 @@
 
 <div class="form-group">
     <label for="inputDescription">Descrição</label>
-    <textarea class="form-control" name="description" id="inputDescription"></textarea>
+    <textarea class="form-control" name="description" id="inputDescription" value="{{old('descricao',$services->descricao)}}"></textarea>
 </div>

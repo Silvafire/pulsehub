@@ -20,12 +20,12 @@ class ServicesRequest extends FormRequest
 
     public function rules(): array
     {
-        $currentId = $this->service ? $this->service->id : null;
+        $currentId = $this->services ? $this->services->id : null;
         return [
             "nome" => 'required|min:3|max:80|unique:services,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" => 'required|min:15|max:80',
-            "img" => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            "imagem_id" => 'required',
+            /* "img" => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            "imagem_id" => 'required', */
         ];
     }
 
@@ -34,8 +34,8 @@ class ServicesRequest extends FormRequest
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
             'descricao' => 'A descrição deve conter apenas letras e espaços',
-            'img' => 'Imagem demaisado grande',
-            'imagem_id' => 'Tipo de evento não existente',
+            /* 'img' => 'Imagem demaisado grande',
+            'imagem_id' => 'Tipo de evento não existente', */
         ];
     }
 }

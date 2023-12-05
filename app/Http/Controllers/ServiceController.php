@@ -43,14 +43,14 @@ class ServiceController extends Controller
      * Display the specified resource.
      */
 
-     public function show($id) // front end
+     public function show($id) 
      {
          $service = Services::find($id);
          if ($service) {
              return view('_admin.services.show', compact('service'));
          } else {
              // Handle the case where the service with the given ID is not found
-             return redirect()->route('some.route.to.redirect'); // Redirect to a suitable page or show an error
+             return redirect()->route('admin.services.index'); // Redirect to a suitable page or show an error
          }
      }
      
@@ -81,7 +81,7 @@ class ServiceController extends Controller
     public function destroy(Services $services)
     {
 
-        if ($services->projects()->exists()) {
+        if ($services->exists()) {
             return redirect()->route('admin.services.index')->withErrors(
                 ['delete' => 'O serviço que tentou eliminar tem projetos associados']
             );
@@ -89,7 +89,7 @@ class ServiceController extends Controller
         $services->delete();
         return redirect()->route('admin.services.index')->with(
             'success',
-            'Serviço eliminada com sucesso'
+            'Serviço eliminado com sucesso'
         );
     }
 }

@@ -8,11 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Services extends Model
 {
     use HasFactory;
-    public function create()
-    {
-        $services = Services::all();
-        return view('_admin.services.create', compact(
-            "Serviços"
-        ));
-    }
+    protected $fillable = [ 'nome', 'descricao' ];
+    
 }
