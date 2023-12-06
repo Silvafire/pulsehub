@@ -20,17 +20,21 @@
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Descrição</th>
-              <th>Actions</th>
-            </tr>
+          <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Imagem</th>
+               <th>Categoria</th>
+               <th>Editar</th>
+          </tr>
           </thead>
           <tbody>
             @foreach($events as $event)
             <tr>
               <td>{{$event->nome}}</td>
               <td>{{$event->Descricao}}</td>
+              <td> <img height='80' src="{{asset('storage/eventos_imagens/'. $event->imagem )}}" alt="Imagem da modalidade"></td>
+              <td>{{ $event->tipo->nome}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.events.show',$event)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.events.edit',$event)}}"><i class="fas fa-pen fa-xs"></i></a>

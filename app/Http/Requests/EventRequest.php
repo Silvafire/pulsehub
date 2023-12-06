@@ -27,8 +27,8 @@ class EventRequest extends FormRequest
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" =>'required|min:15|max:80',
             "data" =>'required',
-            "img"=> 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            "tipo_eventos_id" =>'required',
+            "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
+            'img' =>$this->event ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
@@ -36,10 +36,8 @@ class EventRequest extends FormRequest
     {
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
-            'descricao' => 'A descrição deve conter apenas letras e espaços',
-            'data' => 'Data incorreta',
-            'img' => 'Imagem demaisado grande',
-            'tipo_eventos_id' => 'Tipo de evento não existente',
+            'img.max' => 'Imagem demaisado grande',
+            'tipo_eventos_mod_id.exists' => 'Tipo de evento não existente',
         ];
     }
 }

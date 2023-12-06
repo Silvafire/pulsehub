@@ -9,7 +9,10 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <a class="btn btn-primary" href="{{route('admin.planos.create')}}">
-        <i class="fas fa-plus"></i> Nova Planos
+        <i class="fas fa-plus"></i> Novo Plano
+      </a>
+      <a class="btn btn-primary" href="{{route('admin.tiposplanos.create')}}">
+        <i class="fas fa-plus"></i> Novo Tipo de Planos
       </a>
     </div>
     <div class="card-body">
@@ -18,8 +21,10 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Descrição</th>
+              <th>Series</th>
+              <th>Duracao_Total</th>
+              <th>Tmp_Exercicio</th>
+              <th>Repeticoes</th>
               <th>Editar</th>
             </tr>
           </thead>

@@ -9,12 +9,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Event extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $fillable = ['nome', 'descricao'];
-    public function create()
-    {
-        $events = Event::all();
-        return view('_admin.events.create', compact(
-            "evento"
-        ));
+    public $timestamps=false;
+    protected $fillable=['nome','descricao', 'tipo_eventos_mod_id'];
+
+    public function tipo(){
+        return $this->belongsTo(Tipo_eventos_mod::class,'tipo_eventos_mod_id','id');
     }
+
 }
