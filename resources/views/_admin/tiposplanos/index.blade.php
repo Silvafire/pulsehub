@@ -20,6 +20,7 @@
             <tr>
               <th>Nome</th>
               <th>Descrição</th>
+              <th>Imagem</th>
               <th>Editar</th>
             </tr>
           </thead>

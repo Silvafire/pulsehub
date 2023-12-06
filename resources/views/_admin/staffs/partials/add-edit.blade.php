@@ -1,11 +1,11 @@
 <div class="form-group">
     <label for="inputName">Nome</label>
-    <input type="text" class="form-control" name="nome" id="inputName" value="{{old('nome',$event->nome)}}" />
+    <input type="text" class="form-control" name="nome" id="inputName" value="{{old('nome',$staff->nome)}}" />
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Descrição</label>
-    <textarea class="form-control" name="descricao" id="inputDescription">{{ old('descricao', $event->descricao) }}</textarea>
+    <textarea class="form-control" name="descricao" id="inputDescription">{{ old('descricao', $staff->descricao) }}</textarea>
 </div>
 
 <div class="form-group">
@@ -19,7 +19,7 @@
     <label for="inputTipo">Tipo</label>
     <select class="form-control" name="tipo_eventos_mod_id" id="inputTipo">
         @foreach($tipos as $tipo)
-            <option value="{{$tipo->id}}" {{$tipo->id==old('tipo_eventos_mod_id',$event->tipo_eventos_mod_id)?"selected":""}}>{{$tipo->nome}}</option>
+            <option value="{{$tipo->id}}" {{$tipo->id==old('tipo_eventos_mod_id',$staff->tipo_eventos_mod_id)?"selected":""}}>{{$tipo->nome}}</option>
         @endforeach
     </select>
 </div>

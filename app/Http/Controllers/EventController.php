@@ -11,7 +11,7 @@ class EventController extends Controller
     /**
      * Display a listing of the resource.
      */
-    
+
     public function index()
     {
         $events = Event::all();
@@ -66,7 +66,7 @@ class EventController extends Controller
 
     public function update(EventRequest $request, Event $event)
     {
-        $fields = $request->validated(); 
+        $fields = $request->validated();
         $event->save();
         return redirect()->route('_admin.events.index')->with('success', 'Evento atualizado com sucesso');
     }

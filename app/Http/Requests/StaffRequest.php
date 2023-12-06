@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventRequest extends FormRequest
+class StaffRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,14 +21,13 @@ class EventRequest extends FormRequest
      */
     public function rules(): array
     {
-        $currentId = $this->event ? $this->event->id : null;
+        $currentId = $this->Staff ? $this->Staff->id : null;
         return [
-            "nome" => 'required|min:3|max:80|unique:events,nome,' .
+            "nome" => 'required|min:3|max:80|unique:Staffs,nome,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" =>'required|min:15|max:80',
             "data" =>'required',
-            "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
-            'img' =>$this->event ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'img' =>$this->Staff ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
@@ -37,7 +36,8 @@ class EventRequest extends FormRequest
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
             'img.max' => 'Imagem demaisado grande',
-            'tipo_eventos_mod_id.exists' => 'Tipo de evento não existente',
+  
         ];
     }
+    
 }

@@ -43,7 +43,7 @@
                         <p>{{ $event->data }}</p>
                     </div>
                 </div>
-                {{--  <!-- Cardio Class -->
+               <!-- Cardio Class 
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <img alt="Cardio Class" class="w-full" src="https://random.imagecdn.app/1920/1080">
             <div class="p-4">
@@ -61,7 +61,7 @@
                 </p>
             </div>
         </div>
-        <!-- Yoga Class -->
+         Yoga Class 
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <img alt="Yoga Class" class="w-full" src="https://random.imagecdn.app/1920/1080">
             <div class="p-4">
@@ -78,8 +78,8 @@
                     Professor/a: Jason &amp; Carla
                 </p>
             </div>
-        </div> --}}
-        </div>
+        </div> 
+        </div> -->
     </div>
     @endforeach
 @endsection

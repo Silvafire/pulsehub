@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nome',45);
             $table->string('apelido',50);
-            $table->string('Especialização',45);
+            $table->string('especializacao',45);
             $table->string('link_facebook', 200);
             $table->string('link_instagram', 200);
             $table->string('link_email', 200);

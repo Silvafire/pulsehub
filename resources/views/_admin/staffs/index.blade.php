@@ -4,19 +4,19 @@
 @section("content")
 <div class="container-fluid">
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Eventos</h1>
+  <h1 class="h3 mb-2 text-gray-800">Staffs</h1>
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <a class="btn btn-primary" href="{{route('admin.events.create')}}">
-        <i class="fas fa-plus"></i> Novo Evento
+      <a class="btn btn-primary" href="{{route('admin.staffs.create')}}">
+        <i class="fas fa-plus"></i> Novo Staff
       </a>
       <a class="btn btn-primary" href="#">
-        <i class="fas fa-plus"></i> Novo Tipo Evento
+        <i class="fas fa-plus"></i> Novo Tipo Staff
       </a>
     </div>
     <div class="card-body">
-      @if (count($events))
+      @if (count($staffs))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -29,16 +29,16 @@
           </tr>
           </thead>
           <tbody>
-            @foreach($events as $event)
+            @foreach($staffs as $staff)
             <tr>
-              <td>{{$event->nome}}</td>
-              <td>{{$event->Descricao}}</td>
-              <td> <img height='80' src="{{asset('storage/eventos_imagens/'. $event->imagem )}}" alt="Imagem da modalidade"></td>
-              <td>{{ $event->tipo->nome}}</td>
+              <td>{{$staff->nome}}</td>
+              <td>{{$staff->Descricao}}</td>
+              <td> <img height='80' src="{{asset('storage/eventos_imagens/'. $staff->imagem )}}" alt="Imagem da modalidade"></td>
+              <td>{{ $staff->tipo->nome}}</td>
               <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.events.show',$event)}}"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.events.edit',$event)}}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{route('admin.events.destroy',$event)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
+                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.staffs.show',$staff)}}"><i class="fas fa-eye fa-xs"></i></a>
+                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.staffs.edit',$staff)}}"><i class="fas fa-pen fa-xs"></i></a>
+                <form method="POST" action="{{route('admin.staffs.destroy',$staff)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
@@ -51,7 +51,7 @@
         </table>
       </div>
       @else
-      <h6>Não existem Eventos registados</h6>
+      <h6>Não existem Staffs registados</h6>
       @endif
     </div>
   </div>
