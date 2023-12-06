@@ -24,9 +24,9 @@ class ModalidadesRequest extends FormRequest
         $currentId = $this->modalidade ? $this->modalidade->id : null;
         return [
             "nome" => 'required|min:3|max:80|unique:events,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" =>'required|min:15|max:80',
+            "descricao" =>'required|min:15',
             "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
-            'imagem' =>$this->modalidade ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'imagem' =>$this->modalidade ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
