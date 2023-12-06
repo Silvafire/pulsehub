@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class TipoPlano extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+    public $timestamps=false;
+    protected $fillable=['nome','descricao', 'planos_id'];
+
     public function create()
     {
         $planos = TipoPlano::all();
