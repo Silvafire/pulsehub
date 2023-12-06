@@ -9,8 +9,8 @@
 			Editar Serviço
         </div>
         <div class="card-body">
-		
-			<form method="POST" action="{{ route('admin.services.update',$services)}}" class="form-group">
+
+			<form method="POST" action="{{ route('admin.services.update', $service)}}" class="form-group">
 				@csrf
 				@method("PUT")
 				@include('_admin.services.partials.add-edit')
@@ -22,8 +22,9 @@
 				</div>
 
 			</form>
-			
+	
 		</div>
+
 	</div>
 </div>
 

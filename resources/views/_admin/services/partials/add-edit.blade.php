@@ -1,9 +1,9 @@
 <div class="form-group">
     <label for="inputName">Nome</label>
-    <input type="text" class="form-control" name="name" id="inputName" value="{{old('name',$services->name)}}" />
+    <input type="text" class="form-control" name="nome" id="inputName" value="{{old('nome',$service->nome)}}" />
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Descrição</label>
-    <textarea class="form-control" name="description" id="inputDescription" value="{{old('descricao',$services->descricao)}}"></textarea>
+    <input type="text" class="form-control" name="descricao" id="inputDescription" value="{{old('descricao',$service->descricao)}}"></input>
 </div>
