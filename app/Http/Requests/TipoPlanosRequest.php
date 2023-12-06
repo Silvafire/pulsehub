@@ -4,11 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ServicesRequest extends FormRequest
+class TiposPlanosRequest extends FormRequest
 {
     //Determine if the user is authorized to make this request.*/
 
-    public function authorize(): bool      
+    public function authorize(): bool
     {
         return true;
     }
@@ -20,12 +20,12 @@ class ServicesRequest extends FormRequest
 
     public function rules(): array
     {
-        $currentId = $this->services ? $this->services->id : null;
+        $currentId = $this->tipoplano ? $this->tipoplano->id : null;
         return [
-            "nome" => 'required|min:3|max:30|unique:services,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" => 'required|min:15|max:255',
-            /* "img" => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            "imagem_id" => 'required', */
+            "Series" => 'required|integer|min:1', 
+        "Duracao_Total" => 'required|integer|min:1', 
+        "Tmp_Exercicio" => 'required|integer|min:1', 
+        "Repeticoes" => 'required|integer|min:1',
         ];
     }
 
@@ -33,11 +33,9 @@ class ServicesRequest extends FormRequest
     {
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
-            'nome.max' => 'O nome deve ter no máximo 30 caracteres',
             'descricao' => 'A descrição deve conter apenas letras e espaços',
-            
-            /* 'img' => 'Imagem demaisado grande',
-            'imagem_id' => 'Tipo de evento não existente', */
+            'img' => 'Imagem demaisado grande',
+            'imagem_id' => 'Tipo de evento não existente',
         ];
     }
 }

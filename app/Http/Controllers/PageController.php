@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\User;
-use App\Models\Services;
+use App\Models\Service;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
@@ -32,12 +32,13 @@ class PageController extends Controller
 
     public function servicos()
     {
-        $services = Services::all();
+        $services = Service::all();
         return view('servicos', compact('services'));
     }
     public function eventos()
     {
-        return view('eventos');
+        $events = Service::all();
+        return view('eventos', compact('events'));
     }
 
     public function staff()
@@ -55,5 +56,4 @@ class PageController extends Controller
 
         return view('_admin.dashboard', compact('count_events', 'count_users', 'count_users_per_role'));
     }
-
 }

@@ -9,19 +9,22 @@
 			Editar Serviço
         </div>
         <div class="card-body">
-		
-			<form method="POST" action="#" class="form-group">
+
+			<form method="POST" action="{{ route('admin.services.update', $service)}}" class="form-group">
+				@csrf
+				@method("PUT")
 				@include('_admin.services.partials.add-edit')
 				<div class="form-group">
 					<button type="submit" class="btn btn-success" name="ok">Guardar</button>
 
-					<a href="#" class="btn btn-default">Cancelar</a>
+					<a href="{{route('admin.services.index')}}" class="btn btn-default">Cancelar</a>
     
 				</div>
 
 			</form>
-			
+	
 		</div>
+
 	</div>
 </div>
 

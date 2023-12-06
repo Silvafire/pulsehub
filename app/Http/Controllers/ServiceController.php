@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Services;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Requests\ServicesRequest;
+
 
 class ServiceController extends Controller
 {
@@ -13,8 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Services::all();
-        return view('_admin.services.index', compact('services'));
+        $service = Service::all();
+        return view('_admin.services.index', compact('service'));
     }
 
     /**
@@ -22,8 +23,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $services = new Services;
-        return view('_admin.services.create', compact('services'));
+        $service = new Service;
+        return view('_admin.services.create', compact('service'));
     }
 
     /**
@@ -32,9 +33,10 @@ class ServiceController extends Controller
     public function store(ServicesRequest $request)
     {
         $fields = $request->validated();
-        $services = new Services();
-        $services->fill($fields);
-        $services->save();
+
+        $service = new Service();
+        $service->fill($fields);
+        $service->save();
         return redirect()->route('admin.services.index')
             ->with('success', 'Serviço criado com sucesso');
     }
@@ -43,14 +45,14 @@ class ServiceController extends Controller
      * Display the specified resource.
      */
 
-     public function show($id) // front end
+     public function show($id) 
      {
-         $service = Services::find($id);
+         $service = Service::find($id);
          if ($service) {
              return view('_admin.services.show', compact('service'));
          } else {
              // Handle the case where the service with the given ID is not found
-             return redirect()->route('some.route.to.redirect'); // Redirect to a suitable page or show an error
+             return redirect()->route('admin.services.index'); // Redirect to a suitable page or show an error
          }
      }
      
@@ -58,38 +60,32 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Services $services)
+    public function edit(Service $service)
     {
-        return view('_admin.services.edit', compact('services'));
+
+        return view('_admin.services.edit', compact('service'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(ServicesRequest $request, Services $services)
+    public function update(ServicesRequest $request, Service $service)
     {
         $fields = $request->validated();
-        $services->fill($fields);
-        $services->save();
-        return redirect()->route('admin.services.index')->with('success', 'Serviço atualizado com sucesso');
+        $service->fill($fields);
+        $service->save();
+        return redirect()->route('admin.services.index')
+        ->with('success', 'Serviço atualizado com sucesso');
     }
 
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Services $services)
+    public function destroy(Service $service)
     {
-
-        if ($services->projects()->exists()) {
-            return redirect()->route('admin.services.index')->withErrors(
-                ['delete' => 'O serviço que tentou eliminar tem projetos associados']
-            );
-        }
-        $services->delete();
-        return redirect()->route('admin.services.index')->with(
-            'success',
-            'Serviço eliminada com sucesso'
-        );
+        $service->delete();
+        return redirect()->route('admin.services.index')
+        ->with('success','Serviço eliminado com sucesso');
     }
 }

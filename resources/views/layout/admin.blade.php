@@ -73,9 +73,9 @@
                         <a class="collapse-item" href="{{ route('admin.events.index') }}">Listagem</a>
                         <a class="collapse-item" href="{{ route('admin.events.create') }}">Novo Evento</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Op2:</h6>
-                        <a class="collapse-item" href="#">Listagem</a>
-                        <a class="collapse-item" href="#">Nova Op2</a>
+                        <h6 class="collapse-header">Serviços:</h6>
+                        <a class="collapse-item" href="{{ route('admin.services.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.services.create') }}">Novo Serviço</a>
                         <h6 class="collapse-header">Modalidades:</h6>
                         <a class="collapse-item" href="{{ route('admin.modalidades.index') }}">Listagem</a>
                         <a class="collapse-item" href="{{ route('admin.modalidades.index') }}">Nova Modalidade</a>

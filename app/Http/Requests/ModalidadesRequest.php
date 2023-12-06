@@ -24,10 +24,9 @@ class ModalidadesRequest extends FormRequest
         $currentId = $this->modalidade ? $this->modalidade->id : null;
         return [
             "nome" => 'required|min:3|max:80|unique:events,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" =>'required|min:15|max:80',
-            "img"=> 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            "staff_id" =>'required',
-            "tipo_eventos_mod_id" =>'required',
+            "descricao" =>'required|min:15',
+            "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
+            'imagem' =>$this->modalidade ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
@@ -35,10 +34,8 @@ class ModalidadesRequest extends FormRequest
     {
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
-            'descricao' => 'A descrição deve conter apenas letras e espaços',
-            'img' => 'Imagem demaisado grande',
-            'staff_id' => 'Tipo de staff não existente',
-            'tipo_eventos_mod_id' => 'Tipo de modalidade não existente',
+            'imagem.max' => 'Imagem demaisado grande',
+            'tipo_eventos_mod_id.exists' => 'Tipo de modalidade não existente',
         ];
     }
 }

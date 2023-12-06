@@ -13,7 +13,7 @@
       </a>
     </div>
     <div class="card-body">
-      @if (count($services))
+      @if (count($service))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -24,7 +24,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($services as $service)
+            @foreach($service as $service)
             <tr>
               <td>{{$service->nome}}</td>
               <td>{{$service->descricao}}</td>

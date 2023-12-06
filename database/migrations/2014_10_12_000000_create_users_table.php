@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('img')->nullable();
-            $table->integer('idade')->nullable();
+            $table->date('data_nasc')->nullable();
             $table->enum('perm', ['A', 'N'])->default('N');
             $table->rememberToken();
             $table->timestamps();
