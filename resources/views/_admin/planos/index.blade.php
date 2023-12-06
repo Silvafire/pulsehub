@@ -11,6 +11,9 @@
       <a class="btn btn-primary" href="{{route('admin.planos.create')}}">
         <i class="fas fa-plus"></i> Nova Planos
       </a>
+      <a class="btn btn-primary" href="{{route('admin.tiposplanos.create')}}">
+        <i class="fas fa-plus"></i> Novo Tipo Planos
+      </a>
     </div>
     <div class="card-body">
       @if (count($planos))

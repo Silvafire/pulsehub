@@ -39,7 +39,7 @@ Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
 Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
-Route::resource('admin/planos', TiposPlanosController::class, ['as' => 'admin']);
+Route::resource('admin/tiposplanos', TiposPlanosController::class, ['as' => 'admin']);
 
 Auth::routes();
 
