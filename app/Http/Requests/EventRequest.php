@@ -28,7 +28,7 @@ class EventRequest extends FormRequest
             "descricao" =>'required|min:15|max:80',
             "data" =>'required',
             "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
-            'img' =>$this->modalidade ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'img' =>$this->event ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
@@ -37,7 +37,7 @@ class EventRequest extends FormRequest
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
             'img.max' => 'Imagem demaisado grande',
-            'tipo_eventos_mod_id.exists' => 'Tipo de modalidade não existente',
+            'tipo_eventos_mod_id.exists' => 'Tipo de evento não existente',
         ];
     }
 }
