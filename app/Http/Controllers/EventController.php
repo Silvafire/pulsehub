@@ -29,7 +29,7 @@ class EventController extends Controller
     {
         $event = new Event;
         $tipos = Tipo_eventos_mod::all();
-        return view('_admin.events.create', compact("event"));
+        return view('_admin.events.create', compact("event","tipos"));
     }
 
     /**
@@ -67,7 +67,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         $tipos = Tipo_eventos_mod::all();
-        return view('_admin.events.edit', compact('event'));
+        return view('_admin.events.edit', compact('event',"tipos"));
     }
 
     /**
