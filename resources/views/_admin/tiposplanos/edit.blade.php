@@ -6,7 +6,7 @@
 
      <div class="card shadow mb-4">
         <div class="card-header py-3">
-			Editar TiposPlanos
+			Editar Tipo de Planos
         </div>
         <div class="card-body">
 

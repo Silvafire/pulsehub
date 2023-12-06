@@ -11,6 +11,7 @@
 
 			<div><strong>Nome:</strong>{{$tipoplano->nome}}</div>
 			<div><strong>Descrição:</strong>{{$tipoplano->descricao}}</div>
+            <div><strong>Imagem: </strong><img height='80' src="{{asset('storage/tiposplanos_imagens/'. $tipoplano->imagem )}}" alt="Imagem do tipo do plano"></div>
 		</div>
 	</div>
 </div>
