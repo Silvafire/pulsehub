@@ -34,7 +34,6 @@
                                         <td>{{ $modalidade->nome }}</td>
                                         <td>{{ $modalidade->descricao }}</td>
                                         <td> <img height='80' src="{{asset('storage/modalidades_imagens/'. $modalidade->imagem )}}" alt="Imagem da modalidade"></td>
-
                                         <td>{{ $modalidade->tipo->nome}}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.modalidades.show', $modalidade) }}"><i class="fas fa-eye fa-xs"></i></a>

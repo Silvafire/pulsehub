@@ -9,7 +9,10 @@
 		</div>
 		<div class="card-body">
 
-			<div><strong>Nome:</strong>{{$modalidade->nome}}</div>
+			<div><strong>Nome: </strong>{{$modalidade->nome}}</div>
+            <div><strong>Descrição: </strong>{{$modalidade->descricao}}</div>
+            <div><strong>Imagem: </strong><img height='80' src="{{asset('storage/modalidades_imagens/'. $modalidade->imagem )}}" alt="Imagem da modalidade"></div>
+            <div><strong>Categoria: </strong>{{ $modalidade->tipo->nome}}</div>
 		</div>
 	</div>
 </div>
