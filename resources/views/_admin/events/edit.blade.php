@@ -10,7 +10,7 @@
 		</div>
 		<div class="card-body">
 
-			<form method="POST" action="{{route('admin.events.update',$event)}}" class="form-group">
+			<form method="POST" action="{{route('admin.events.update',$event)}}" class="form-group" enctype="multipart/form-data">
 				@csrf
 				@method('PUT')
 				@include('_admin.events.partials.add-edit')

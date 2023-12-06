@@ -25,6 +25,7 @@ class EventController extends Controller
     public function create()
     {
         $event = new Event;
+        $tipos = Tipo_eventos_mod::all();
         return view('_admin.events.create', compact("event"));
     }
 
@@ -37,6 +38,11 @@ class EventController extends Controller
         $fields = $request->validated();
         $event = new Event();
         $event->fill($fields);
+        if ($request->hasFile('imagem')) {
+            $imagem_path =
+                $request->file('imagem')->store('public/eventos_imagens');
+            $event->imagem = basename($imagem_path);
+        }
         $event->save();
         return redirect()->route('admin.events.index')
             ->with('success', 'Evento criado com sucesso');
@@ -57,6 +63,7 @@ class EventController extends Controller
 
     public function edit(Event $event)
     {
+        $tipos = Tipo_eventos_mod::all();
         return view('_admin.events.edit', compact('event'));
     }
 
@@ -67,6 +74,15 @@ class EventController extends Controller
     public function update(EventRequest $request, Event $event)
     {
         $fields = $request->validated(); 
+        if ($request->hasFile('imagem')) {
+            if (!empty($event->imagem)) {
+                Storage::disk('public')->delete('eventos_imagens/' .
+                    $event->imagem);
+            }
+            $imagem_path =
+                $request->file('imagem')->store('public/eventos_imagens');
+            $event->imagem = basename($imagem_path);
+        }
         $event->save();
         return redirect()->route('_admin.events.index')->with('success', 'Evento atualizado com sucesso');
     }
