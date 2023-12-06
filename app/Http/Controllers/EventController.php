@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Requests\EventRequest;
+use App\Models\Tipo_eventos_mod;
+
 
 class EventController extends Controller
 {
