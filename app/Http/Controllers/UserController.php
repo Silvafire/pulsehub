@@ -95,11 +95,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        if ($user->projects()->exists()) {
-            return redirect()->route('admin.users.index')->withErrors(
-                ['delete' => 'O User que tentou eliminar tem projetos associados']
-            );
-        }
         $user->delete();
         return redirect()->route('admin.users.index')->with(
             'success',
