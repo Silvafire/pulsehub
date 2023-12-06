@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TipoPlano;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\TipoPlanosRequest;
 
 class TiposPlanosController extends Controller
