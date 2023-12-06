@@ -76,6 +76,7 @@ class ModalidadesController extends Controller
     public function update(ModalidadesRequest $request, Modalidade $modalidade)
     {
         $fields = $request->validated();
+        $modalidade->fill($fields);
         if ($request->hasFile('imagem')) {
             if (!empty($modalidade->imagem)) {
                 Storage::disk('public')->delete('modalidades_imagens/' .
@@ -86,7 +87,7 @@ class ModalidadesController extends Controller
             $modalidade->imagem = basename($imagem_path);
         }
         $modalidade->save();
-        return redirect()->route('_admin.modalidades.index')->with('success', 'Modalidade atualizado com sucesso');
+        return redirect()->route('admin.modalidades.index')->with('success', 'Modalidade atualizado com sucesso');
     }
 
 
