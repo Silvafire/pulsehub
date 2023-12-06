@@ -34,10 +34,8 @@ class ModalidadesRequest extends FormRequest
     {
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
-            'descricao' => 'A descrição deve conter apenas letras e espaços',
-            'img' => 'Imagem demaisado grande',
-            'staff_id' => 'Tipo de staff não existente',
-            'tipo_eventos_mod_id' => 'Tipo de modalidade não existente',
+            'imagem.max' => 'Imagem demaisado grande',
+            'tipo_eventos_mod_id.exists' => 'Tipo de modalidade não existente',
         ];
     }
 }
