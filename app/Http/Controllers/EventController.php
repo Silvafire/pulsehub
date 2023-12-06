@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Requests\EventRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Tipo_eventos_mod;
 
 
