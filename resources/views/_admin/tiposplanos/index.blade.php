@@ -4,19 +4,16 @@
 @section("content")
 <div class="container-fluid">
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Planos</h1>
+  <h1 class="h3 mb-2 text-gray-800">Tipo Planos</h1>
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <a class="btn btn-primary" href="{{route('admin.planos.create')}}">
-        <i class="fas fa-plus"></i> Nova Planos
-      </a>
       <a class="btn btn-primary" href="{{route('admin.tiposplanos.create')}}">
         <i class="fas fa-plus"></i> Novo Tipo Planos
       </a>
     </div>
     <div class="card-body">
-      @if (count($planos))
+      @if (count($tiposplanos))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -27,14 +24,14 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($planos as $plano)
+            @foreach($tiposplanos as $tipoplano)
             <tr>
-              <td>{{$plano->nome}}</td>
-              <td>{{$plano->descricao}}</td>
+              <td>{{$tipoplano->nome}}</td>
+              <td>{{$tipoplano->descricao}}</td>
               <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.planos.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.planos.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{route('admin.planos.destroy',$plano)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar esta modalidade?');">
+                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tiposplanos.show',$tipoplano)}}"><i class="fas fa-eye fa-xs"></i></a>
+                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tiposplanos.edit',$tipoplano)}}"><i class="fas fa-pen fa-xs"></i></a>
+                <form method="POST" action="{{route('admin.tiposplanos.destroy',$tipoplano)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este tipo de plano?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
@@ -47,7 +44,7 @@
         </table>
       </div>
       @else
-      <h6>Não existem planos registados</h6>
+      <h6>Não existem tipos de planos registados</h6>
       @endif
     </div>
   </div>
