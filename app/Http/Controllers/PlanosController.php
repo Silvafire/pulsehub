@@ -6,6 +6,7 @@ use App\Models\Plano;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PlanosRequest;
+use App\Models\Modalidade;
 
 class PlanosController extends Controller
 {
@@ -26,7 +27,8 @@ class PlanosController extends Controller
     public function create()
     {
         $plano = new Plano;
-        return view('_admin.planos.create', compact("plano"));
+        $tipos = Modalidade::all();
+        return view('_admin.planos.create', compact("plano","tipos"));
     }
 
     /**
