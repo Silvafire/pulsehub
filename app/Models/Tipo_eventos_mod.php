@@ -15,5 +15,11 @@ class Tipo_eventos_mod extends Model
 
     public function modalidades(){
         return $this->hasMany(Modalidade::class,'tipo_eventos_mod_id','id');
+ 
     }
+
+    public function eventos(){
+        return $this->hasMany(Event::class,'tipo_eventos_mod_id','id');
+    }
+
 }
