@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('nome', 45);
             $table->text('descricao');
             $table->string('imagem');
+            /*
             $table->unsignedBigInteger('staff_id');
             $table->foreign('staff_id')->references('id')->on('staff');
+            */
             $table->unsignedBigInteger('tipo_eventos_mod_id'); // Chave estrangeira
             $table->foreign('tipo_eventos_mod_id')->references('id')->on('tipo_eventos_mod');
             $table->softDeletes();

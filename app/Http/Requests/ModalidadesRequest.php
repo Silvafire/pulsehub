@@ -25,9 +25,8 @@ class ModalidadesRequest extends FormRequest
         return [
             "nome" => 'required|min:3|max:80|unique:events,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" =>'required|min:15|max:80',
-            "img"=> 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            "staff_id" =>'required',
-            "tipo_eventos_mod_id" =>'required',
+            "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
+            'imagem' =>$this->modalidade ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif|max:2048',
         ];
     }
 

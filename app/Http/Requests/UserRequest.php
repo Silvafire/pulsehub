@@ -11,7 +11,7 @@ class UserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,19 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+          'name'=>'required|min:3|max:40|regex:/^[A-ZÀ-úa-z\s]+$/',
+           'email' =>'required|email|unique:users,email,'.
+                    ($this->user?$this->user->id:''),
+           'imagem' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+           'perm' => 'required|in:A,N',
+           'data_nasc' => 'nullable|date|date_format:Y-m-d'
         ];
     }
+    public function messages(): array
+    {
+        return[
+            'photo.image' => 'O ficheiro não é uma imagem'
+        ];
+    }
+
 }

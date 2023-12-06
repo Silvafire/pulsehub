@@ -27,7 +27,6 @@ class PageController extends Controller
 
     public function modalidades()
     {
-        $tipos==
         return view('modalidades');
     }
 

@@ -44,8 +44,8 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Photo</th>
-                                        <th>Name</th>
+                                        <th>Imagem</th>
+                                        <th>Nome</th>
                                         <th>Email</th>
                                         <th>perm</th>
                                         <th>Actions</th>

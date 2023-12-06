@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Modalidade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ModalidadesRequest;
+use App\Models\Tipo_eventos_mod;
 
 class ModalidadesController extends Controller
 {
@@ -25,7 +27,8 @@ class ModalidadesController extends Controller
     public function create()
     {
         $modalidade = new Modalidade;
-        return view('_admin.modalidades.create', compact("modalidade"));
+        $tipos = Tipo_eventos_mod::all();
+        return view('_admin.modalidades.create', compact("modalidade","tipos"));
     }
 
     /**
@@ -37,6 +40,11 @@ class ModalidadesController extends Controller
         $fields = $request->validated();
         $modalidade = new Modalidade();
         $modalidade->fill($fields);
+        if ($request->hasFile('imagem')) {
+            $imagem_path =
+                $request->file('imagem')->store('public/modalidades_imagens');
+            $modalidade->imagem = basename($imagem_path);
+        }
         $modalidade->save();
         return redirect()->route('admin.modalidades.index')
             ->with('success', 'modalidadeo criado com sucesso');
@@ -57,7 +65,8 @@ class ModalidadesController extends Controller
 
     public function edit(Modalidade $modalidade)
     {
-        return view('_admin.modalidades.edit', compact('modalidade'));
+        $tipos = Tipo_eventos_mod::all();
+        return view('_admin.modalidades.edit', compact('modalidade','tipos'));
     }
 
     /**
@@ -67,6 +76,15 @@ class ModalidadesController extends Controller
     public function update(ModalidadesRequest $request, Modalidade $modalidade)
     {
         $fields = $request->validated();
+        if ($request->hasFile('imagem')) {
+            if (!empty($modalidade->imagem)) {
+                Storage::disk('public')->delete('modalidades_imagens/' .
+                    $modalidade->imagem);
+            }
+            $imagem_path =
+                $request->file('imagem')->store('public/modalidades_imagens');
+            $modalidade->imagem = basename($imagem_path);
+        }
         $modalidade->save();
         return redirect()->route('_admin.modalidades.index')->with('success', 'Modalidade atualizado com sucesso');
     }

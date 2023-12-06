@@ -24,7 +24,6 @@
                                     <th>Nome</th>
                                     <th>Descrição</th>
                                     <th>Imagem</th>
-                                    <th>Staff_id</th>
                                     <th>Categoria</th>
                                     <th>Editar</th>
                                 </tr>
@@ -35,8 +34,8 @@
                                         <td>{{ $modalidade->nome }}</td>
                                         <td>{{ $modalidade->descricao }}</td>
                                         <td>{{ $modalidade->imagem }}</td>
-                                        <td>{{ $modalidade->staff_id }}</td>
-                                        <td>{{ $modalidade->tipo_eventos_mod_id }}</td>
+
+                                        <td>{{ $modalidade->tipo->nome}}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.modalidades.show', $modalidade) }}"><i class="fas fa-eye fa-xs"></i></a>
                                             <a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.modalidades.edit', $modalidade) }}"><i class="fas fa-pen fa-xs"></i></a>
@@ -67,7 +66,6 @@
                 [0, 'asc']
             ],
             "columns": [
-                null,
                 null,
                 null,
                 null,
