@@ -6,6 +6,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ModalidadesController;
 use App\Http\Controllers\PlanosController;
+use App\Http\Controllers\TiposPlanosController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,6 +39,7 @@ Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
 Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
+Route::resource('admin/planos', TiposPlanosController::class, ['as' => 'admin']);
 
 Auth::routes();
 
