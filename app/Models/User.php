@@ -2,15 +2,18 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
+    //Tem a coluna deleted_at
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -33,19 +37,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function roleToStr()
-    {
-        switch ($this->perm) {
-            case 'A':
-                return 'Administrador';
-            case 'N':
-                return 'Normal';
-            default:
-                # code...
-                break;
-        }
-    }
-
     /**
      * The attributes that should be cast.
      *
@@ -55,4 +46,28 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+	public function roleToStr()
+    {
+        switch ($this->role) {
+            case 'N':
+                return 'Normal';
+            case 'A':
+                return 'Admin';
+        }
+    }
+    public function isAdmin()
+    {
+        return $this->role == 'A';
+    }
+	
+	/*CRIAR MÉTODO SIMILAR PARA TODOS OS RELACIONAMENTOS COM A TABELA DOS USERS
+	public function projects()
+    {
+        return $this->hasMany(Project::class);
+        //Quando as chaves não seguem as convenções
+        //return $this->hasMany(Project::class,'user_id','id');
+    }
+	*/
+	
 }
