@@ -32,8 +32,8 @@
             @foreach($events as $event)
             <tr>
               <td>{{$event->nome}}</td>
-              <td>{{$event->Descricao}}</td>
-              <td> <img height='80' src="{{asset('storage/eventos_imagens/'. $event->imagem )}}" alt="Imagem da modalidade"></td>
+              <td>{{$event->descricao}}</td>
+              <td> <img height='80' src="{{asset('storage/eventos_imagens/'. $event->imagem )}}" alt="Imagem do evento"></td>
               <td>{{ $event->tipo->nome}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.events.show',$event)}}"><i class="fas fa-eye fa-xs"></i></a>

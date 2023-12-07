@@ -33,7 +33,6 @@ Route::get('staff', [PageController::class, 'staff'])->name('staff');
 
 
 Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
-Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
