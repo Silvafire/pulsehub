@@ -5,15 +5,15 @@
 
 <div class="form-group">
     <label for="inputDescription">Titulo</label>
-    <textarea class="form-control" name="duracao_total" id="inputDescription"></textarea>
+    <textarea class="form-control" name="titulo" id="inputDescription"></textarea>
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Descricao</label>
-    <textarea class="form-control" name="tmp_exercicio" id="inputDescription"></textarea>
+    <textarea class="form-control" name="descricao" id="inputDescription"></textarea>
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Informacao</label>
-    <textarea class="form-control" name="repeticoes" id="inputDescription"></textarea>
+    <textarea class="form-control" name="informacao" id="inputDescription"></textarea>
 </div>
