@@ -29,7 +29,7 @@
             </td>
               <td nowrap>
                 <a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.services.images.edit', [$service, $image]) }}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{ route('admin.services.images.destroy', [$service, $image]) }}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar esta imagem do serviço?');">
+                <form method="POST" action="{{ route('admin.services.images.destroy',  [$service, $image]) }}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar esta imagem do serviço?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
