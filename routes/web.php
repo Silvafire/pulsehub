@@ -5,6 +5,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ModalidadesController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TipoPostController;
+use App\Http\Controllers\PostUsersController;
 use App\Http\Controllers\PlanosController;
 use App\Http\Controllers\TiposPlanosController;
 use App\Http\Controllers\UserController;
@@ -42,6 +45,7 @@ Route::resource('admin/tiposplanos', TiposPlanosController::class, ['as' => 'adm
 Route::resource('admin/post', PostController::class, ['as' => 'admin']);
 Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
 Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
+Route::resource('admin/staffs', StaffController::class, ['as' => 'admin']);
 
 Auth::routes(['verify'=>true]);
 

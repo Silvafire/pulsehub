@@ -62,7 +62,7 @@
         $('#dataTable').dataTable({
             destroy: true,
             "order": [
-                [0, 'asc']
+                [1, 'asc']
             ],
             "columns": [
                 {

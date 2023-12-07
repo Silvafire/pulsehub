@@ -69,7 +69,7 @@
                 </a>
                 <div id="collapsePosts" class="collapse" aria-labelledby="headingPosts" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Op1:</h6>
+                        <h6 class="collapse-header">Eventos:</h6>
                         <a class="collapse-item" href="{{ route('admin.events.index') }}">Listagem</a>
                         <a class="collapse-item" href="{{ route('admin.events.create') }}">Novo Evento</a>
                         <div class="collapse-divider"></div>
@@ -82,6 +82,9 @@
                         <h6 class="collapse-header">Planos:</h6>
                         <a class="collapse-item" href="{{ route('admin.planos.index') }}">Listagem</a>
                         <a class="collapse-item" href="{{ route('admin.planos.index') }}">Novo Plano</a>
+                        <h6 class="collapse-header">Blog:</h6>
+                        <a class="collapse-item" href="{{ route('admin.post.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.post.index') }}">Novo Post</a>
                     </div>
                 </div>
             </li>
