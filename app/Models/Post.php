@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
     use HasFactory, SoftDeletes;
+    protected $table="post";
     public $timestamps=false;
     protected $fillable = ['imagem', 'titulo', 'descricao', 'informacao', 'tipo_post_id'];
 

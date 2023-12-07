@@ -15,11 +15,4 @@
 </div>
 
 
-<div class="form-group">
-    <label for="inputTipo">Tipo</label>
-    <select class="form-control" name="tipo_eventos_mod_id" id="inputTipo">
-        @foreach($tipos as $tipo)
-            <option value="{{$tipo->id}}" {{$tipo->id==old('tipo_eventos_mod_id',$staff->tipo_eventos_mod_id)?"selected":""}}>{{$tipo->nome}}</option>
-        @endforeach
-    </select>
-</div>
+

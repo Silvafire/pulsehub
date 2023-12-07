@@ -11,9 +11,7 @@
       <a class="btn btn-primary" href="{{route('admin.staffs.create')}}">
         <i class="fas fa-plus"></i> Novo Staff
       </a>
-      <a class="btn btn-primary" href="#">
-        <i class="fas fa-plus"></i> Novo Tipo Staff
-      </a>
+
     </div>
     <div class="card-body">
       @if (count($staffs))

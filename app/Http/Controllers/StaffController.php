@@ -9,10 +9,10 @@ use App\Http\Requests\StaffRequest;
 class StaffController extends Controller
 {
     //
-    
+
     public function index()
     {
-        $Staffs = Staff::all();
+        $staffs = Staff::all();
         return view('_admin.staffs.index', compact('staffs'));
     }
 
@@ -22,7 +22,7 @@ class StaffController extends Controller
 
     public function create()
     {
-        $Staff = new Staff;
+        $staff = new Staff;
         return view('_admin.staffs.create', compact("staff"));
     }
 
