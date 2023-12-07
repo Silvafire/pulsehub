@@ -25,14 +25,9 @@ class UserRequest extends FormRequest
           'name'=>'required|min:3|max:40|regex:/^[A-ZÀ-úa-z\s]+$/',
            'email' =>'required|email|unique:users,email,'.
                     ($this->user?$this->user->id:''),
-<<<<<<< HEAD
            'imagem' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
            'perm' => 'required|in:A,N',
-           'data_nasc' => 'nullable|date|date_format:Y-m-d'
-=======
-           'photo' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-           'role' => 'required|in:A,N',
->>>>>>> TiagoQ
+           'data_nasc' => 'nullable|date|date_format:"Y-m-d"'
         ];
     }
     public function messages(): array

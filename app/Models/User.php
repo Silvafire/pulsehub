@@ -24,11 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-<<<<<<< HEAD
         'data_nasc'
-=======
-        'role',
->>>>>>> TiagoQ
     ];
 
     /**
@@ -64,7 +60,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->role == 'A';
     }
-	
+
 	/*CRIAR MÉTODO SIMILAR PARA TODOS OS RELACIONAMENTOS COM A TABELA DOS USERS
 	public function projects()
     {
@@ -73,5 +69,5 @@ class User extends Authenticatable implements MustVerifyEmail
         //return $this->hasMany(Project::class,'user_id','id');
     }
 	*/
-	
+
 }
