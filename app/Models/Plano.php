@@ -10,11 +10,12 @@ class Plano extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
-    protected $fillable=['Series','Duracao_Total','Tmp_Exercicio','Repeticoes' ,'modalidades_id'];
+    protected $fillable=['Series','Duracao_Total','Tmp_Exercicio','Repeticoes' ,'modalidade_id','tipo_plano_id'];
 
-    public function create()
-    {
-        $planos = Plano::all();
-        return view('_admin.planos.create', compact("plano"));
+    public function modalidade(){
+        return $this->belongsTo(Modalidade::class,'modalidade_id','id');
+    }
+    public function tipo_plano(){
+        return $this->belongsTo(TipoPlano::class,'tipo_plano_id','id');
     }
 }

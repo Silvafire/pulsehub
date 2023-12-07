@@ -21,9 +21,9 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>Imagem</th>
                                     <th>Nome</th>
                                     <th>Descrição</th>
-                                    <th>Imagem</th>
                                     <th>Categoria</th>
                                     <th>Editar</th>
                                 </tr>
@@ -31,10 +31,10 @@
                             <tbody>
                                 @foreach ($modalidades as $modalidade)
                                     <tr>
+                                        <td> <img height='80' src="{{asset('storage/modalidades_imagens/'. $modalidade->imagem )}}" alt="Imagem da modalidade"></td>
                                         <td>{{ $modalidade->nome }}</td>
                                         <td>{{ $modalidade->descricao }}</td>
-                                        <td> <img height='80' src="{{asset('storage/modalidades_imagens/'. $modalidade->imagem )}}" alt="Imagem da modalidade"></td>
-                                        <td>{{ $modalidade->tipo->nome}}</td>
+                                          <td>{{ $modalidade->tipo->nome}}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.modalidades.show', $modalidade) }}"><i class="fas fa-eye fa-xs"></i></a>
                                             <a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.modalidades.edit', $modalidade) }}"><i class="fas fa-pen fa-xs"></i></a>
@@ -65,7 +65,9 @@
                 [0, 'asc']
             ],
             "columns": [
-                null,
+                {
+                    "orderable": false
+                },
                 null,
                 null,
                 null,
