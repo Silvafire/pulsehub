@@ -15,4 +15,10 @@ class Modalidade extends Model
     public function tipo(){
         return $this->belongsTo(Tipo_eventos_mod::class,'tipo_eventos_mod_id','id');
     }
+    public function planos(){
+        return $this->hasMany(Plano::class,'modalidade_id','id');
+    }
+    public function staff(){
+        return $this->belongsToMany(Staff::class,'staff_modalidades','modalidade_id','staff_id');
+    }
 }

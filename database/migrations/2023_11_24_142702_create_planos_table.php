@@ -17,8 +17,10 @@ return new class extends Migration
             $table->datetime('Duracao_Total');
             $table->datetime('Tmp_Exercicio');
             $table->integer('Repeticoes');
-            $table->unsignedBigInteger('modalidades_id'); // Chave estrangeira
-            $table->foreign('modalidades_id')->references('id')->on('modalidades');
+            $table->unsignedBigInteger('modalidade_id'); // Chave estrangeira
+            $table->foreign('modalidade_id')->references('id')->on('modalidades');
+            $table->unsignedBigInteger('tipo_plano_id'); // Chave estrangeira
+            $table->foreign('tipo_plano_id')->references('id')->on('tipo_planos');
             $table->softDeletes(); // Adiciona a coluna deleted_at para soft deletes
         });
     }

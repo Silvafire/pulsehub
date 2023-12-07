@@ -10,11 +10,9 @@ class TipoPlano extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
-    protected $fillable=['nome','descricao', 'planos_id'];
+    protected $fillable=['nome','descricao'];
 
-    public function create()
-    {
-        $planos = TipoPlano::all();
-        return view('_admin.tiposplanos.create', compact("tipoplano"));
+    public function planos(){
+        return $this->hasMany(Plano::class,'tipo_plano_id','id');
     }
 }

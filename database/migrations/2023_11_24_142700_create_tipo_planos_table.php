@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('nome', 100);
             $table->text('descricao');
             $table->string('imagem');
-            $table->unsignedBigInteger('planos_id'); // Chave estrangeira
-            $table->foreign('planos_id')->references('id')->on('planos');
+
             $table->softDeletes(); // Adiciona a coluna deleted_at para soft deletes
         });
     }
