@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('planos', function (Blueprint $table) {
             $table->id();
-            $table->integer('Series');
-            $table->datetime('Duracao_Total');
-            $table->datetime('Tmp_Exercicio');
-            $table->integer('Repeticoes');
+            $table->integer('series');
+            $table->datetime('duracao_Total');
+            $table->datetime('tmp_Exercicio');
+            $table->integer('repeticoes');
             $table->unsignedBigInteger('modalidade_id'); // Chave estrangeira
             $table->foreign('modalidade_id')->references('id')->on('modalidades');
             $table->unsignedBigInteger('tipo_plano_id'); // Chave estrangeira
