@@ -23,7 +23,7 @@ class ServicesRequest extends FormRequest
         $currentId = $this->service ? $this->service->id : null;
         return [
             "nome" => 'required|min:3|max:30|unique:services,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" => 'required|min:15|max:255',
+            "descricao" => 'required|min:3|max:255',
             /* "img" => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             "imagem_id" => 'required', */
         ];
