@@ -84,7 +84,7 @@
                         <a class="collapse-item" href="{{ route('admin.planos.index') }}">Novo Plano</a>
                         <h6 class="collapse-header">Blog:</h6>
                         <a class="collapse-item" href="{{ route('admin.post.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.post.index') }}">Novo Plano</a>
+                        <a class="collapse-item" href="{{ route('admin.post.index') }}">Novo Post</a>
                     </div>
                 </div>
             </li>
