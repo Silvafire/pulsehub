@@ -29,7 +29,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($posts as $post)
+            @foreach($post as $post)
             <tr>
               <td>{{$post->nome}}</td>
               <td>{{$post->descricao}}</td>
