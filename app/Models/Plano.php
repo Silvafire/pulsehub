@@ -13,9 +13,9 @@ class Plano extends Model
     protected $fillable=['series','duracao_total','tmp_exercicio','repeticoes' ,'modalidade_id','tipo_plano_id'];
 
     public function modalidade(){
-        return $this->belongsTo(Modalidade::class,'modalidade_id','id');
+        return $this->belongsTo(Modalidade::class,'modalidade_id','id')->withTrashed();
     }
     public function tipo_plano(){
-        return $this->belongsTo(TipoPlano::class,'tipo_plano_id','id');
+        return $this->belongsTo(TipoPlano::class,'tipo_plano_id','id')->withTrashed();
     }
 }

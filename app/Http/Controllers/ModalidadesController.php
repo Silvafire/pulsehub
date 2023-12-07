@@ -97,11 +97,6 @@ class ModalidadesController extends Controller
 
     public function destroy(Modalidade $modalidade)
     {
-        if ($modalidade->projects()->exists()) {
-            return redirect()->route('admin.modalidades.index')->withErrors(
-                ['delete' => 'A modalidade que tentou eliminar tem projetos associados']
-            );
-        }
         $modalidade->delete();
         return redirect()->route('admin.modalidades.index')->with(
             'success',
@@ -109,3 +104,4 @@ class ModalidadesController extends Controller
         );
     }
 }
+
