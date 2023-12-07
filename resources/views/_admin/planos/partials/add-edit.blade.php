@@ -1,11 +1,11 @@
 <div class="form-group">
     <label for="inputName">Series</label>
-    <input type="text" class="form-control" name="name" id="inputName" value="{{old('name',$plano->series)}}" />
+    <input type="number" class="form-control" name="series" id="inputRepeticoes" min="1" required>
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Duração_Total</label>
-    <textarea class="form-control" name="duracao_total" id="inputDescription"></textarea>
+    <input type="number" class="form-control" name="duracao_total" id="inputRepeticoes" min="1" required>
 </div>
 
 <div class="form-group">
@@ -15,5 +15,5 @@
 
 <div class="form-group">
     <label for="inputDescription">Repetições</label>
-    <textarea class="form-control" name="repeticoes" id="inputDescription"></textarea>
+    <input type="number" class="form-control" name="repeticoes" id="inputRepeticoes" min="1" required>
 </div>
