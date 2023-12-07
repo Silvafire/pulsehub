@@ -40,7 +40,7 @@ class PostRequest extends FormRequest
             'titulo.regex' => 'O título deve conter apenas letras e espaços',
             'descricao.regex' => 'A descrição deve conter apenas letras e espaços',
             'informacao' => 'A informação deve conter apenas letras e espaços',
-            'tipo_eventos_id' => 'Tipo de evento não existente',
+            'tipo_post_id' => 'Tipo de post não existente',
         ];
     }
 }

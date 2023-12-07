@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Requests\EventRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Tipo_eventos_mod;
+
+
 
 class EventController extends Controller
 {
@@ -25,7 +29,8 @@ class EventController extends Controller
     public function create()
     {
         $event = new Event;
-        return view('_admin.events.create', compact("event"));
+        $tipos = Tipo_eventos_mod::all();
+        return view('_admin.events.create', compact("event","tipos"));
     }
 
     /**
@@ -37,9 +42,14 @@ class EventController extends Controller
         $fields = $request->validated();
         $event = new Event();
         $event->fill($fields);
+        if ($request->hasFile('imagem')) {
+            $imagem_path =
+                $request->file('imagem')->store('public/eventos_imagens');
+            $event->imagem = basename($imagem_path);
+        }
         $event->save();
         return redirect()->route('admin.events.index')
-            ->with('success', 'Evento criado com sucesso');
+            ->with('success', 'evento criado com sucesso');
     }
 
     /**
@@ -57,7 +67,7 @@ class EventController extends Controller
 
     public function edit(Event $event)
     {
-        return view('_admin.events.edit', compact('event'));
+        return view('_admin.events.edit', compact('event','tipos'));
     }
 
     /**
@@ -67,6 +77,16 @@ class EventController extends Controller
     public function update(EventRequest $request, Event $event)
     {
         $fields = $request->validated();
+        $event->fill($fields);
+        if ($request->hasFile('imagem')) {
+            if (!empty($event->imagem)) {
+                Storage::disk('public')->delete('eventos_imagens/' .
+                    $event->imagem);
+            }
+            $imagem_path =
+                $request->file('imagem')->store('public/eventos_imagens');
+            $event->imagem = basename($imagem_path);
+        }
         $event->save();
         return redirect()->route('_admin.events.index')->with('success', 'Evento atualizado com sucesso');
     }

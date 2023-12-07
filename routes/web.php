@@ -33,13 +33,15 @@ Route::get('staff', [PageController::class, 'staff'])->name('staff');
 
 
 Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
-Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
 Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
 Route::resource('admin/tiposplanos', TiposPlanosController::class, ['as' => 'admin']);
+Route::resource('admin/post', PostController::class, ['as' => 'admin']);
+Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
+Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
 
 Auth::routes();
 
