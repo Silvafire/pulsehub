@@ -85,6 +85,9 @@
                         <h6 class="collapse-header">Blog:</h6>
                         <a class="collapse-item" href="{{ route('admin.post.index') }}">Listagem</a>
                         <a class="collapse-item" href="{{ route('admin.post.index') }}">Novo Post</a>
+                        <h6 class="collapse-header">Staff:</h6>
+                        <a class="collapse-item" href="{{ route('admin.staffs.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.staffs.create') }}">Novo Satff</a>
                     </div>
                 </div>
             </li>

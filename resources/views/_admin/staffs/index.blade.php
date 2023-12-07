@@ -11,9 +11,7 @@
       <a class="btn btn-primary" href="{{route('admin.staffs.create')}}">
         <i class="fas fa-plus"></i> Novo Staff
       </a>
-      <a class="btn btn-primary" href="#">
-        <i class="fas fa-plus"></i> Novo Tipo Staff
-      </a>
+
     </div>
     <div class="card-body">
       @if (count($staffs))
@@ -22,7 +20,7 @@
           <thead>
           <tr>
                 <th>Nome</th>
-                <th>Descrição</th>
+                <th>Apelido</th>
                 <th>Imagem</th>
                <th>Categoria</th>
                <th>Editar</th>
@@ -32,8 +30,8 @@
             @foreach($staffs as $staff)
             <tr>
               <td>{{$staff->nome}}</td>
-              <td>{{$staff->Descricao}}</td>
-              <td> <img height='80' src="{{asset('storage/eventos_imagens/'. $staff->imagem )}}" alt="Imagem da modalidade"></td>
+              <td>{{$staff->apelido}}</td>
+              <td> <img height='80' src="{{asset('storage/staff_imagens/'. $staff->imagem )}}" alt="Imagem da modalidade"></td>
               <td>{{ $staff->tipo->nome}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.staffs.show',$staff)}}"><i class="fas fa-eye fa-xs"></i></a>

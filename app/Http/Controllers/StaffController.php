@@ -9,10 +9,10 @@ use App\Http\Requests\StaffRequest;
 class StaffController extends Controller
 {
     //
-    
+
     public function index()
     {
-        $Staffs = Staff::all();
+        $staffs = Staff::all();
         return view('_admin.staffs.index', compact('staffs'));
     }
 
@@ -22,7 +22,7 @@ class StaffController extends Controller
 
     public function create()
     {
-        $Staff = new Staff;
+        $staff = new Staff;
         return view('_admin.staffs.create', compact("staff"));
     }
 
@@ -32,9 +32,15 @@ class StaffController extends Controller
 
     public function store(StaffRequest $request)
     {
+
         $fields = $request->validated();
         $staff = new Staff();
         $staff->fill($fields);
+        if ($request->hasFile('imagem')) {
+            $imagem_path =
+                $request->file('imagem')->store('public/staff_imagens');
+            $staff->imagem = basename($imagem_path);
+        }
         $staff->save();
         return redirect()->route('admin.staffs.index')
             ->with('success', 'Staff criado com sucesso');
@@ -65,6 +71,15 @@ class StaffController extends Controller
     public function update(StaffRequest $request, Staff $staff)
     {
         $fields = $request->validated();
+        if ($request->hasFile('imagem')) {
+            if (!empty($staff->imagem)) {
+                Storage::disk('public')->delete('staff_imagens/' .
+                    $staff->imagem);
+            }
+            $imagem_path =
+                $request->file('imagem')->store('public/staff_imagens');
+            $staff->imagem = basename($imagem_path);
+        }
         $staff->save();
         return redirect()->route('_admin.staffs.index')->with('success', 'Sttaf atualizado com sucesso');
     }

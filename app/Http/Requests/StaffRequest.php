@@ -23,10 +23,9 @@ class StaffRequest extends FormRequest
     {
         $currentId = $this->Staff ? $this->Staff->id : null;
         return [
-            "nome" => 'required|min:3|max:80|unique:Staffs,nome,' .
+            "nome" => 'required|min:3|max:80|unique:staff,nome,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" =>'required|min:15|max:80',
-            "data" =>'required',
+            "apelido" =>'required',
             'img' =>$this->Staff ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
@@ -36,8 +35,8 @@ class StaffRequest extends FormRequest
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
             'img.max' => 'Imagem demaisado grande',
-  
+
         ];
     }
-    
+
 }
