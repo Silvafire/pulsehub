@@ -30,7 +30,7 @@ class EventController extends Controller
     {
         $event = new Event;
         $tipos = Tipo_eventos_mod::all();
-        return view('_admin.events.create', compact("event","tipos"));
+        return view('_admin.events.create', compact("event", "tipos"));
     }
 
     /**
@@ -42,10 +42,10 @@ class EventController extends Controller
         $fields = $request->validated();
         $event = new Event();
         $event->fill($fields);
-        if ($request->hasFile('imagem')) {
+        if ($request->hasFile('img')) {
             $imagem_path =
-                $request->file('imagem')->store('public/eventos_imagens');
-            $event->imagem = basename($imagem_path);
+                $request->file('img')->store('public/eventos_imagens');
+            $event->img = basename($imagem_path);
         }
         $event->save();
         return redirect()->route('admin.events.index')
@@ -67,7 +67,8 @@ class EventController extends Controller
 
     public function edit(Event $event)
     {
-        return view('_admin.events.edit', compact('event','tipos'));
+        $tipos = Tipo_eventos_mod::all();
+        return view('_admin.events.edit', compact('event', 'tipos'));
     }
 
     /**
@@ -78,17 +79,17 @@ class EventController extends Controller
     {
         $fields = $request->validated();
         $event->fill($fields);
-        if ($request->hasFile('imagem')) {
-            if (!empty($event->imagem)) {
+        if ($request->hasFile('img')) {
+            if (!empty($event->img)) {
                 Storage::disk('public')->delete('eventos_imagens/' .
-                    $event->imagem);
+                    $event->img);
             }
             $imagem_path =
-                $request->file('imagem')->store('public/eventos_imagens');
-            $event->imagem = basename($imagem_path);
+                $request->file('img')->store('public/eventos_imagens');
+            $event->img = basename($imagem_path);
         }
         $event->save();
-        return redirect()->route('_admin.events.index')->with('success', 'Evento atualizado com sucesso');
+        return redirect()->route('admin.events.index')->with('success', 'Evento atualizado com sucesso');
     }
 
 
@@ -98,11 +99,6 @@ class EventController extends Controller
 
     public function destroy(Event $event)
     {
-        if ($event->projects()->exists()) {
-            return redirect()->route('admin.events.index')->withErrors(
-                ['delete' => 'O Evento que tentou eliminar tem projetos associados']
-            );
-        }
         $event->delete();
         return redirect()->route('admin.events.index')->with(
             'success',
