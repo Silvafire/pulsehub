@@ -10,6 +10,7 @@ class Post extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
+    protected $fillable = ['imagem', 'titulo', 'descricao', 'informacao', 'tipo_post_id'];
 
     public function create()
     {

@@ -10,6 +10,7 @@ class TipoPost extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
+    protected $fillable = ['nome', 'tipo_post_id'];
 
     public function create()
     {

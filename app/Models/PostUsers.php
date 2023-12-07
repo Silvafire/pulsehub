@@ -10,6 +10,7 @@ class PostUsers extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
+    protected $fillable = ['id_post', 'id_user'];
 
     public function create()
     {

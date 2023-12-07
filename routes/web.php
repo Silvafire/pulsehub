@@ -40,6 +40,9 @@ Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
 Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
 Route::resource('admin/tiposplanos', TiposPlanosController::class, ['as' => 'admin']);
+Route::resource('admin/post', PostController::class, ['as' => 'admin']);
+Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
+Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
 
 Auth::routes();
 
