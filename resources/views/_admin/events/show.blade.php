@@ -12,7 +12,7 @@
 			<div><strong>Nome:</strong>{{$event->nome}}</div>
 			<div><strong>descrição:</strong>{{$event->descricao}}</div>
 			<div><strong>imagem:</strong>{{$event->img}}</div>
-			<div><strong>tipo de evento:</strong>{{$event->tipo}}</div>
+			<div><strong>tipo de evento:</strong>{{$event->tipo->nome}}</div>
 
 		</div>
 	</div>

@@ -25,10 +25,10 @@ class EventRequest extends FormRequest
         return [
             "nome" => 'required|min:3|max:80|unique:events,nome,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" =>'required|min:15|max:80',
-            "data" =>'required',
+            "descricao" =>'required|min:8|max:80',
+            'data' => 'required|date|date_format:"Y-m-d"',
             "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
-            'img' =>$this->event ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'img' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
