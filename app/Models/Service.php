@@ -12,7 +12,7 @@ class Service extends Model
     protected $fillable = [ 'nome', 'descricao'];
 
     public function images(){
-        return $this->hasMany(ImageService::class,'service_id','id');
+        return $this->hasMany(ImageService::class,'imagem_id','id');
 
     }
 

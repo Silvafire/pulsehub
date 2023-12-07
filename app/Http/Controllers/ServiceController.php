@@ -49,9 +49,8 @@ class ServiceController extends Controller
      * Display the specified resource.
      */
 
-     public function show($id) 
+     public function show(Service $service) 
      {
-         $service = Service::find($id);
          if ($service) {
              return view('_admin.services.show', compact('service'));
          } else {
@@ -120,7 +119,7 @@ class ServiceController extends Controller
         $fields = $request->validated();
  
         $imageService = new ImageService();
-        $imageService->service_id=$service->id;
+        $imageService->imagem_id=$service->id;
         if ($request->hasFile('imagem')) {
             $imagem_path = $request->file('imagem')->store('public/image_services');
             $imageService->imagem = basename($imagem_path);

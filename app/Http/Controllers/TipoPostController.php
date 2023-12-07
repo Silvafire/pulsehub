@@ -17,7 +17,7 @@ class TipoPostController extends Controller
     public function index()
     {
         $tipopost = TipoPost::all();
-        return view('_admin.tipospost.index', compact('tipospost'));
+        return view('_admin.tipopost.index', compact('tipopost'));
     }
 
     /**
@@ -27,7 +27,7 @@ class TipoPostController extends Controller
     public function create()
     {
         $tipopost = new TipoPost;
-        return view('_admin.tipospost.create', compact("tipopost"));
+        return view('_admin.tipopost.create', compact("tipopost"));
     }
 
     /**
@@ -40,7 +40,7 @@ class TipoPostController extends Controller
         $tipopost = new TipoPost();
         $tipopost->fill($fields);
         $tipopost->save();
-        return redirect()->route('admin.tipospost.index')
+        return redirect()->route('admin.tipopost.index')
             ->with('success', 'Tipos de post criado com sucesso');
     }
 
@@ -50,7 +50,7 @@ class TipoPostController extends Controller
 
     public function show(TipoPost $tipopost)
     {
-        return view('_admin.tipospost.show', compact("tippost"));
+        return view('_admin.tipopost.show', compact("tippost"));
     }
 
     /**
@@ -59,7 +59,7 @@ class TipoPostController extends Controller
 
     public function edit(TipoPost $tipopost)
     {
-        return view('_admin.tipospost.edit', compact('tipopost'));
+        return view('_admin.tipopost.edit', compact('tipopost'));
     }
 
     /**
@@ -70,7 +70,7 @@ class TipoPostController extends Controller
     {
         $fields = $request->validated();
         $tipopost->save();
-        return redirect()->route('_admin.tipospost.index')->with('success', 'Tipo de post atualizado com sucesso');
+        return redirect()->route('_admin.tipopost.index')->with('success', 'Tipo de post atualizado com sucesso');
     }
 
 
@@ -81,12 +81,12 @@ class TipoPostController extends Controller
     public function destroy(TipoPlano $tipoplano)
     {
         if ($tipoplano->projects()->exists()) {
-            return redirect()->route('admin.tipospost.index')->withErrors(
+            return redirect()->route('admin.tipopost.index')->withErrors(
                 ['delete' => 'O tipo de post que tentou eliminar tem projetos associados']
             );
         }
         $tipoplano->delete();
-        return redirect()->route('admin.tipospost.index')->with(
+        return redirect()->route('admin.tipopost.index')->with(
             'success',
             'post eliminado com sucesso'
         );
