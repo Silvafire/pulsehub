@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Requests\ServicesRequest;
+use Illuminate\Support\Facades\Storage;
+
 
 
 class ServiceController extends Controller
@@ -35,6 +37,7 @@ class ServiceController extends Controller
         $fields = $request->validated();
 
         $service = new Service();
+
         $service->fill($fields);
         $service->save();
         return redirect()->route('admin.services.index')
@@ -84,6 +87,9 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
+        Storage::disk('public')->delete('image_services/' .
+        $service->imagem);
+       
         $service->delete();
         return redirect()->route('admin.services.index')
         ->with('success','Serviço eliminado com sucesso');

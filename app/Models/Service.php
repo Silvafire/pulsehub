@@ -9,6 +9,11 @@ class Service extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = [ 'nome', 'descricao' ];
-    
+    protected $fillable = [ 'nome', 'descricao'];
+
+    public function imagens(){
+        return $this->hasMany(ImageService::class,'service_id','id');
+
+    }
+
 }

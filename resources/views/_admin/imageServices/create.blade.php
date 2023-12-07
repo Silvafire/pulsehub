@@ -9,12 +9,12 @@
 		</div>
 		<div class="card-body">
 
-			<form method="POST" action="{{ route('admin.services.store') }}" class="form-group" enctype="multipart/form-data">
+			<form method="POST" action="{{ route('admin.imageServices.store',[$service]) }}" class="form-group" enctype="multipart/form-data">
 				@csrf
-				@include('_admin.services.partials.add-edit')
+				@include('_admin.imageServices.partials.add-edit')
 				<div class="form-group">
 					<button type="submit" class="btn btn-success" name="ok">Salvar</button>
-					<a href="{{ route('admin.services.index') }}" class="btn btndefault">Cancelar</a>
+					<a href="{{ route('admin.imageServices.index',[$service]) }}" class="btn btndefault">Cancelar</a>
 				</div>
 			</form>
 		</div>

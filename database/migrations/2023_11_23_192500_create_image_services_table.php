@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('image_services', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->unsignedBigInteger('imagem_id'); // Chave estrangeira
-            $table->foreign('imagem_id')->references('id')->on('services'); // references
+            $table->string('imagem');
+            $table->unsignedBigInteger('service_id'); // Chave estrangeira
+            $table->foreign('service_id')->references('id')->on('services'); // references
         });
     }
 

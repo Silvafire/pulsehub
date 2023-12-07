@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 30);
             $table->text('descricao');
+            
         });
     }
 
