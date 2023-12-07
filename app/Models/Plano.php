@@ -10,7 +10,7 @@ class Plano extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
-    protected $fillable=['Series','Duracao_Total','Tmp_Exercicio','Repeticoes' ,'modalidade_id','tipo_plano_id'];
+    protected $fillable=['series','duracao_total','tmp_exercicio','repeticoes' ,'modalidade_id','tipo_plano_id'];
 
     public function modalidade(){
         return $this->belongsTo(Modalidade::class,'modalidade_id','id');

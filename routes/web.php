@@ -43,6 +43,6 @@ Route::resource('admin/post', PostController::class, ['as' => 'admin']);
 Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
 Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
