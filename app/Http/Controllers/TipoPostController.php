@@ -16,7 +16,7 @@ class TipoPostController extends Controller
 
     public function index()
     {
-        $tipopost = TipoPost::all();
+        $tipo_post = TipoPost::all();
         return view('_admin.tipopost.index', compact('tipopost'));
     }
 
