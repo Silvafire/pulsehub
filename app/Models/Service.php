@@ -11,7 +11,7 @@ class Service extends Model
     public $timestamps = false;
     protected $fillable = [ 'nome', 'descricao'];
 
-    public function imagens(){
+    public function images(){
         return $this->hasMany(ImageService::class,'service_id','id');
 
     }

@@ -37,7 +37,7 @@
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
                     <i class="fas fa-trash fa-xs"></i></button>
                 </form>
-                <a class="btn btn-xs btn-success btn-p" href="{{route('admin.imageServices.index',$service)}}"><i class="fas fa-image fa-xs"></i></a>
+                <a class="btn btn-xs btn-success btn-p" href="{{ route('admin.services.images.index', $service) }}"><i class="fas fa-image fa-xs"></i></a>
               </td>
             </tr>
             @endforeach

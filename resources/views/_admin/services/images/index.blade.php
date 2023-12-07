@@ -8,12 +8,12 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <a class="btn btn-primary" href="{{ route('admin.imageServices.create',[$service]) }}">
+      <a class="btn btn-primary" href="{{ route('admin.services.images.create', $service) }}">
         <i class="fas fa-plus"></i> Nova imagem
       </a>
     </div>
     <div class="card-body">
-      @if (count($imagesservices))
+      @if (count($service->images))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -22,14 +22,14 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($imagesservices as $imageService)
+            @foreach($service->images as $image)
             <tr>
                 <td>
-              <img src="{{asset('storage/image_services/'. $imageService->imagem)}}" class="img-post" alt="">
+              <img src="{{asset('storage/image_services/'. $image->imagem)}}" class="img-post" alt="">
             </td>
               <td nowrap>
-                <a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.imageServices.edit',[$service,$imageService]) }}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{ route('admin.imageServices.destroy',[$service,$imageService]) }}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este serviço?');">
+                <a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.services.images.edit', [$service, $image]) }}"><i class="fas fa-pen fa-xs"></i></a>
+                <form method="POST" action="{{ route('admin.services.images.destroy', [$service, $image]) }}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar esta imagem do serviço?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">

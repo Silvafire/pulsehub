@@ -10,14 +10,14 @@
         </div>
         <div class="card-body">
 
-			<form method="POST" action="{{ route('admin.imageServices.update',[$service,$imageService]) }}" class="form-group">
+			<form method="POST" action="{{ route('admin.services.images.update',[$service,$imageService]) }}" class="form-group" enctype="multipart/form-data">
 				@csrf
 				@method("PUT")
-				@include('_admin.imageServices.partials.add-edit')
+				@include('_admin.services.images.partials.add-edit')
 				<div class="form-group">
 					<button type="submit" class="btn btn-success" name="ok">Guardar</button>
 
-					<a href="{{ route('admin.imageServices.index',[$service]) }}" class="btn btn-default">Cancelar</a>
+					<a href="{{ route('admin.services.images.index',[$service]) }}" class="btn btn-default">Cancelar</a>
 
 				</div>
 
