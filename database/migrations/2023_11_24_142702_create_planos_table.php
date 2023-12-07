@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('planos', function (Blueprint $table) {
             $table->id();
             $table->integer('series');
-            $table->datetime('duracao_Total');
-            $table->datetime('tmp_Exercicio');
+            $table->integer('duracao_Total');
+            $table->integer('tmp_Exercicio');
             $table->integer('repeticoes');
             $table->unsignedBigInteger('modalidade_id'); // Chave estrangeira
             $table->foreign('modalidade_id')->references('id')->on('modalidades');
