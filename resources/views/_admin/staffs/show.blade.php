@@ -10,9 +10,9 @@
 		<div class="card-body">
 
 			<div><strong>Nome:</strong>{{$staff->nome}}</div>
-			<div><strong>descrição:</strong>{{$staff->descricao}}</div>
+			<div><strong>Apelido:</strong>{{$staff->apelido}}</div>
 			<div><strong>imagem:</strong>{{$staff->img}}</div>
-		
+
 
 		</div>
 	</div>
