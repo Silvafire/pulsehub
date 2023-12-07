@@ -4,7 +4,7 @@
 @section("content")
 <div class="container-fluid">
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Planos</h1>
+  <h1 class="h3 mb-2 text-gray-800">Tipo de Post</h1>
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -13,7 +13,7 @@
       </a>
     </div>
     <div class="card-body">
-      @if (count($post))
+      @if (count($tipopost))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -29,7 +29,7 @@
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tipopost.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tipopost.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{route('admin.post.destroy',$post)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este post?');">
+                <form method="POST" action="{{route('admin.post.destroy',$post)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este tipo de post?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
