@@ -45,6 +45,7 @@ Route::resource('admin/tiposplanos', TiposPlanosController::class, ['as' => 'adm
 Route::resource('admin/post', PostController::class, ['as' => 'admin']);
 Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
 Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
+Route::resource('admin/staffs', StaffController::class, ['as' => 'admin']);
 
 Auth::routes(['verify'=>true]);
 
