@@ -30,7 +30,7 @@ class StaffRequest extends FormRequest
             "link_facebook" =>'required',
             "link_instagram" =>'required',
             "link_email" =>'required',
-            'img' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'img' =>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
