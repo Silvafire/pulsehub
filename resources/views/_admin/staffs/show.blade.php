@@ -11,8 +11,10 @@
 
 			<div><strong>Nome:</strong>{{$staff->nome}}</div>
 			<div><strong>Apelido:</strong>{{$staff->apelido}}</div>
-			<div><strong>imagem:</strong>{{$staff->img}}</div>
-
+			<div>
+				<img alt="Imagem" src="{{asset('storage/staff_imagens/' .
+				$staff->imagem)}}">
+			</div>
 
 		</div>
 	</div>

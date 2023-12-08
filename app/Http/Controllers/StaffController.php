@@ -59,9 +59,9 @@ class StaffController extends Controller
      * Show the form for editing the specified resource.
      */
 
-    public function edit(Staff $staffs)
+    public function edit(Staff $staff)
     {
-        return view('_admin.staffs.edit', compact('staffs'));
+        return view('_admin.staffs.edit', compact('staff'));
     }
 
     /**
@@ -91,11 +91,11 @@ class StaffController extends Controller
 
     public function destroy(Staff $staff)
     {
-        if ($staff->projects()->exists()) {
+       /*  if ($staff->projects()->exists()) {
             return redirect()->route('admin.staffs.index')->withErrors(
                 ['delete' => 'O Staff que tentou eliminar tem projetos associados']
             );
-        }
+        } */
         $staff->delete();
         return redirect()->route('admin.staffs.index')->with(
             'success',

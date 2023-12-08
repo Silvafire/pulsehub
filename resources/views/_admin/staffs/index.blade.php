@@ -31,8 +31,8 @@
             <tr>
               <td>{{$staff->nome}}</td>
               <td>{{$staff->apelido}}</td>
-              <td> <img height='80' src="{{asset('storage/staff_imagens/'. $staff->imagem )}}" alt="Imagem da modalidade"></td>
-              <td>{{ $staff->tipo->nome}}</td>
+              <td> <img height='80' src="{{asset('storage/staff_imagens/'. $staff->img )}}" alt="Imagem da modalidade"></td>
+              <td>{{ $staff->nome}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.staffs.show',$staff)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.staffs.edit',$staff)}}"><i class="fas fa-pen fa-xs"></i></a>

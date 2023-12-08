@@ -26,7 +26,11 @@ class StaffRequest extends FormRequest
             "nome" => 'required|min:3|max:80|unique:staff,nome,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "apelido" =>'required',
-          /*   'img' =>$this->Staff ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048', */
+            "especializacao" =>'required',
+            "link_facebook" =>'required',
+            "link_instagram" =>'required',
+            "link_email" =>'required',
+            'img' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
