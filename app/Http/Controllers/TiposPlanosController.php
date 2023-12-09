@@ -38,6 +38,12 @@ class TiposPlanosController extends Controller
         $fields = $request->validated();
         $tipoplano = new TipoPlano();
         $tipoplano->fill($fields);
+        if ($request->hasFile('imagem')) {
+            $imagem_path =
+                $request->file('imagem')->store('public/tipoplanos_imagens');
+            $tipoplano->imagem = basename($imagem_path);
+        }
+
         $tipoplano->save();
         return redirect()->route('admin.tiposplanos.index')
             ->with('success', 'tipos de planos criado com sucesso');
@@ -68,6 +74,17 @@ class TiposPlanosController extends Controller
     public function update(TipoPlanosRequest $request, TipoPlano $tipoplano)
     {
         $fields = $request->validated();
+        $tipoplano->fill($fields);
+        if ($request->hasFile('imagem')) {
+            if (!empty($tipoplano->imagem)) {
+                Storage::disk('public')->delete('tipoplanos_imagens/' .
+                    $tipoplano->imagem);
+            }
+            $imagem_path =
+                $request->file('imagem')->store('public/tipoplanos_imagens');
+            $tipoplano->imagem = basename($imagem_path);
+        }
+
         $tipoplano->save();
         return redirect()->route('_admin.tiposplanos.index')->with('success', 'Tipo de plano atualizado com sucesso');
     }
@@ -79,7 +96,7 @@ class TiposPlanosController extends Controller
 
     public function destroy(TipoPlano $tipoplano)
     {
-        if ($tipoplano->projects()->exists()) {
+        if ($tipoplano->planos()->exists()) {
             return redirect()->route('admin.tiposplanos.index')->withErrors(
                 ['delete' => 'O tipo de plano que tentou eliminar tem projetos associados']
             );
@@ -87,7 +104,7 @@ class TiposPlanosController extends Controller
         $tipoplano->delete();
         return redirect()->route('admin.tiposplanos.index')->with(
             'success',
-            'plano eliminado com sucesso'
+            'tipo do plano eliminado com sucesso'
         );
     }
 }

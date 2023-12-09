@@ -58,15 +58,19 @@
   $('#dataTable').dataTable({
     destroy: true,
     "order": [
-      [0, 'asc']
+      [1, 'asc']
     ],
     "columns": [
-      null,
-      null,
-      {
-        "orderable": false
-      }
-    ]
-  });
+        {
+            "orderable": false
+        },
+        null,
+        null,
+        null,
+        {
+            "orderable": false
+        }
+            ]
+        });
 </script>
 @endsection

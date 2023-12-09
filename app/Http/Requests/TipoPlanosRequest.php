@@ -22,7 +22,7 @@ class TiposPlanosRequest extends FormRequest
     {
         $currentId = $this->tipoplano ? $this->tipoplano->id : null;
         return [
-            "nome" => 'required|min:3|max:80|unique:events,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
+            "nome" => 'required|min:3|max:80|unique:tipo_planos,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" =>'required|min:15',
             'imagem' =>$this->tipoplano ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
@@ -33,7 +33,7 @@ class TiposPlanosRequest extends FormRequest
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
             'imagem.max' => 'Imagem demaisado grande',
-            
+
         ];
     }
 }
