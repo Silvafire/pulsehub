@@ -23,14 +23,14 @@ class StaffRequest extends FormRequest
     {
         $currentId = $this->Staff ? $this->Staff->id : null;
         return [
-            "nome" => 'required|min:3|max:80|unique:staff,nome,' .
+            "nome" => 'required|min:3|max:80|' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "apelido" =>'required',
             "especializacao" =>'required',
             "link_facebook" =>'required',
             "link_instagram" =>'required',
             "link_email" =>'required',
-            'img' =>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'img' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 

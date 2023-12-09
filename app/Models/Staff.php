@@ -16,4 +16,6 @@ class Staff extends Model
     public function modalidades(){
         return $this->belongsToMany(Modalidade::class,'staff_modalidades','staff_id','modalidade_id');
     }
+
+
 }

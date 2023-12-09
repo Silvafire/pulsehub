@@ -11,9 +11,12 @@
 
 			<div><strong>Nome:</strong>{{$staff->nome}}</div>
 			<div><strong>Apelido:</strong>{{$staff->apelido}}</div>
+			<div><strong>Especialização:</strong>{{$staff->especializacao}}</div>
+			<div><strong>Email:</strong>{{$staff->link_email}}</div>
 			<div>
-				<img alt="Imagem" src="{{asset('storage/staff_imagens/' .
-				$staff->imagem)}}">
+			<strong>Imagem de Perfil:</strong>
+				<img height='100' alt="Imagem" src="{{asset('storage/staff_imagens/' .
+				$staff->img)}}">
 			</div>
 
 		</div>

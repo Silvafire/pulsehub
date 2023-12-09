@@ -36,10 +36,10 @@ class StaffController extends Controller
         $fields = $request->validated();
         $staff = new Staff();
         $staff->fill($fields);
-        if ($request->hasFile('imagem')) {
+        if ($request->hasFile('img')) {
             $imagem_path =
-                $request->file('imagem')->store('public/staff_imagens');
-            $staff->imagem = basename($imagem_path);
+                $request->file('img')->store('public/staff_imagens');
+            $staff->img = basename($imagem_path);
         }
         $staff->save();
         return redirect()->route('admin.staffs.index')
@@ -68,22 +68,31 @@ class StaffController extends Controller
      * Update the specified resource in storage.
      */
 
-    public function update(StaffRequest $request, Staff $staff)
-    {
-        $fields = $request->validated();
-        if ($request->hasFile('imagem')) {
-            if (!empty($staff->imagem)) {
-                Storage::disk('public')->delete('staff_imagens/' .
-                    $staff->imagem);
-            }
-            $imagem_path =
-                $request->file('imagem')->store('public/staff_imagens');
-            $staff->imagem = basename($imagem_path);
-        }
-        $staff->save();
-        return redirect()->route('_admin.staffs.index')->with('success', 'Sttaf atualizado com sucesso');
-    }
-
+     public function update(StaffRequest $request, Staff $staff)
+     {
+         $fields = $request->validated();
+     
+         // Verifica se o campo 'img' foi alterado
+         if ($request->hasFile('img')) {
+             if (!empty($staff->img)) {
+                 Storage::disk('public')->delete('staff_imagens/' . $staff->img);
+             }
+     
+             $imagem_path = $request->file('img')->store('public/staff_imagens');
+             $fields['img'] = basename($imagem_path);
+         }
+     
+         // Verifica se outros campos foram alterados e os atualiza
+         foreach ($fields as $key => $value) {
+             if ($staff->$key != $value) {
+                 $staff->$key = $value;
+             }
+         }
+     
+         $staff->save();
+         return redirect()->route('admin.staffs.index')->with('success', 'Staff atualizado com sucesso');
+     }
+     
 
     /**
      * Remove the specified resource from storage.
