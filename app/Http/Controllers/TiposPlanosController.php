@@ -96,7 +96,7 @@ class TiposPlanosController extends Controller
 
     public function destroy(TipoPlano $tipoplano)
     {
-        if ($tipoplano->planos()->exists()) {
+       if ($tipoplano->planos()->exists()) {
             return redirect()->route('admin.tiposplanos.index')->withErrors(
                 ['delete' => 'O tipo de plano que tentou eliminar tem projetos associados']
             );

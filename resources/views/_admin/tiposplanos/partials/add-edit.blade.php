@@ -1,11 +1,11 @@
 <div class="form-group">
     <label for="inputName">Nome</label>
-    <input type="text" class="form-control" name="name" id="inputName" value="{{old('name',$tipoplano->nome)}}" />
+    <input type="text" class="form-control" name="nome" id="inputName" value="{{old('nome',$tipoplano->nome)}}" />
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Descrição</label>
-    <textarea class="form-control" name="description" id="inputDescription">{{ old('descricao', $tipoplano->descricao) }}</textarea>
+    <textarea class="form-control" name="descricao" id="inputDescription">{{ old('descricao', $tipoplano->descricao) }}</textarea>
 </div>
 
 <div class="form-group">

@@ -9,7 +9,7 @@
 		</div>
 		<div class="card-body">
 
-			<form method="POST" action="{{ route('admin.tiposplanos.store') }}" class="form-group">
+			<form method="POST" action="{{ route('admin.tiposplanos.store') }}" class="form-group" enctype="multipart/form-data">
 				@csrf
 				@include('_admin.tiposplanos.partials.add-edit')
 				<div class="form-group">
