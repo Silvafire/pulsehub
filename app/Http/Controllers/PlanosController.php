@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PlanosRequest;
 use App\Models\Modalidade;
+use App\Models\TipoPlano;
 
 class PlanosController extends Controller
 {
@@ -28,7 +29,8 @@ class PlanosController extends Controller
     {
         $plano = new Plano;
         $tipos = Modalidade::all();
-        return view('_admin.planos.create', compact("plano","tipos"));
+        $tiposPlanos = TipoPlano::all();
+        return view('_admin.planos.create', compact("plano","tipos","tiposPlanos"));
     }
 
     /**
@@ -38,6 +40,10 @@ class PlanosController extends Controller
     public function store(PlanosRequest $request)
     {
         $fields = $request->validated();
+
+        $fields['modalidade_id'] = $request->input('modalidade_id');
+        $fields['tipo_plano_id'] = $request->input('tipo_plano_id');
+
         $plano = new Plano();
         $plano->fill($fields);
         $plano->save();
@@ -60,7 +66,9 @@ class PlanosController extends Controller
 
     public function edit(Plano $plano)
     {
-        return view('_admin.planos.edit', compact('plano'));
+        $tipos = Modalidade::all();
+        $tiposPlanos = TipoPlano::all();
+        return view('_admin.planos.create', compact("plano","tipos","tiposPlanos"));
     }
 
     /**
@@ -70,6 +78,10 @@ class PlanosController extends Controller
     public function update(PlanosRequest $request, Plano $plano)
     {
         $fields = $request->validated();
+
+        $fields['tipo_plano_id'] = $request->input('tipo_plano_id');
+
+        $plano->fill($fields);
         $plano->save();
         return redirect()->route('_admin.planos.index')->with('success', 'Plano atualizado com sucesso');
     }

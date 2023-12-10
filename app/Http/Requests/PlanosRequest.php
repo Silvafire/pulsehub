@@ -22,9 +22,9 @@ class PlanosRequest extends FormRequest
     {
         $currentId = $this->plano ? $this->plano->id : null;
         return [
-            "series" => 'required|integer|min:1', 
-        "duracao_total" => 'required|integer|min:1', 
-        "tmp_exercicio" => 'required|integer|min:1', 
+            "series" => 'required|integer|min:1',
+        "duracao_total" => 'required|integer|min:1',
+        "tmp_exercicio" => 'required|integer|min:1',
         "repeticoes" => 'required|integer|min:1',
         ];
     }
@@ -34,7 +34,7 @@ class PlanosRequest extends FormRequest
         return [
             'series' => 'numeros inteiros',
             'duracao_total' => 'A descrição deve conter apenas letras e espaços',
-            'tmp_exercicio' => 'Imagem demaisado grande',
+            'tmp_exercicio' => 'tempo nao possivel',
             'repeticoes' => 'Tipo de evento não existente',
         ];
     }
