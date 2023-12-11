@@ -10,11 +10,9 @@ class TipoPost extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
-    protected $fillable = ['nome', 'tipo_post_id'];
+    protected $fillable = ['nome'];
 
-    public function create()
-    {
-        $post = TipoPost::all();
-        return view('_admin.tipo_post.create', compact("tipopost"));
-    }
+   public function post(){
+    return $this->hasMany(Post::class,'tipo_post_id','id');
+   }
 }

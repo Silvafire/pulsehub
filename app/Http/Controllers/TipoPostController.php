@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TipoPlano;
 use App\Models\TipoPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -78,9 +77,9 @@ class TipoPostController extends Controller
      * Remove the specified resource from storage.
      */
 
-    public function destroy(TipoPlano $tipoplano)
+    public function destroy(TipoPost $tipopost)
     {
-        if ($tipoplano->projects()->exists()) {
+        if ($tipopost->projects()->exists()) {
             return redirect()->route('admin.tipopost.index')->withErrors(
                 ['delete' => 'O tipo de post que tentou eliminar tem projetos associados']
             );
@@ -88,7 +87,7 @@ class TipoPostController extends Controller
         $tipoplano->delete();
         return redirect()->route('admin.tipopost.index')->with(
             'success',
-            'post eliminado com sucesso'
+            'Tipo de post eliminado com sucesso'
         );
     }
 }
