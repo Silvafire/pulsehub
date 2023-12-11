@@ -49,7 +49,7 @@ class TipoPostController extends Controller
 
     public function show(TipoPost $tipopost)
     {
-        return view('_admin.tipopost.show', compact("tippost"));
+        return view('_admin.tipopost.show', compact("tipopost"));
     }
 
     /**
@@ -77,17 +77,18 @@ class TipoPostController extends Controller
      * Remove the specified resource from storage.
      */
 
-    public function destroy(TipoPost $tipopost)
-    {
-        if ($tipopost->projects()->exists()) {
-            return redirect()->route('admin.tipopost.index')->withErrors(
-                ['delete' => 'O tipo de post que tentou eliminar tem projetos associados']
-            );
-        }
-        $tipoplano->delete();
-        return redirect()->route('admin.tipopost.index')->with(
-            'success',
-            'Tipo de post eliminado com sucesso'
-        );
-    }
+     public function destroy(TipoPost $tipopost)
+     {
+         if ($tipopost->post()->exists()) {
+             return redirect()->route('admin.tipopost.index')->withErrors(
+                 ['delete' => 'O tipo de post que tentou eliminar tem projetos associados']
+             );
+         }
+         $tipopost->delete();
+         return redirect()->route('admin.tipopost.index')->with(
+             'success',
+             'Tipo de post eliminado com sucesso'
+         );
+     }
+
 }

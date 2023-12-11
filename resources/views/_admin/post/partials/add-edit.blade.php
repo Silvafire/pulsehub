@@ -5,8 +5,8 @@
 </div>
 
 <div class="form-group">
-    <label for="inputName">Nome</label>
-    <input type="text" class="form-control" name="nome" id="inputName" value="{{old('nome',$post->nome)}}" />
+    <label for="inputTitle">Título</label>
+    <input type="text" class="form-control" name="titulo" id="inputTitle" value="{{ old('titulo', $post->titulo) }}" />
 </div>
 
 <div class="form-group">

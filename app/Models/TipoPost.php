@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class TipoPost extends Model
 {
     use HasFactory, SoftDeletes;
+    protected $table="tipo_post";
     public $timestamps=false;
     protected $fillable = ['nome'];
 

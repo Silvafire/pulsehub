@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\TipoPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostRequest;
-use App\Http\Requests\TipoPost;
+use App\Http\Requests\TipoPostRequest;
 
 class PostController extends Controller
 {
@@ -39,7 +40,7 @@ class PostController extends Controller
     {
         $fields = $request->validated();
 
-        $fields['tipo_post_id'] = request->input('tipo_post_id');
+        $fields['tipo_post_id'] = $request->input('tipo_post_id');
 
         $post = new Post();
         $post->fill($fields);
@@ -75,7 +76,7 @@ class PostController extends Controller
     {
         $fields = $request->validated();
 
-        $fields['tipo_post_id'] = request->input('tipo_post_id');
+        $fields['tipo_post_id'] = $request->input('tipo_post_id');
 
         $post->fill($fields);
         $post->save();
