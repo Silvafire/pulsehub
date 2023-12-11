@@ -61,8 +61,7 @@
                                                     <img src="{{ asset('storage/users_photos/' . $user->photo) }}"
                                                         class="img-post" alt="User photo">
                                                 @else
-                                                    <img src="{{ asset('img/default_user.jpg') }}" class="img-post"
-                                                        alt="User photo">
+                                                    <img src="{{asset('storage/users_fotos/'. $user->img )}}" class="img-post" height="80"                                                        alt="User photo">
                                                 @endif
                                             </td>
                                             <td>{{ $user->name }}</td>

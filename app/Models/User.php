@@ -25,6 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'data_nasc',
+        'img',
         'perm'
     ];
 
@@ -50,7 +51,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
 	public function roleToStr()
     {
-        switch ($this->role) {
+        switch ($this->perm) {
             case 'N':
                 return 'Normal';
             case 'A':

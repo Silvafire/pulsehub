@@ -53,10 +53,10 @@ class UserController extends Controller
         $user = new User();
         $user->fill($fields);
         $user->password = Hash::make('password');
-        if ($request->hasFile('imagem')) {
-            $imagem_path = $request->file('imagem')->store(
+        if ($request->hasFile('img')) {
+            $img_path = $request->file('img')->store(
                 'public/users_fotos');
-            $user->imagem = basename($imagem_path);
+            $user->img = basename($img_path);
         }
         $user->save();
         $user->sendEmailVerificationNotification();
@@ -87,14 +87,14 @@ class UserController extends Controller
     {
         $fields = $request->validated();
         $user->fill($fields);
-        if ($request->hasFile('imagem')) {
-            if (!empty($user->imagem)) {
+        if ($request->hasFile('img')) {
+            if (!empty($user->img)) {
                 Storage::disk('public')->delete('users_fotos/' .
-                    $user->imagem);
+                    $user->img);
             }
-            $imagem_path =
-            $request->file('imagem')->store('public/users_fotos');
-            $user->imagem = basename($imagem_path);
+            $img_path =
+            $request->file('img')->store('public/users_fotos');
+            $user->img = basename($img_path);
         }
 
         $user->save();
@@ -114,8 +114,8 @@ class UserController extends Controller
     }
     public function destroy_photo(User $user)
     {
-        Storage::disk('public')->delete('user_fotos/' . $user->imagem);
-        $user->imagem = null;
+        Storage::disk('public')->delete('user_fotos/' . $user->img);
+        $user->img = null;
         $user->save();
         return redirect()->route('admin.users.edit', $user)->with('success',
             'A foto do utilizador foi apagada com sucesso.');

@@ -11,7 +11,7 @@
         <div class="card-body">
 
 			<div>
-				<img alt="Foto" src="xxx">
+				<img alt="Foto" src="{{asset('storage/users_fotos/'. $user->img )}}" height="80">
 			</div>
 
 			<div><strong>Nome:</strong>{{$user->name}}</div>
