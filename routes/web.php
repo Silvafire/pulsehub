@@ -48,7 +48,7 @@ Route::resource('admin/post', PostController::class, ['as' => 'admin']);
 Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
 Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
 Route::resource('admin/staffs', StaffController::class, ['as' => 'admin']);
-Route::resource('admin/tipo_evento_mod', Tipo_evento_modController::class, ['as' => 'admin']);
+Route::resource('admin/tipo_eventos_mod', Tipo_evento_modController::class, ['as' => 'admin']);
 
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 

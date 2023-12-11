@@ -12,14 +12,14 @@ use App\Models\Tipo_eventos_mod;
 
 class Tipo_evento_modController extends Controller
 {
-    /**
+    /**tipo_eventos_mod
      * Display a listing of the resource.
      */
 
     public function index()
     {
         $tems = Tipo_eventos_mod::all();
-        return view('_admin.tipo_eventos_mods.index', compact('tems'));
+        return view('_admin.tipo_eventos_mod.index', compact('tems'));
     }
 
     /**
@@ -29,7 +29,7 @@ class Tipo_evento_modController extends Controller
     public function create()
     {
         $tem = new Tipo_eventos_mod;
-        return view('_admin.tipo_eventos_mods.create', compact("tem", "tipos"));
+        return view('_admin.tipo_eventos_mod.create', compact("tem"));
     }
 
     /**
@@ -47,7 +47,7 @@ class Tipo_evento_modController extends Controller
             $tem->imagem = basename($imagem_path);
         }
         $tem->save();
-        return redirect()->route('admin.tipo_eventos_mods.index')
+        return redirect()->route('admin.tipo_eventos_mod.index')
             ->with('success', 'evento criado com sucesso');
     }
 
@@ -57,7 +57,7 @@ class Tipo_evento_modController extends Controller
 
     public function show(Event $event)
     {
-        return view('_admin.tipo_eventos_mods.show', compact("event"));
+        return view('_admin.tipo_eventos_mod.show', compact("event"));
     }
 
     /**
@@ -67,7 +67,7 @@ class Tipo_evento_modController extends Controller
     public function edit(Tipo_evento_modRequest $tem)
     {
         $tipos = Tipo_eventos_mod::all();
-        return view('_admin.tipo_eventos_mods.edit', compact('tem'));
+        return view('_admin.tipo_eventos_mod.edit', compact('tem'));
     }
 
     /**
@@ -88,7 +88,7 @@ class Tipo_evento_modController extends Controller
             $tem->imagem = basename($imagem_path);
         }
         $tem->save();
-        return redirect()->route('admin.tipo_eventos_mods.index')->with('success', 'tipo atualizado com sucesso');
+        return redirect()->route('admin.tipo_eventos_mod.index')->with('success', 'tipo atualizado com sucesso');
     }
 
 
@@ -99,7 +99,7 @@ class Tipo_evento_modController extends Controller
     public function destroy(Tipo_eventos_mod $tem)
     {
         $tem->delete();
-        return redirect()->route('admin.tipo_eventos_mods.index')->with(
+        return redirect()->route('admin.tipo_eventos_mod.index')->with(
             'success',
             'tipo de evento/modalidade eliminado com sucesso'
         );
