@@ -55,38 +55,40 @@ class Tipo_evento_modController extends Controller
      * Display the specified resource.
      */
 
-    public function show(Tipo_eventos_mod $tem)
+
+
+    public function show(Tipo_eventos_mod $tipo_eventos_mod)
     {
-        return view('_admin.tipo_eventos_mod.show', compact("tem"));
+        return view('_admin.tipo_eventos_mod.show', compact('tipo_eventos_mod'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
 
-    public function edit(Tipo_eventos_mod $tem)
+    public function edit(Tipo_eventos_mod $tipo_eventos_mod)
     {
-        return view('_admin.tipo_eventos_mod.edit', compact('tem'));
+        return view('_admin.tipo_eventos_mod.edit', compact('tipo_eventos_mod'));
     }
 
     /**
      * Update the specified resource in storage.
      */
 
-    public function update(Tipo_evento_modRequest $request, Tipo_eventos_mod $tem)
+    public function update(Tipo_evento_modRequest $request, Tipo_eventos_mod $tipo_eventos_mod)
     {
         $fields = $request->validated();
-        $tem->fill($fields);
+        $tipo_eventos_mod->fill($fields);
         if ($request->hasFile('imagem')) {
-            if (!empty($tem->imagem)) {
+            if (!empty($tipo_eventos_mod->imagem)) {
                 Storage::disk('public')->delete('tipo_modalidades/' .
-                    $tem->imagem);
+                    $tipo_eventos_mod->imagem);
             }
             $imagem_path =
                 $request->file('imagem')->store('public/tipo_modalidades');
-            $tem->imagem = basename($imagem_path);
+            $tipo_eventos_mod->imagem = basename($imagem_path);
         }
-        $tem->save();
+        $tipo_eventos_mod->save();
         return redirect()->route('admin.tipo_eventos_mod.index')->with('success', 'tipo atualizado com sucesso');
     }
 
