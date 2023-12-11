@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 use App\Http\Requests\StaffRequest;
+use Illuminate\Support\Facades\Storage;
+
 
 class StaffController extends Controller
 {

@@ -39,6 +39,7 @@ class StaffRequest extends FormRequest
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
             'img.max' => 'Imagem demaisado grande',
+            'apelido.required'=>'O Apelido é Obrigatório',
 
         ];
     }
