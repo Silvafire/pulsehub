@@ -55,18 +55,17 @@ class Tipo_evento_modController extends Controller
      * Display the specified resource.
      */
 
-    public function show(Event $event)
+    public function show(Tipo_eventos_mod $tem)
     {
-        return view('_admin.tipo_eventos_mod.show', compact("event"));
+        return view('_admin.tipo_eventos_mod.show', compact("tem"));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
 
-    public function edit(Tipo_evento_modRequest $tem)
+    public function edit(Tipo_eventos_mod $tem)
     {
-        $tipos = Tipo_eventos_mod::all();
         return view('_admin.tipo_eventos_mod.edit', compact('tem'));
     }
 

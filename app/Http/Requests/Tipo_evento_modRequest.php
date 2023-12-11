@@ -21,9 +21,9 @@ class Tipo_evento_modRequest extends FormRequest
      */
     public function rules(): array
     {
-        $currentId = $this->tem ? $this->tem->id : null;
+        $currentId = $this->tipo ? $this->tipo->id : null;
         return [
-            "nome" => 'required|min:3|max:80|unique:events,nome,' .
+            "nome" => 'required|min:3|max:80|unique:tipo_eventos_mod,nome,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             'imagem' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];

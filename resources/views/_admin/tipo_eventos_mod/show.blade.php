@@ -5,7 +5,7 @@
 
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
-			Informação do tipo evntos/modalidades
+			Informação do tipo eventos/modalidades
 		</div>
 		<div class="card-body">
 
