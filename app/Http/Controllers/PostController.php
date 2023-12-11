@@ -28,7 +28,7 @@ class PostController extends Controller
     {
         $post = new Post;
         $tipoPost = TipoPost::all();
-        return view('_admin.post.create', compact("post","post"));
+        return view('_admin.post.create', compact("post","tipoPost"));
     }
 
     /**
