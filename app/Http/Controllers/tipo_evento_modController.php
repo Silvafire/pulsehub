@@ -97,9 +97,9 @@ class Tipo_evento_modController extends Controller
      * Remove the specified resource from storage.
      */
 
-    public function destroy(Tipo_eventos_mod $tem)
+    public function destroy(Tipo_eventos_mod $tipo_eventos_mod)
     {
-        $tem->delete();
+        $tipo_eventos_mod->delete();
         return redirect()->route('admin.tipo_eventos_mod.index')->with(
             'success',
             'tipo de evento/modalidade eliminado com sucesso'
