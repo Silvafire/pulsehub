@@ -127,7 +127,14 @@ h6 {
 
 /* ---------------main STAFF--------------- */
 
-
+.erro-message{
+    font-size: 3rem;
+    font-family: var(--ff--montserrat);
+    text-align: center;
+    color: var(--cl--black);
+    font-weight: 900;
+    text-transform: uppercase;
+}
 
 .staff {
     margin: 4rem 0;
