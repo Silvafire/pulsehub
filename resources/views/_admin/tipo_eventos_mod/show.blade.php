@@ -9,8 +9,8 @@
 		</div>
 		<div class="card-body">
 
-			<div><strong>Nome:</strong>{{$tipo_eventos_mod->nome}}</div>
-			<div><strong>imagem:</strong>{{$tipo_eventos_mod->imagem}}</div>
+			<div><strong>Nome:</strong>{{$tem->nome}}</div>
+			<div><strong>imagem:</strong>{{$tem->imagem}}</div>
 
 		</div>
 	</div>
