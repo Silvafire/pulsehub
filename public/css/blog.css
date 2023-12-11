@@ -548,4 +548,5 @@ h6 {
 .mostrarmais:hover {
     -webkit-transform: scale(1.06);
     transform: scale(1.06);
+    color: #000;
 }
