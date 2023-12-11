@@ -26,7 +26,7 @@
                                 @foreach ($tems as $tem)
                                     <tr>
                                       <td>
-                                          @if ($imagem->imagem)
+                                          @if ($tem->imagem)
                                               <img height='80'
                                                   src="{{ asset('storage/tipo_modalidades/' . $tem->imagem) }}"
                                                   alt="Imagem do tipo eventos modo">
