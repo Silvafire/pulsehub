@@ -10,7 +10,7 @@ class Tipo_eventos_mod extends Model
 {
     use HasFactory;
     public $timestamps=false;
-    protected $table="tipo_eventos_mod";
+    protected $table='tipo_eventos_mod';
     protected $fillable=['nome'];
 
     public function modalidades(){
