@@ -16,6 +16,7 @@
 
     <main class="staff">
         <div class="container-grid">
+        @if(count($staffs) > 0)
         @foreach($staffs as $staff)
             <div class="staff-card">
                 <div class="img-card">
@@ -33,6 +34,9 @@
             </div>
 
             @endforeach
+            @else
+            <h1 class="erro-message">Não existem staffs</h1>
+        @endif
         </div>
     </main>
 @endsection

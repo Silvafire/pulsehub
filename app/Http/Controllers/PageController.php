@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\User;
 use App\Models\Service;
+use App\Models\Staff;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
@@ -43,7 +44,8 @@ class PageController extends Controller
 
     public function staff()
     {
-        return view('staff');
+        $staffs = Staff::all();
+        return view('staff',compact('staffs'));
     }
 
     public function admindashboard()
