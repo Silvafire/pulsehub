@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StaffRequest extends FormRequest
+class Tipo_evento_modRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,16 +21,11 @@ class StaffRequest extends FormRequest
      */
     public function rules(): array
     {
-        $currentId = $this->Staff ? $this->Staff->id : null;
+        $currentId = $this->tipo ? $this->tipo->id : null;
         return [
-            "nome" => 'required|min:3|max:80|' .
+            "nome" => 'required|min:3|max:80|unique:tipo_eventos_mod,nome,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "apelido" =>'required',
-            "especializacao" =>'required',
-            "link_facebook" =>'required',
-            "link_instagram" =>'required',
-            "link_email" =>'required',
-            'img' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'imagem' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
@@ -39,9 +34,6 @@ class StaffRequest extends FormRequest
         return [
             'nome.regex' => 'O nome deve conter apenas letras e espaços',
             'img.max' => 'Imagem demaisado grande',
-            'apelido.required'=>'O Apelido é Obrigatório',
-
         ];
     }
-
 }

@@ -1,6 +1,7 @@
 <div class="form-group">
     <label for="inputName">Nome</label>
-    <input type="text" class="form-control" name="nome" id="inputName" value="{{ old('nome', $tipo_eventos_mod->nome) }}" />
+    <input type="text" class="form-control" name="nome" id="inputName"
+        value="{{ old('nome', $tipo_eventos_mod->nome) }}" />
 </div>
 
 <div class="form-group">

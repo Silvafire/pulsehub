@@ -29,7 +29,7 @@
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tipopost.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tipopost.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{route('admin.post.destroy',$post)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este tipo de post?');">
+                <form method="POST" action="{{route('admin.tipopost.destroy',$tipopost)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este tipo de post?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">
@@ -55,7 +55,7 @@
   $('#dataTable').dataTable({
     destroy: true,
     "order": [
-      [0, 'asc']
+      [1, 'asc']
     ],
     "columns": [
       null,
