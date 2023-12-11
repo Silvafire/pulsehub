@@ -1,19 +1,21 @@
 <div class="form-group">
     <label for="inputImage">Imagem</label>
-    <input type="file" class="form-control-file" name="image" id="inputImage" accept="image/*" />
+    <input type="file" class="form-control-file" name="imagem" id="inputImage" aria-describedby="fileHelp" />
+    <small id="fileHelp" class="form-text text-muted">Por favor carregue um ficheiro de imagem válido. O tamanho da imagem não deve exceder 2MB.</small>
 </div>
 
 <div class="form-group">
-    <label for="inputDescription">Titulo</label>
-    <textarea class="form-control" name="titulo" id="inputDescription"></textarea>
+    <label for="inputName">Nome</label>
+    <input type="text" class="form-control" name="nome" id="inputName" value="{{old('nome',$post->nome)}}" />
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Descricao</label>
-    <textarea class="form-control" name="descricao" id="inputDescription"></textarea>
+    <input type="text" class="form-control" name="descricao" id="descricao" value="{{old('descricao',$post->descricao)}}" />
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Informacao</label>
-    <textarea class="form-control" name="informacao" id="inputDescription"></textarea>
+    <input type="text" class="form-control" name="informacao" id="informacao" value="{{old('informacao',$post->informacao)}}" />
+
 </div>

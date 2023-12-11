@@ -13,9 +13,7 @@ class Post extends Model
     public $timestamps=false;
     protected $fillable = ['imagem', 'titulo', 'descricao', 'informacao', 'tipo_post_id'];
 
-    public function create()
-    {
-        $post = Post::all();
-        return view('_admin.post.create', compact("post"));
+    public function tipo_post(){
+        return $this->belongsTo(TipoPost::class.'tipo_post_id','id')->withTrashed();
     }
 }

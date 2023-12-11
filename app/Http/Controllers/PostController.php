@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\TipoPost;
 
 class PostController extends Controller
 {
@@ -26,7 +27,8 @@ class PostController extends Controller
     public function create()
     {
         $post = new Post;
-        return view('_admin.post.create', compact("post"));
+        $tipoPost = TipoPost::all();
+        return view('_admin.post.create', compact("post","post"));
     }
 
     /**
@@ -36,6 +38,9 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $fields = $request->validated();
+
+        $fields['tipo_post_id'] = request->input('tipo_post_id');
+
         $post = new Post();
         $post->fill($fields);
         $post->save();
@@ -58,7 +63,8 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('_admin.post.edit', compact('post'));
+        $tipoPost = TipoPost::all();
+        return view('_admin.post.edit', compact("post","tipoPost"));
     }
 
     /**
@@ -68,6 +74,10 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $fields = $request->validated();
+
+        $fields['tipo_post_id'] = request->input('tipo_post_id');
+
+        $post->fill($fields);
         $post->save();
         return redirect()->route('_admin.post.index')->with('success', 'Post atualizado com sucesso');
     }
