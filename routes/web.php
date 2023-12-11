@@ -12,7 +12,7 @@ use App\Http\Controllers\PlanosController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TiposPlanosController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\ImageServiceController;
+use App\Http\Controllers\Tipo_evento_modController;
 use App\Http\Controllers\ModalidadesController;
 
 
@@ -48,6 +48,7 @@ Route::resource('admin/post', PostController::class, ['as' => 'admin']);
 Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
 Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
 Route::resource('admin/staffs', StaffController::class, ['as' => 'admin']);
+Route::resource('admin/tipo_evento_mod', Tipo_evento_modController::class, ['as' => 'admin']);
 
 Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
 
