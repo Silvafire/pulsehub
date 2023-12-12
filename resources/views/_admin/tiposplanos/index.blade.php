@@ -27,7 +27,7 @@
           <tbody>
             @foreach($tiposplanos as $tiposplano)
             <tr>
-            <td> <img height='80' src="{{asset('storage/tipoplanos_imagens/'. $tiposplano->imagem )}}" alt="Imagem do tipo plano"></td>
+            <td> <img height='80' src="{{asset('storage/tiposplanos_imagens/'. $tiposplano->imagem )}}" alt="Imagem do tipo plano"></td>
               <td>{{$tiposplano->nome}}</td>
               <td>{{$tiposplano->descricao}}</td>
               <td nowrap>
