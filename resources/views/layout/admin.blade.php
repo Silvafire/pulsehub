@@ -130,9 +130,9 @@
                                     {{ auth()->user()->name }}
                                 </span>
                                 @if (auth()->user()->photo == null)
-                                <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('img /default_user.jpg') }}">
+                                <img class="img-profile rounded-circle" height="40" width="40" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
                                 @else
-                                <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('storage/users_photos/' . auth()->user()->photo) }}">
+                                <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
                                 @endif
                             </a>
                             <!-- Dropdown - User Information -->
