@@ -5,7 +5,7 @@
 
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
-			Novo Post
+			Novo Tipo de Post
 		</div>
 		<div class="card-body">
 
