@@ -9,7 +9,7 @@
 		</div>
 		<div class="card-body">
 
-			<div><strong>Nome:</strong>{{$tipopost->nome}}</div>
+			<div><strong>Nome: </strong>{{$tipopost->nome}}</div>
 
 		</div>
 	</div>
