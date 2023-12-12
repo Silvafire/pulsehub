@@ -40,7 +40,7 @@ class TiposPlanosController extends Controller
         $tiposplano->fill($fields);
         if ($request->hasFile('imagem')) {
             $imagem_path =
-                $request->file('imagem')->store('public/tiposPlanos_imagens');
+                $request->file('imagem')->store('public/tiposplanos_imagens');
             $tiposplano->imagem = basename($imagem_path);
         }
 
@@ -77,11 +77,11 @@ class TiposPlanosController extends Controller
         $tiposplano->fill($fields);
         if ($request->hasFile('imagem')) {
             if (!empty($tiposplano->imagem)) {
-                Storage::disk('public')->delete('tiposPlanos_imagens/' .
+                Storage::disk('public')->delete('tiposplanos_imagens/' .
                     $tiposplano->imagem);
             }
             $imagem_path =
-                $request->file('imagem')->store('public/tiposPlanos_imagens');
+                $request->file('imagem')->store('public/tiposplanos_imagens');
             $tiposplano->imagem = basename($imagem_path);
         }
 
