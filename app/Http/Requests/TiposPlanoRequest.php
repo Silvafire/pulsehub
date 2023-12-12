@@ -20,11 +20,11 @@ class TiposPlanoRequest extends FormRequest
 
     public function rules(): array
     {
-        $currentId = $this->tiposPlano ? $this->tiposPlano->id : null;
+        $currentId = $this->tiposplano ? $this->tiposplano->id : null;
         return [
             "nome" => 'required|min:3|max:80|unique:tipo_planos,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" =>'required|min:15',
-            'imagem' =>$this->tiposPlano ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'imagem' =>$this->tiposplano ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 
