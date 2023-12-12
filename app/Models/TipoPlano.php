@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class TipoPlano extends Model
 {
     use HasFactory, SoftDeletes;
+    protected $table='tipo_planos';
     public $timestamps=false;
     protected $fillable=['nome','descricao'];
 
