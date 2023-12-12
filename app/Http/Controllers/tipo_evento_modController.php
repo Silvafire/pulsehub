@@ -18,8 +18,8 @@ class Tipo_evento_modController extends Controller
 
     public function index()
     {
-        $tems = Tipo_eventos_mod::all();
-        return view('_admin.tipo_eventos_mod.index', compact('tems'));
+        $tipo_eventos_mods = Tipo_eventos_mod::all();
+        return view('_admin.tipo_eventos_mod.index', compact('tipo_eventos_mods'));
     }
 
     /**
@@ -28,8 +28,8 @@ class Tipo_evento_modController extends Controller
 
     public function create()
     {
-        $tem = new Tipo_eventos_mod;
-        return view('_admin.tipo_eventos_mod.create', compact("tem"));
+        $tipo_eventos_mod = new Tipo_eventos_mod;
+        return view('_admin.tipo_eventos_mod.create', compact("tipo_eventos_mod"));
     }
 
     /**
@@ -39,14 +39,14 @@ class Tipo_evento_modController extends Controller
     public function store(Tipo_evento_modRequest $request)
     {
         $fields = $request->validated();
-        $tem = new Tipo_eventos_mod();
-        $tem->fill($fields);
+        $tipo_eventos_mod = new Tipo_eventos_mod();
+        $tipo_eventos_mod->fill($fields);
         if ($request->hasFile('imagem')) {
             $imagem_path =
                 $request->file('imagem')->store('public/tipo_modalidades');
-            $tem->imagem = basename($imagem_path);
+            $tipo_eventos_mod->imagem = basename($imagem_path);
         }
-        $tem->save();
+        $tipo_eventos_mod->save();
         return redirect()->route('admin.tipo_eventos_mod.index')
             ->with('success', 'evento criado com sucesso');
     }

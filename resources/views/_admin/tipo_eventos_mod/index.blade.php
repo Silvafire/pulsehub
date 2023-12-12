@@ -12,7 +12,7 @@
                 </a>
             </div>
             <div class="card-body">
-                @if (count($tems))
+                @if (count($tipo_eventos_mods))
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
@@ -23,24 +23,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($tems as $tem)
+                                @foreach ($tipo_eventos_mods as $tipo_eventos_mod)
                                     <tr>
                                       <td>
-                                          @if ($tem->imagem)
+                                          @if ($tipo_eventos_mod->imagem)
                                               <img height='80'
-                                                  src="{{ asset('storage/tipo_modalidades/' . $tem->imagem) }}"
+                                                  src="{{ asset('storage/tipo_modalidades/' . $tipo_eventos_mod->imagem) }}"
                                                   alt="Imagem do tipo eventos modo">
                                           @endif
                                       </td>
-                                        <td>{{ $tem->nome }}</td>
+                                        <td>{{ $tipo_eventos_mod->nome }}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p"
-                                                href="{{ route('admin.tipo_eventos_mod.show', $tem) }}"><i
+                                                href="{{ route('admin.tipo_eventos_mod.show', $tipo_eventos_mod) }}"><i
                                                     class="fas fa-eye fa-xs"></i></a>
                                             <a class="btn btn-xs btn-warning btn-p"
-                                                href="{{ route('admin.tipo_eventos_mod.edit', $tem) }}"><i
+                                                href="{{ route('admin.tipo_eventos_mod.edit', $tipo_eventos_mod) }}"><i
                                                     class="fas fa-pen fa-xs"></i></a>
-                                            <form method="POST" action="{{ route('admin.tipo_eventos_mod.destroy', $tem) }}"
+                                            <form method="POST" action="{{ route('admin.tipo_eventos_mod.destroy', $tipo_eventos_mod) }}"
                                                 role="form" class="inline"
                                                 onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                 @csrf
