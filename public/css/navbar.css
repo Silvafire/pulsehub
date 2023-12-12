@@ -172,7 +172,6 @@ li {
 }
 
 .navbar .logo {
-
     overflow: hidden;
     cursor: pointer;
     width: 150px;
@@ -191,7 +190,6 @@ li {
     padding: 2rem;
     transition: all 0.5s ease-in-out;
     z-index: 999;
-
 }
 
 .dropdown_menu.open {
@@ -246,11 +244,6 @@ li {
 
 
 }
-
-
-
-
-
 
 .all-list {
     display: flex;

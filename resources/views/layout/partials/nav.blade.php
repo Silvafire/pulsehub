@@ -12,11 +12,11 @@
 
 <nav class="barra-nav">
     <div class="container-nav">
-        <div class="logo">
-            <img src="{{ asset('img/Logo-PulseHub-Branco.png') }}" alt="logo website branco">
-
-
-        </div>
+        <a href="{{ route('index') }}">
+            <div class="logo">
+                <img src="{{ asset('img/Logo-PulseHub-Branco.png') }}" alt="logo website branco">
+            </div>
+        </a>
         <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
         <div class="all-list">
             <ul class="list">
