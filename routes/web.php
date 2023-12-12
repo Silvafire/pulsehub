@@ -59,6 +59,13 @@ Route::get('admin/services/{service}/images/{imageService}/edit', [ServiceContro
 Route::put('admin/services/{service}/images/{imageService}', [ServiceController::class, 'images_update'])->name('admin.services.images.update');
 Route::delete('admin/services/{service}/images/{imageService}', [ServiceController::class, 'images_destroy'])->name('admin.services.images.destroy');
 
-Auth::routes(['verify'=>true]);
+Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' => 'admin'], function () {
+ Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
+ Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email']) ->name('users.sendActivationEmail');
+});
+
+Auth::routes(['verify' => true]);
+Auth::routes(['register' => false, 'verify' => true]);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

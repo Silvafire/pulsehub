@@ -26,6 +26,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
+        @if(Auth::user()->perm == 'A')
         <ul class="navbar-nav dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -102,6 +103,7 @@
             </div>
 
         </ul>
+        @endif
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
