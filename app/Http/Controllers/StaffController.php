@@ -73,28 +73,28 @@ class StaffController extends Controller
      public function update(StaffRequest $request, Staff $staff)
      {
          $fields = $request->validated();
-     
+
          // Verifica se o campo 'img' foi alterado
          if ($request->hasFile('img')) {
              if (!empty($staff->img)) {
                  Storage::disk('public')->delete('staff_imagens/' . $staff->img);
              }
-     
+
              $imagem_path = $request->file('img')->store('public/staff_imagens');
              $fields['img'] = basename($imagem_path);
          }
-     
+
          // Verifica se outros campos foram alterados e os atualiza
          foreach ($fields as $key => $value) {
              if ($staff->$key != $value) {
                  $staff->$key = $value;
              }
          }
-     
+
          $staff->save();
          return redirect()->route('admin.staffs.index')->with('success', 'Staff atualizado com sucesso');
      }
-     
+
 
     /**
      * Remove the specified resource from storage.
