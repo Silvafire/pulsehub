@@ -9,8 +9,7 @@
 			Editar Tipo de Planos
         </div>
         <div class="card-body">
-
-			<form method="POST" action="{{route('admin.tiposplanos.update', $tipoplano)}}" class="form-group" enctype="multipart/form-data">
+			<form method="POST" action="{{route('admin.tiposplanos.update', $tiposplano)}}" class="form-group" enctype="multipart/form-data">
                 @csrf
 				@method('PUT')
 				@include('_admin.tiposplanos.partials.add-edit')

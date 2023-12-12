@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TipoPlano extends Model
+class TiposPlano extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table='tipo_planos';

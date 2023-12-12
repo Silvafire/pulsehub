@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TipoPlano;
+use App\Models\TiposPlano;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\TipoPlanosRequest;
+use App\Http\Requests\TiposPlanoRequest;
 
 class TiposPlanosController extends Controller
 {
@@ -15,7 +15,7 @@ class TiposPlanosController extends Controller
 
     public function index()
     {
-        $tiposplanos = TipoPlano::all();
+        $tiposplanos = TiposPlano::all();
         return view('_admin.tiposplanos.index', compact('tiposplanos'));
     }
 
@@ -25,26 +25,26 @@ class TiposPlanosController extends Controller
 
     public function create()
     {
-        $tipoplano = new TipoPlano;
-        return view('_admin.tiposplanos.create', compact("tipoplano"));
+        $tiposplano = new TiposPlano;
+        return view('_admin.tiposplanos.create', compact("tiposplano"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
 
-    public function store(TipoPlanosRequest $request)
+    public function store(TiposPlanoRequest $request)
     {
         $fields = $request->validated();
-        $tipoplano = new TipoPlano();
-        $tipoplano->fill($fields);
+        $tiposplano = new tiposPlano();
+        $tiposplano->fill($fields);
         if ($request->hasFile('imagem')) {
             $imagem_path =
-                $request->file('imagem')->store('public/tipoplanos_imagens');
-            $tipoplano->imagem = basename($imagem_path);
+                $request->file('imagem')->store('public/tiposPlanos_imagens');
+            $tiposplano->imagem = basename($imagem_path);
         }
 
-        $tipoplano->save();
+        $tiposplano->save();
         return redirect()->route('admin.tiposplanos.index')
             ->with('success', 'tipos de planos criado com sucesso');
     }
@@ -53,40 +53,40 @@ class TiposPlanosController extends Controller
      * Display the specified resource.
      */
 
-    public function show(TipoPlano $tipoplano)
+    public function show(TiposPlano $tiposplano)
     {
-        return view('_admin.tiposplanos.show', compact("tipoplano"));
+        return view('_admin.tiposplanos.show', compact("tiposplano"));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
 
-    public function edit(TipoPlano $tipoplano)
+    public function edit(TiposPlano $tiposplano)
     {
-        return view('_admin.tiposplanos.edit', compact('tipoplano'));
+        return view('_admin.tiposplanos.edit', compact('tiposplano'));
     }
 
     /**
      * Update the specified resource in storage.
      */
 
-    public function update(TipoPlanosRequest $request, TipoPlano $tipoplano)
+    public function update(TiposPlanoRequest $request, TiposPlano $tiposplano)
     {
         $fields = $request->validated();
-        $tipoplano->fill($fields);
+        $tiposplano->fill($fields);
         if ($request->hasFile('imagem')) {
-            if (!empty($tipoplano->imagem)) {
-                Storage::disk('public')->delete('tipoplanos_imagens/' .
-                    $tipoplano->imagem);
+            if (!empty($tiposplano->imagem)) {
+                Storage::disk('public')->delete('tiposPlanos_imagens/' .
+                    $tiposplano->imagem);
             }
             $imagem_path =
-                $request->file('imagem')->store('public/tipoplanos_imagens');
-            $tipoplano->imagem = basename($imagem_path);
+                $request->file('imagem')->store('public/tiposPlanos_imagens');
+            $tiposplano->imagem = basename($imagem_path);
         }
 
-        $tipoplano->save();
-        return redirect()->route('_admin.tiposplanos.index')->with('success', 'Tipo de plano atualizado com sucesso');
+        $tiposplano->save();
+        return redirect()->route('admin.tiposplanos.index')->with('success', 'Tipo de plano atualizado com sucesso');
     }
 
 
@@ -94,14 +94,14 @@ class TiposPlanosController extends Controller
      * Remove the specified resource from storage.
      */
 
-    public function destroy(TipoPlano $tipoplano)
+    public function destroy(TiposPlano $tiposplano)
     {
-       if ($tipoplano->planos()->exists()) {
+       if ($tiposplano->planos()->exists()) {
             return redirect()->route('admin.tiposplanos.index')->withErrors(
                 ['delete' => 'O tipo de plano que tentou eliminar tem projetos associados']
             );
         }
-        $tipoplano->delete();
+        $tiposplano->delete();
         return redirect()->route('admin.tiposplanos.index')->with(
             'success',
             'tipo do plano eliminado com sucesso'
