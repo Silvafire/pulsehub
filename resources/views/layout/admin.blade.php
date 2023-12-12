@@ -130,7 +130,7 @@
                                     {{ auth()->user()->name }}
                                 </span>
                                 @if (auth()->user()->photo == null)
-                                <img class="img-profile rounded-circle" height="40" width="40" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
+                                <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
                                 @else
                                 <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
                                 @endif
@@ -178,7 +178,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; CTeSP Desenvolvimento Web e Multimédia</span>
+                        <span>Copyright &copy; PulseHub</span>
                     </div>
                 </div>
             </footer>
