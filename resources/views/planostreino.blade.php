@@ -26,7 +26,7 @@
     @foreach($tiposplanos as $tipoplano)
         <div class="cardtreino">
             <div class="card-img">
-                <img src="{{ asset('storage/tipoplanos_imagens/' . $tipoplano->imagem) }}" alt="Musculação">
+                <img src="{{ asset('storage/tiposplanos_imagens/' . $tipoplano->imagem) }}" alt="Musculação">
             </div>
             <div class="card-texto">
                 <h2>{{ $tipoplano->nome }}</h2>

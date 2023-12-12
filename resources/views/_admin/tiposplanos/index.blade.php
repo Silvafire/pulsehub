@@ -25,15 +25,15 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($tiposplanos as $tipoplano)
+            @foreach($tiposplanos as $tiposplano)
             <tr>
-            <td> <img height='80' src="{{asset('storage/tipoplanos_imagens/'. $tipoplano->imagem )}}" alt="Imagem do tipo plano"></td>
-              <td>{{$tipoplano->nome}}</td>
-              <td>{{$tipoplano->descricao}}</td>
+            <td> <img height='80' src="{{asset('storage/tiposplanos_imagens/'. $tiposplano->imagem )}}" alt="Imagem do tipo plano"></td>
+              <td>{{$tiposplano->nome}}</td>
+              <td>{{$tiposplano->descricao}}</td>
               <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tiposplanos.show',$tipoplano)}}"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tiposplanos.edit',$tipoplano)}}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{route('admin.tiposplanos.destroy',$tipoplano)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este tipo de plano?');">
+                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tiposplanos.show',$tiposplano)}}"><i class="fas fa-eye fa-xs"></i></a>
+                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tiposplanos.edit',$tiposplano)}}"><i class="fas fa-pen fa-xs"></i></a>
+                <form method="POST" action="{{route('admin.tiposplanos.destroy',$tiposplano)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este tipo de plano?');">
                   @csrf
                   @method("DELETE")
                   <button type="submit" class="btn btn-xs btn-danger btn-p">

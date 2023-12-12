@@ -9,9 +9,9 @@
 		</div>
 		<div class="card-body">
 
-			<div><strong>Nome:</strong>{{$tipoplano->nome}}</div>
-			<div><strong>Descrição:</strong>{{$tipoplano->descricao}}</div>
-            <div><strong>Imagem: </strong><img height='80' src="{{asset('storage/tiposplanos_imagens/'. $tipoplano->imagem )}}" alt="Imagem do tipo do plano"></div>
+			<div><strong>Nome:</strong>{{$tiposplano->nome}}</div>
+			<div><strong>Descrição:</strong>{{$tiposplano->descricao}}</div>
+            <div><strong>Imagem: </strong><img height='80' src="{{asset('storage/tiposplanos_imagens/'. $tiposplano->imagem )}}" alt="Imagem do tipo do plano"></div>
 		</div>
 	</div>
 </div>
