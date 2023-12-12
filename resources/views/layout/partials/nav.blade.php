@@ -39,33 +39,33 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     @if (auth()->check())
-                        <div class="dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-200 small">
-                                    {{ auth()->user()->name }}
-                                </span>
-                                @if (auth()->user()->photo == null)
-                                    <img class="img-profile rounded-circle" height="40" width="40" alt="User Photo"
-                                        src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
-                                @else
-                                    <img class="img-profile rounded-circle" alt="User Photo"
-                                        src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
-                                @endif
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-200 small">
+                                {{ auth()->user()->name }}
+                            </span>
+                            @if (auth()->user()->photo == null)
+                                <img class="img-profile rounded-circle" height="40" width="40" alt="User Photo"
+                                    src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
+                            @else
+                                <img class="img-profile rounded-circle" alt="User Photo"
+                                    src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
+                            @endif
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="{{ route('admin.users.edit', auth()->user()) }}">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Perfil
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.users.edit', auth()->user()) }}">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
-                                </a>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
                         </div>
                     @else
-
+                        <a href="{{ route('login') }}" class="button-nav">Login</a>
                     @endif
                 </li>
 
@@ -102,4 +102,3 @@
     </div>
 
 </nav>
-<a href="{{ route('login') }}" class="button-nav">Login</a>
