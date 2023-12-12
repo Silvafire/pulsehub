@@ -11,7 +11,7 @@ class TipoPost extends Model
     use HasFactory, SoftDeletes;
     protected $table="tipo_post";
     public $timestamps=false;
-    protected $fillable = ['nome'];
+    protected $fillable = ['nome','id_users'];
 
    public function post(){
     return $this->hasMany(Post::class,'tipo_post_id','id');

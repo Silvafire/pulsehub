@@ -20,9 +20,9 @@ class TipoPostRequest extends FormRequest
     {
         $currentId = $this->tipopost ? $this->tipopost->id : null;
         return [
-            "nome" => 'required|min:3|max:80|unique:post,titulo,' .
+            "nome" => 'required|min:3|max:80|unique:tipo_post,nome,' .
             $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "tipo_post_id" =>'required',
+            /*"tipo_post_id" =>'required',*/
         ];
     }
 
@@ -30,7 +30,7 @@ class TipoPostRequest extends FormRequest
     {
         return [
             'nome.regex' => 'O título deve conter apenas letras e espaços',
-            'tipo_tipo_post_eventos_id' => 'Tipo de evento não existente',
+            /*'tipo_post_id' => 'Tipo de post não existente',*/
         ];
     }
 }

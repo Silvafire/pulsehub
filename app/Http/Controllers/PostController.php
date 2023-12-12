@@ -38,16 +38,22 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        $fields = $request->validated();
+    $fields = $request->validated();
+    $fields['tipo_post_id'] = $request->input('tipo_post_id');
 
-        $fields['tipo_post_id'] = $request->input('tipo_post_id');
+    $post = new Post();
+    $post->fill($fields);
 
-        $post = new Post();
-        $post->fill($fields);
-        $post->save();
-        return redirect()->route('admin.post.index')
-            ->with('success', 'Post criado com sucesso');
+    if ($request->hasFile('imagem')) {
+        $imagem_path = $request->file('imagem')->store('public/post_imagens');
+        $post->imagem = basename($imagem_path);
     }
+
+    $post->save();
+    return redirect()->route('admin.post.index')->with('success', 'Post criado com sucesso');
+    }
+
+
 
     /**
      * Display the specified resource.
@@ -72,33 +78,39 @@ class PostController extends Controller
      * Update the specified resource in storage.
      */
 
-    public function update(PostRequest $request, Post $post)
-    {
-        $fields = $request->validated();
+     public function update(PostRequest $request, Post $post)
+{
+    $fields = $request->validated();
+    $fields['tipo_post_id'] = $request->input('tipo_post_id');
 
-        $fields['tipo_post_id'] = $request->input('tipo_post_id');
+    if ($request->hasFile('imagem')) {
+        $imagem_path = $request->file('imagem')->store('public/post_imagens');
+        $imagem = basename($imagem_path);
 
-        $post->fill($fields);
-        $post->save();
-        return redirect()->route('_admin.post.index')->with('success', 'Post atualizado com sucesso');
-    }
-
-
-    /**
-     * Remove the specified resource from storage.
-     */
-
-    public function destroy(Post $post)
-    {
-        if ($post->projects()->exists()) {
-            return redirect()->route('admin.post.index')->withErrors(
-                ['delete' => 'O post que tentou eliminar tem projetos associados']
-            );
+        // Verifica se a imagem atual é diferente da imagem enviada
+        if ($post->imagem != $imagem) {
+            // Atualiza a imagem
+            $post->imagem = $imagem;
         }
-        $post->delete();
-        return redirect()->route('admin.post.index')->with(
-            'success',
-            'Post eliminado com sucesso'
-        );
     }
+
+    $post->fill($fields);
+    $post->save();
+
+    return redirect()->route('admin.post.index')->with('success', 'Post atualizado com sucesso.');
+}
+
+
+     public function destroy(Post $post)
+     {
+         /*
+         if ($post->projects()->exists()) {
+             return redirect()->route('admin.post.index')->withErrors(['delete' => 'O post que tentou eliminar tem projetos associados']);
+         }
+         */
+
+         $post->delete();
+         return redirect()->route('admin.post.index')->with('success', 'Post eliminado com sucesso.');
+     }
+
 }

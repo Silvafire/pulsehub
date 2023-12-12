@@ -23,19 +23,21 @@
             <tr>
               <th>Imagem</th>
               <th>Titulo</th>
-              <th>Descricao</th>
-              <th>Informacao</th>
+              <th>Descrição</th>
+              <th>Informação</th>
               <th>Editar</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($posts as $post)
+            @foreach($post as $post)
             <tr>
-              <td>{{$post->nome}}</td>
+            <td> <img height='100' src="{{asset('storage/post_imagens/'. $post->imagem )}}" alt="Imagem do Post"></td>
+              <td>{{$post->titulo}}</td>
               <td>{{$post->descricao}}</td>
+              <td>{{$post->informacao}}</td>
               <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.post.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.post.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
+                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.post.show',$post)}}"><i class="fas fa-eye fa-xs"></i></a>
+                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.post.edit',$post)}}"><i class="fas fa-pen fa-xs"></i></a>
                 <form method="POST" action="{{route('admin.post.destroy',$post)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este post?');">
                   @csrf
                   @method("DELETE")

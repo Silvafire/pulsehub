@@ -9,13 +9,12 @@
 		</div>
 		<div class="card-body">
 
-			<div><strong>Imagem:</strong>{{$plano->imagem}}</div>
-			<div><strong>Titulo:</strong>{{$plano->titulo}}</div>
-			<div><strong>Descricao:</strong>{{$plano->descricao}}</div>
-			<div><strong>Informacao:</strong>{{$plano->informacao}}</div>
+            <div><strong>Imagem do Post:<br></strong><br><img height='100' alt="Imagem" src="{{asset('storage/post_imagens/' .$post->imagem)}}"></div>
+			<br>
+            <div><strong>Titulo: </strong>{{$post->titulo}}</div>
+			<div><strong>Descrição: </strong>{{$post->descricao}}</div>
+			<div><strong>Informação: </strong>{{$post->informacao}}</div>
 
-
-		</div>
 	</div>
 </div>
 @endsection

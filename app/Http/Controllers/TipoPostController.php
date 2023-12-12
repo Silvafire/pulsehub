@@ -34,14 +34,19 @@ class TipoPostController extends Controller
      */
 
     public function store(TipoPostRequest $request)
-    {
-        $fields = $request->validated();
-        $tipopost = new TipoPost();
-        $tipopost->fill($fields);
-        $tipopost->save();
-        return redirect()->route('admin.tipopost.index')
-            ->with('success', 'Tipos de post criado com sucesso');
-    }
+{
+    $fields = $request->validated();
+    $fields['id_users'] = auth()->user()->id;
+
+    $tipopost = new TipoPost();
+    $tipopost->fill($fields);
+
+    $tipopost->save();
+
+    return redirect()->route('admin.tipopost.index')
+        ->with('success', 'Tipo de post criado com sucesso.');
+}
+
 
     /**
      * Display the specified resource.
@@ -65,12 +70,15 @@ class TipoPostController extends Controller
      * Update the specified resource in storage.
      */
 
-    public function update(TipoPostRequest $request, TipoPost $tipopost)
-    {
-        $fields = $request->validated();
-        $tipopost->save();
-        return redirect()->route('_admin.tipopost.index')->with('success', 'Tipo de post atualizado com sucesso');
-    }
+     public function update(TipoPostRequest $request, TipoPost $tipopost)
+     {
+         $fields = $request->validated();
+         $tipopost->fill($fields); // Update the TipoPost model with the new fields
+         $tipopost->save();
+
+         return redirect()->route('admin.tipopost.index')->with('success', 'Tipo de post atualizado com sucesso');
+     }
+
 
 
     /**

@@ -36,9 +36,9 @@ Route::get('modalidades', [PageController::class, 'modalidades'])->name('modalid
 Route::get('servicos', [PageController::class, 'servicos'])->name('servicos');
 Route::get('eventos', [PageController::class, 'eventos'])->name('eventos');
 Route::get('staff', [PageController::class, 'staff'])->name('staff');
-
-
+Route::get('post', [PageController::class, 'post'])->name('post');
 Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
+
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);

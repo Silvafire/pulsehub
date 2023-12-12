@@ -23,12 +23,12 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($tipoposts as $tipopost)
+            @foreach($tipopost as $tipopost)
             <tr>
               <td>{{$tipopost->nome}}</td>
               <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tipopost.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tipopost.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
+                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tipopost.show',$tipopost)}}"><i class="fas fa-eye fa-xs"></i></a>
+                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tipopost.edit',$tipopost)}}"><i class="fas fa-pen fa-xs"></i></a>
                 <form method="POST" action="{{route('admin.tipopost.destroy',$tipopost)}}" role="form" class="inline" onsubmit="return confirm('Confirma que pretende eliminar este tipo de post?');">
                   @csrf
                   @method("DELETE")
@@ -42,7 +42,7 @@
         </table>
       </div>
       @else
-      <h6>Não existem tipo post registados</h6>
+      <h6>Não existem tipos de post registados</h6>
       @endif
     </div>
   </div>
