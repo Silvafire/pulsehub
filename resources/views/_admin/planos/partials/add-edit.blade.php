@@ -32,7 +32,7 @@
     <label for="inputModalidade">Tipo plano</label>
     <select class="form-control" name="modalidade_id" id="inputModalidade" required>
         <option value="" disabled selected>Escolha um tipo de plano</option>
-        @foreach($tiposPlanos as $tipoplano)
+        @foreach($tiposplanos as $tipoplano)
             <option value="{{$tipoplano->id}}" {{$tipoplano->id==old('tipo_plano_id',$plano->tipo_plano_id)?"selected":""}}>{{$tipoplano->nome}}</option>
         @endforeach
     </select>

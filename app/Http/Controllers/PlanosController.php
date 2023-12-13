@@ -29,7 +29,7 @@ class PlanosController extends Controller
     {
         $plano = new Plano;
         $tipos = Modalidade::all();
-        $tiposPlanos = TiposPlano::all();
+        $tiposplanos = TiposPlano::all();
         return view('_admin.planos.create', compact("plano","tipos","tiposPlanos"));
     }
 
@@ -67,7 +67,7 @@ class PlanosController extends Controller
     public function edit(Plano $plano)
     {
         $tipos = Modalidade::all();
-        $tiposPlanos = TiposPlano::all();
+        $tiposplanos = TiposPlano::all();
         return view('_admin.planos.edit', compact("plano","tipos","tiposPlanos"));
     }
 
