@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<section id="main1">
+{{-- <section id="main1">
     <div id="post1">
         <img src="{{asset('img/consistenciaobjetivos.jpg')}}" alt="Consistência Objetivos" id="imgpost1">
         <div id="infopost1">
@@ -30,9 +30,31 @@
             <a href="#" class="vermais1">Ver mais ></a>
         </div>
     </div>
+    </section> --}}
+
+    <section id="main2">
+        @if(count($posts) > 0)
+        @foreach($posts as $post)
+    <div id="post2">
+        <div id="infopost2">
+            <h6 id="nomepost2">{{$post->titulo}}</h6>
+            <div class="divisorbloco">
+                <div class="linha"></div>
+            </div>
+            <div id="descricaopost2">
+                <p>{{$post->descricao}}</p>
+            </div>
+            <a href="#" class="vermais2">Ver mais ></a>
+        </div>
+        <img src="{{ asset('storage/post_imagens/' . $post->imagem) }}" alt="Personal Trainer" id="imgpost2">
+    </div>
+    @endforeach
+    @else
+    <h1 class="erro-message">Não existem staffs</h1>
+    @endif
     </section>
 
-<section id="main2">
+{{-- <section id="main2">
 <div id="post2">
     <div id="infopost2">
         <h6 id="nomepost2">5 MOTIVOS PARA TREINAR COM UM PERSONAL TRAINER</h6>
@@ -95,7 +117,7 @@
             <a href="#" class="vermais5">Ver mais ></a>
         </div>
     </div>
-</section>
+</section> --}}
 
 <div id="container">
 <a href="#" class="mostrarmais">EXPERIMENTE GRÁTIS</a>

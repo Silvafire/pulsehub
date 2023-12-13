@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\User;
 use App\Models\Service;
 use App\Models\Staff;
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
@@ -23,7 +24,8 @@ class PageController extends Controller
 
     public function blog()
     {
-        return view('blog');
+        $posts = Post::all();
+        return view('blog',compact('posts'));
     }
 
     public function modalidades()
