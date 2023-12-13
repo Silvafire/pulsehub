@@ -11,7 +11,7 @@
                 <a class="btn btn-primary" href="{{ route('admin.modalidades.create') }}">
                     <i class="fas fa-plus"></i> Nova Modalidade
                 </a>
-                <a class="btn btn-primary" href="#">
+                <a class="btn btn-primary" href="{{ route('admin.tipo_eventos_mod.create') }}">
                     <i class="fas fa-plus"></i> Novo Tipo Modalidade
                 </a>
             </div>

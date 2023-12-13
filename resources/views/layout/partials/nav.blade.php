@@ -32,7 +32,7 @@
                         href="{{ route('eventos') }}">Eventos</a></li>
                 <li><a class="nav-hiper scrollto @if (Route::currentRouteName() == 'servicos') active @endif"
                         href="{{ route('servicos') }}">Serviços</a></li>
-                <li><a href="#">Loja</a></li>
+                <li><a href="https://wordpress.g3.dwm2023.fun/">Loja</a></li>
             </ul>
 
         </div>
@@ -74,6 +74,12 @@
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Perfil
                                     </a>
+                                    @if(Auth::user()->perm == 'A')
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Dashboard
+                                    </a>
+                                    @endif
                                     <a class="dropdown-item" href="#" data-toggle="modal"
                                         data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
