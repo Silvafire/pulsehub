@@ -156,7 +156,6 @@ h6 {
 }
 
 .card-row {
-    display: flex;
     gap: 15px;
     justify-content: center;
     padding-top: 40px;
@@ -170,7 +169,7 @@ h6 {
 }
 
 .card-img{
-max-width: 420px;
+max-width: 40%;
     max-height: 270px;
 }
 
@@ -219,6 +218,11 @@ max-width: 420px;
     color: white;
     background-color: #ff8606;
     font-family: var(--ff--Roboto);
+}
+
+.cta-button2:hover{
+    color:#ffffff;
+    text-decoration: none;
 }
 
 .cardtreino:hover {
