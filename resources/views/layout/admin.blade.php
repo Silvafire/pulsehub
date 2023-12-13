@@ -30,7 +30,7 @@
         <ul class="navbar-nav dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('index') }}">
                 <img src="{{ asset('img/Logo-PulseHub-Branco.png') }}" alt="" class="img-fluid">
             </a>
 
