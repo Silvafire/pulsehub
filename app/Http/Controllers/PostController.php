@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\TipoPost;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\TipoPostRequest;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -48,7 +49,7 @@ class PostController extends Controller
         $imagem_path = $request->file('imagem')->store('public/post_imagens');
         $post->imagem = basename($imagem_path);
     }
-
+    $post->user_id=Auth::user()->id;
     $post->save();
     return redirect()->route('admin.post.index')->with('success', 'Post criado com sucesso');
     }

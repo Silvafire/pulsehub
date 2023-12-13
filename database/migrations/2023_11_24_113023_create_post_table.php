@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('informacao');
             $table->unsignedBigInteger('tipo_post_id');
             $table->foreign('tipo_post_id')->references('id')->on('tipo_post');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->softDeletes();
         });
     }

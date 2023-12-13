@@ -13,7 +13,7 @@ class TipoPost extends Model
     public $timestamps=false;
     protected $fillable = ['nome','id_users'];
 
-   public function post(){
+   public function posts(){
     return $this->hasMany(Post::class,'tipo_post_id','id');
    }
 }

@@ -132,7 +132,7 @@
                                     {{ auth()->user()->name }}
                                 </span>
                                 @if (auth()->user()->photo == null)
-                                <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
+                                <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('img/default_user.jpg') }}">
                                 @else
                                 <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
                                 @endif
