@@ -43,7 +43,7 @@
     */
 body {
     line-height: 1.5;
-    background-color: #d8d8d8;
+    background-color: #eeeeee !important;
 
 }
 
@@ -216,6 +216,7 @@ h6 {
 
 .vermais1:hover {
     color: #fda445;
+    text-decoration: none;
 }
 
 
@@ -291,6 +292,7 @@ h6 {
 
 .vermais2:hover {
     color: #fda445;
+    text-decoration: none;
 }
 
 
@@ -366,6 +368,7 @@ h6 {
 
 .vermais3:hover{
     color: #fda445;
+    text-decoration: none;
 }
 
 
@@ -441,6 +444,7 @@ h6 {
 
 .vermais4:hover{
     color: #fda445;
+    text-decoration: none;
 }
 
 
@@ -518,6 +522,7 @@ h6 {
 
 .vermais5:hover{
     color: #fda445;
+    text-decoration: none;
 }
 
 #container {
@@ -549,4 +554,5 @@ h6 {
     -webkit-transform: scale(1.06);
     transform: scale(1.06);
     color: #000000 !important;
+    text-decoration: none;
 }
