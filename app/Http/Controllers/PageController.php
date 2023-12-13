@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\User;
 use App\Models\Service;
 use App\Models\Staff;
+use App\Models\TiposPlano;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
@@ -18,7 +19,8 @@ class PageController extends Controller
 
     public function planostreino()
     {
-        return view('planostreino');
+        $tiposplanos = TiposPlano::all();
+        return view('planostreino', compact('tiposplanos'));
     }
 
     public function blog()
