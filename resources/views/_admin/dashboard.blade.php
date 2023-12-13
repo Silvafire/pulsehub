@@ -15,6 +15,17 @@
                         @endforeach
                     </div>
                 </div>
+                {{-- <div class="card shadow">
+                    <div class="card-header p-4">
+                        <h1 style="display:inline;"> {{ $count_modalidade }} </h1>
+                        <h3 style="display:inline;"> Modalidades </h3>
+                    </div>
+                    <div class="card-body">
+                        @foreach ($count_modalidades as $categoria)
+                            <p>{{ $categoria->roleToStr() }}: {{ $categoria->count }} utilizadores</p>
+                        @endforeach
+                    </div>
+                </div> --}}
             </div>
         </div>
     </div>

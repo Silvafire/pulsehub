@@ -10,7 +10,7 @@
                 <a class="btn btn-primary" href="{{ route('admin.events.create') }}">
                     <i class="fas fa-plus"></i> Novo Evento
                 </a>
-                <a class="btn btn-primary" href="#">
+                <a class="btn btn-primary" href="{{ route('admin.tipo_eventos_mod.create') }}">
                     <i class="fas fa-plus"></i> Novo Tipo Evento
                 </a>
             </div>
@@ -38,7 +38,7 @@
                                           @endif
                                       </td>
                                         <td>{{ $event->nome }}</td>
-                                        <td>{{ $event->descricao }}</td> 
+                                        <td>{{ $event->descricao }}</td>
                                         <td>{{ $event->tipo->nome }}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p"
