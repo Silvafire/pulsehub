@@ -17,7 +17,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                  <th>Imagem</th>
+                                    <th>Imagem</th>
                                     <th>Nome</th>
                                     <th>Editar</th>
                                 </tr>
@@ -25,13 +25,13 @@
                             <tbody>
                                 @foreach ($tipo_eventos_mods as $tipo_eventos_mod)
                                     <tr>
-                                      <td>
-                                          @if ($tipo_eventos_mod->imagem)
-                                              <img height='80'
-                                                  src="{{ asset('storage/tipo_modalidades/' . $tipo_eventos_mod->imagem) }}"
-                                                  alt="Imagem do tipo eventos modo">
-                                          @endif
-                                      </td>
+                                        <td>
+                                            @if ($tipo_eventos_mod->imagem)
+                                                <img height='80'
+                                                    src="{{ asset('storage/tipo_modalidades/' . $tipo_eventos_mod->imagem) }}"
+                                                    alt="Imagem do tipo eventos modo">
+                                            @endif
+                                        </td>
                                         <td>{{ $tipo_eventos_mod->nome }}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p"
@@ -40,7 +40,8 @@
                                             <a class="btn btn-xs btn-warning btn-p"
                                                 href="{{ route('admin.tipo_eventos_mod.edit', $tipo_eventos_mod) }}"><i
                                                     class="fas fa-pen fa-xs"></i></a>
-                                            <form method="POST" action="{{ route('admin.tipo_eventos_mod.destroy', $tipo_eventos_mod) }}"
+                                            <form method="POST"
+                                                action="{{ route('admin.tipo_eventos_mod.destroy', $tipo_eventos_mod) }}"
                                                 role="form" class="inline"
                                                 onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                 @csrf
@@ -69,14 +70,14 @@
             "order": [
                 [1, 'asc']
             ],
-            "columns": [
-              {
+            "columns": [{
                     "orderable": false
                 },
+                null,
                 {
                     "orderable": false
                 }
-            ]
+            ],
         });
     </script>
 @endsection
