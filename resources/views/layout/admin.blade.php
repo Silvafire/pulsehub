@@ -65,24 +65,21 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePosts" aria-expanded="true" aria-controls="collapsePosts">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Projetos</span>
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Tipos</span>
                 </a>
                 <div id="collapsePosts" class="collapse" aria-labelledby="headingPosts" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Planos:</h6>
-                        <a class="collapse-item" href="{{ route('admin.planos.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.planos.index') }}">Novo Plano</a>
-                        <h6 class="collapse-header">Blog:</h6>
-                        <a class="collapse-item" href="{{ route('admin.post.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.post.create') }}">Novo Post</a>
-                        <h6 class="collapse-header">Staff:</h6>
-                        <a class="collapse-item" href="{{ route('admin.staffs.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.staffs.create') }}">Novo Satff</a>
                         <h6 class="collapse-header">Tipo Eventos/Mod:</h6>
                         <a class="collapse-item" href="{{ route('admin.tipo_eventos_mod.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.tipo_eventos_mod.create') }}">Novo Satff</a>
+                        <a class="collapse-item" href="{{ route('admin.tipo_eventos_mod.create') }}">Novo Tipo Event/Mod</a>
+                        <h6 class="collapse-header">Tipo Post:</h6>
+                        <a class="collapse-item" href="{{ route('admin.tipopost.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.tipopost.create') }}">Novo Tipo Post</a>
+                        <h6 class="collapse-header">Tipo Planos:</h6>
+                        <a class="collapse-item" href="{{ route('admin.tiposplanos.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.tiposplanos.create') }}">Novo Tipo Planos</a>
                     </div>
                 </div>
             </li>
@@ -119,6 +116,42 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admin.services.index') }}">Listagem</a>
                         <a class="collapse-item" href="{{ route('admin.services.create') }}">Novo Serviço</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePlanos" aria-expanded="true" aria-controls="collapsePlanos">
+                    <i class="fas fa-hourglass"></i>
+                    <span>Planos</span>
+                </a>
+                <div id="collapsePlanos" class="collapse" aria-labelledby="headingPlanos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.planos.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.planos.create') }}">Novo Plano</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog" aria-expanded="true" aria-controls="collapseBlog">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span>Blog</span>
+                </a>
+                <div id="collapseBlog" class="collapse" aria-labelledby="headingBlog" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.post.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.post.create') }}">Novo Post</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStaff" aria-expanded="true" aria-controls="collapseStaff">
+                    <i class="fas fa-hard-hat"></i>
+                    <span>Staff</span>
+                </a>
+                <div id="collapseStaff" class="collapse" aria-labelledby="headingStaff" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.staffs.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.staffs.create') }}">Novo Staff</a>
                     </div>
                 </div>
             </li>
