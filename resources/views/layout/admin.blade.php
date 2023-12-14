@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Dashboard - CTeSP Desenvolvimento Web e Multimédia</title>
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+    <title>Dashboard - PulseHub</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel=" stylesheet" type="text/css">
