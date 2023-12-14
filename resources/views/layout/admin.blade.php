@@ -106,7 +106,7 @@
                 <div id="collapseEventos" class="collapse" aria-labelledby="headingEventos" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admin.events.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.events.create') }}">Nova Modalidade</a>
+                        <a class="collapse-item" href="{{ route('admin.events.create') }}">Novo Evento</a>
                     </div>
                 </div>
             </li>
@@ -118,7 +118,7 @@
                 <div id="collapseServicos" class="collapse" aria-labelledby="headingServicos" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admin.services.index') }}">Listagem</a>
-                        <a class="collapse-item" href="{{ route('admin.services.create') }}">Nova Modalidade</a>
+                        <a class="collapse-item" href="{{ route('admin.services.create') }}">Novo Serviço</a>
                     </div>
                 </div>
             </li>
