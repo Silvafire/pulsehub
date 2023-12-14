@@ -33,8 +33,8 @@
     </section> --}}
 
     <section id="main2">
-        @if(count($posts) > 0)
-        @foreach($posts as $post)
+    @if(count($posts) > 0)
+    @foreach($posts as $post)
     <div id="post2">
         <div id="infopost2">
             <h6 id="nomepost2">{{$post->titulo}}</h6>
@@ -50,7 +50,7 @@
     </div>
     @endforeach
     @else
-    <h1 class="erro-message">Não existem staffs</h1>
+    <p class="erro-message">Não existem posts no nosso blog.</p>
     @endif
     </section>
 
@@ -120,7 +120,7 @@
 </section> --}}
 
 <div id="container">
-<a href="#" class="mostrarmais">EXPERIMENTE GRÁTIS</a>
+<a href="#" class="mostrarmais">MOSTRAR MAIS</a>
 </div>
 
 @endsection

@@ -142,6 +142,17 @@ h6 {
 
 /*---RESTANTE PÁGINA---*/
 
+
+.erro-message{
+    font-size: 1rem;
+    font-family: var(--ff--montserrat);
+    text-align: center;
+    color: var(--cl--black);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
 /*---POST 1---*/
 
 #main1{

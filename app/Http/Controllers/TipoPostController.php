@@ -87,7 +87,7 @@ class TipoPostController extends Controller
 
      public function destroy(TipoPost $tipopost)
      {
-         if ($tipopost->post()->exists()) {
+         if ($tipopost->posts()->exists()) {
              return redirect()->route('admin.tipopost.index')->withErrors(
                  ['delete' => 'O tipo de post que tentou eliminar tem projetos associados']
              );

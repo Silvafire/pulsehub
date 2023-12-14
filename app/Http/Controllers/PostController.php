@@ -51,7 +51,7 @@ class PostController extends Controller
     }
     $post->user_id=Auth::user()->id;
     $post->save();
-    return redirect()->route('admin.post.index')->with('success', 'Post criado com sucesso');
+    return redirect()->route('admin.post.index')->with('success', 'Post criado com sucesso.');
     }
 
 

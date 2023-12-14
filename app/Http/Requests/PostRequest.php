@@ -18,18 +18,17 @@ class PostRequest extends FormRequest
     @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>*/
 
     public function rules(): array
-    {
-        $currentId = $this->post ? $this->post->id : null;
-        return [
-            "img"=> 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            "titulo" => 'required|min:3|max:80|unique:post,titulo,' .
-            $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" => 'required|min:3|max:80|unique:post,descricao,' .
-            $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "informacao" =>'required|min:15|max:80',
-            "tipo_post_id" =>'required',
-        ];
-    }
+{
+    $currentId = $this->post ? $this->post->id : null;
+    return [
+        "img" => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        "titulo" => 'required|min:3|max:100|unique:post,titulo,' . $currentId . '|regex:/^[A-ZÀ-úa-z0-9\s:\-_\.,?!]+$/',
+        "descricao" => 'required|min:15|max:255|unique:post,descricao,'. $currentId . '|regex:/^[A-ZÀ-úa-z\s:\-_\.,?!]+$/',
+        "informacao" => 'nullable|min:3|max:255|unique:post,informacao,'. $currentId . '|regex:/^[A-ZÀ-úa-z\s:\-_\.,?!]+$/',
+        "tipo_post_id" => 'required',
+    ];
+}
+
 
     public function messages()
     {
