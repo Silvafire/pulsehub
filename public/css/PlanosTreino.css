@@ -156,9 +156,14 @@ h6 {
 }
 
 .card-row {
-    gap: 15px;
-    justify-content: center;
-    padding-top: 40px;
+    max-width: 1280px;
+    margin-inline: auto;
+    display: grid;
+   /*  grid-template-columns: repeat(4,1fr); */
+    row-gap: 3rem;
+    column-gap: 1rem;
+   /*  justify-items: center; */
+    grid-template-columns: repeat( auto-fit, minmax(270px, 1fr) );
 }
 
 .cardtreino{
@@ -168,10 +173,6 @@ h6 {
     transition: transform 1s ease;
 }
 
-.card-img{
-max-width: 40%;
-    max-height: 270px;
-}
 
 .card-img img{
     width: 100%;
