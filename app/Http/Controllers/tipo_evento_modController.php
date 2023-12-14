@@ -99,6 +99,7 @@ class Tipo_evento_modController extends Controller
 
     public function destroy(Tipo_eventos_mod $tipo_eventos_mod)
     {
+        Storage::disk('public')->delete('tipo_modalidades/' . $tipo_eventos_mod->imagem);
         $tipo_eventos_mod->delete();
         return redirect()->route('admin.tipo_eventos_mod.index')->with(
             'success',

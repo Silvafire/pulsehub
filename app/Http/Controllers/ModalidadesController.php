@@ -97,6 +97,7 @@ class ModalidadesController extends Controller
 
     public function destroy(Modalidade $modalidade)
     {
+        Storage::disk('public')->delete('modalidades_imagens/' . $modalidade->imagem);
         $modalidade->delete();
         return redirect()->route('admin.modalidades.index')->with(
             'success',
