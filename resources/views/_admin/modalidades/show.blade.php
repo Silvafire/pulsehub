@@ -26,7 +26,7 @@
             @endif
 
             @if(count($modalidade->planos))
-            <div><strong>Staff associado à modalidade: </strong>
+            <div><strong>Planos associado à modalidade: </strong>
                 <ul>
                     @foreach($modalidade->planos as $plano)
                         <li>

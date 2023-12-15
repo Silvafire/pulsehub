@@ -16,5 +16,8 @@ class Table_staff_modalidades extends Model
     public function modalidades(){
         return $this->hasMany(Modalidade::class,'table_staff_modalidades_id','id');
     }
-
+    public function staff(){
+        return $this->hasMany(Staff::class,'table_staff_modalidades_id','id');
+    }
+    
 }
