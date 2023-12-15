@@ -251,6 +251,9 @@ li {
     align-items: center;
     gap: 2rem;
 }
+.nav-wrapper-flex{
+    display: flex;
+}
 /* mobile Navbar */
 
 @media(max-width:1150px) {
@@ -273,4 +276,8 @@ li {
     .all-list {
         display: none;
     }
+    .nav-wrapper-flex{
+        display: none;
+    }
+
 }
