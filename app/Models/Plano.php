@@ -16,6 +16,6 @@ class Plano extends Model
         return $this->belongsTo(Modalidade::class,'modalidade_id','id')->withTrashed();
     }
     public function tipo_plano(){
-        return $this->belongsTo(TipoPlano::class,'tipo_plano_id','id')->withTrashed();
+        return $this->belongsTo(TiposPlano::class,'tipo_plano_id','id')->withTrashed();
     }
 }
