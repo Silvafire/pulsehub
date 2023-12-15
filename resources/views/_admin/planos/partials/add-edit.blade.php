@@ -29,8 +29,8 @@
 </div>
 
 <div class="form-group">
-    <label for="inputModalidade">Tipo plano</label>
-    <select class="form-control" name="modalidade_id" id="inputModalidade" required>
+    <label for="inputTipoPlano">Tipo plano</label>
+    <select class="form-control" name="tipo_plano_id" id="inputTipoPlano" required>
         <option value="" disabled selected>Escolha um tipo de plano</option>
         @foreach($tiposplanos as $tipoplano)
             <option value="{{$tipoplano->id}}" {{$tipoplano->id==old('tipo_plano_id',$plano->tipo_plano_id)?"selected":""}}>{{$tipoplano->nome}}</option>
