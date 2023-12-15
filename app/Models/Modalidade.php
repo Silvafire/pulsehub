@@ -10,7 +10,7 @@ class Modalidade extends Model
 {
     use HasFactory, SoftDeletes;
     public $timestamps=false;
-    protected $fillable=['nome','descricao', 'tipo_eventos_mod_id'];
+    protected $fillable=['nome','descricao', 'tipo_eventos_mod_id', 'modalidade_id', 'staff_id', 'staff_modalidades'];
 
     public function tipo(){
         return $this->belongsTo(Tipo_eventos_mod::class,'tipo_eventos_mod_id','id');
