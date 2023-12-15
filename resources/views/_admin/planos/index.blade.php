@@ -31,9 +31,10 @@
           <tbody>
             @foreach($planos as $plano)
             <tr>
-              <td>{{$plano->nome}}</td>
-              <td>{{$plano->descricao}}</td>
-              
+              <td>{{$plano->series}}</td>
+              <td>{{$plano->duracao_total}}</td>
+              <td>{{$plano->tmp_exercicio}}</td>
+              <td>{{$plano->repeticoes}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.planos.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.planos.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
@@ -66,6 +67,8 @@
       [0, 'asc']
     ],
     "columns": [
+      null,
+      null,
       null,
       null,
       {

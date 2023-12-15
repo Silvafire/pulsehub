@@ -83,7 +83,7 @@ class PlanosController extends Controller
 
         $plano->fill($fields);
         $plano->save();
-        return redirect()->route('_admin.planos.index')->with('success', 'Plano atualizado com sucesso');
+        return redirect()->route('admin.planos.index')->with('success', 'Plano atualizado com sucesso');
     }
 
 
@@ -93,11 +93,7 @@ class PlanosController extends Controller
 
     public function destroy(Plano $plano)
     {
-        if ($plano->projects()->exists()) {
-            return redirect()->route('admin.planos.index')->withErrors(
-                ['delete' => 'O plano que tentou eliminar tem projetos associados']
-            );
-        }
+       
         $plano->delete();
         return redirect()->route('admin.planos.index')->with(
             'success',
