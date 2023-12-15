@@ -47,7 +47,7 @@ class PlanosController extends Controller
         $plano = new Plano();
         $plano->fill($fields);
         $plano->save();
-        return redirect()->route('admin.plano.index')
+        return redirect()->route('admin.planos.index')
             ->with('success', 'plano criado com sucesso');
     }
 
