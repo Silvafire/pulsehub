@@ -55,7 +55,8 @@ class UserController extends Controller
         $user->password = Hash::make('password');
         if ($request->hasFile('img')) {
             $img_path = $request->file('img')->store(
-                'public/users_fotos');
+                'public/users_fotos'
+            );
             $user->img = basename($img_path);
         }
         $user->save();
@@ -85,6 +86,11 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
+        if (auth()->user()->can('updateRole', $user)) {
+            $fields = $request->validated();
+        } else {
+            $fields = $request->except("role");
+        }
         $fields = $request->validated();
         $user->fill($fields);
         if ($request->hasFile('img')) {
@@ -93,7 +99,7 @@ class UserController extends Controller
                     $user->img);
             }
             $img_path =
-            $request->file('img')->store('public/users_fotos');
+                $request->file('img')->store('public/users_fotos');
             $user->img = basename($img_path);
         }
 
@@ -108,22 +114,33 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success',
-            'Utilizador eliminado com sucesso');
-
+        return redirect()->route('admin.users.index')->with(
+            'success',
+            'Utilizador eliminado com sucesso'
+        );
     }
     public function destroy_photo(User $user)
     {
         Storage::disk('public')->delete('user_fotos/' . $user->img);
         $user->img = null;
         $user->save();
-        return redirect()->route('admin.users.edit', $user)->with('success',
-            'A foto do utilizador foi apagada com sucesso.');
+        return redirect()->route('admin.users.edit', $user)->with(
+            'success',
+            'A foto do utilizador foi apagada com sucesso.'
+        );
     }
     public function send_reactivate_email(User $user)
     {
         $user->sendEmailVerificationNotification();
-        return redirect()->route('admin.users.edit', $user)->with('success',
-            'O email foi enviado com sucesso para o utilizador');
+        return redirect()->route('admin.users.edit', $user)->with(
+            'success',
+            'O email foi enviado com sucesso para o utilizador'
+        );
+    }
+
+
+    public function __construct()
+    {
+        $this->authorizeResource(User::class, 'user');
     }
 }
