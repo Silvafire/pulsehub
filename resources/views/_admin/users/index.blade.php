@@ -32,10 +32,15 @@
                     <div class="form-group col-3">
                         <button type="submit" class="btn btn-success">Search</button>
                         &nbsp;
-                        <a class="btn btn-primary" href="{{ route('admin.users.create') }}">
-                            <i class="fas fa-plus"></i> Add User
-                        </a>
-                    </div>
+
+                        @can('create', App\Models\User::class)
+                            <a class="btn btn-primary" href="{{ route('admin.users.create') }}">
+                                <i class="fas fa-plus"></i> Add User
+                            </a>
+                            {{--  @else
+                            <span class="btn btn-secondary disabled"> Add User
+                            </span> --}}
+                        @endcan
                 </form>
             </div>
             <div class="card-body p-5">
@@ -45,7 +50,7 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Photo</th>
+                                        <th>img</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Role</th>
@@ -55,13 +60,13 @@
                                 <tbody>
                                     @foreach ($users as $user)
                                         <tr>
-
                                             <td>
-                                                @if ($user->photo)
-                                                    <img src="{{ asset('storage/users_photos/' . $user->photo) }}"
-                                                        class="img-post" alt="User photo">
+                                                @if ($user->img)
+                                                    <img src="{{ asset('storage/users_fotos/' . $user->img) }}"
+                                                        class="img-post" alt="User photo" height="80">
                                                 @else
-                                                    <img src="{{asset('storage/users_fotos/'. $user->img )}}" class="img-post" height="80"                                                        alt="User photo">
+                                                    <img src="{{ asset('img/default_user.jpg') }}" class="img-post"
+                                                        alt="User photo">
                                                 @endif
                                             </td>
                                             <td>{{ $user->name }}</td>
@@ -71,17 +76,30 @@
                                                 <a class="btn btn-xs btn-primary btn-p"
                                                     href="{{ route('admin.users.show', $user) }}"><i
                                                         class="fas fa-eye fa-xs"></i></a>
-                                                <a class="btn btn-xs btn-warning btn-p"
-                                                    href="{{ route('admin.users.edit', $user) }}"><i
-                                                        class="fas fa-pen fa-xs"></i></a>
-                                                <form method="POST" action="{{ route('admin.users.destroy', $user) }}"
-                                                    role="form" class="inline"
-                                                    onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-xs btn-danger btn-p"><i
-                                                            class="fas fa-trash fa-xs"></i></button>
-                                                </form>
+                                                @can('update', $user)
+                                                    <a class="btn btn-xs btn-warning btn-p"
+                                                        href="{{ route('admin.users.edit', $user) }}">
+                                                        <i class="fas fa-pen fa-xs"></i>
+                                                    </a>
+                                                @else
+                                                    <span class="btn btn-xs btn-secondary btn-p disabled">
+                                                        <i class="fas fa-pen fa-xs"></i>
+                                                    </span>
+                                                @endcan
+                                                @can('delete', $user)
+                                                    <form method="POST" action="{{ route('admin.users.destroy', $user) }}"
+                                                        role="form" class="inline"
+                                                        onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-xs btn-danger btn-p"><i
+                                                                class="fas fa-trash fa-xs"></i></button>
+                                                    </form>
+                                                @else
+                                                    <span class="btn btn-xs btn-secondary btn-p disabled">
+                                                        <i class="fas fas fa-trash fa-xs"></i>
+                                                    </span>
+                                                @endcan
                                             </td>
                                         </tr>
                                     @endforeach

@@ -67,5 +67,18 @@ Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' =
 Auth::routes(['verify' => true]);
 Auth::routes(['register' => false, 'verify' => true]);
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.',
+'prefix' => 'admin'], function () { Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
+ Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
+ Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
+ Route::resource('admin/users', UserController::class, ['as' => 'admin']);
+Route::resource('admin/events', EventController::class, ['as' => 'admin']);
+Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
+Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
+Route::resource('admin/post', PostController::class, ['as' => 'admin']);
+Route::resource('admin/staffs', StaffController::class, ['as' => 'admin']);
+
+});
+

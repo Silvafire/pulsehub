@@ -25,8 +25,8 @@ class UserController extends Controller
             if ($request->filled('email')) {
                 $users->where('email', 'like', '%' . $request->email . '%');
             }
-            if ($request->filled('role')) {
-                $users->where('role', $request->role);
+            if ($request->filled('perm')) {
+                $users->where('perm', $request->perm);
             }
             $users = $users->get();
         }
@@ -81,6 +81,13 @@ class UserController extends Controller
         return view('_admin.users.edit', compact('user'));
     }
 
+
+    public function __construct()
+    {
+        $this->authorizeResource(User::class, 'user');
+    }
+
+
     /**
      * Update the specified resource in storage.
      */
@@ -89,7 +96,7 @@ class UserController extends Controller
         if (auth()->user()->can('updateRole', $user)) {
             $fields = $request->validated();
         } else {
-            $fields = $request->except("role");
+            $fields = $request->except("perm");
         }
         $fields = $request->validated();
         $user->fill($fields);
@@ -136,11 +143,5 @@ class UserController extends Controller
             'success',
             'O email foi enviado com sucesso para o utilizador'
         );
-    }
-
-
-    public function __construct()
-    {
-        $this->authorizeResource(User::class, 'user');
     }
 }

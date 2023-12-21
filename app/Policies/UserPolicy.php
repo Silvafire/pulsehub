@@ -53,7 +53,11 @@ class UserPolicy
         }
         return false;
     }
-
+    
+    public function updateRole(User $user, User $model)
+    {
+        return false;
+    }
     /**
      * Determine whether the user can delete the model.
      */
@@ -63,8 +67,4 @@ class UserPolicy
         //
     }
 
-    public function updateRole(User $user, User $model)
-    {
-        return false;
-    }
 }
