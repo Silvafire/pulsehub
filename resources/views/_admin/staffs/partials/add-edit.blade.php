@@ -30,7 +30,14 @@
 
     <input type="file" class="form-control-file" name="img" id="inputImage" aria-describedby="fileHelp" />
     <small id="fileHelp" class="form-text text-muted"> Por favor carregue um ficheiro de imagem válido. O tamanho da imagem não deve exceder 2MB. </small>
-</div> 
+</div>
 
-
+<div class="form-group">
+    <label for="inputModalidades">Modalidades</label>
+    <select multiple size="5" class="form-control" name="modalidades[]" id="inputModalidades" required>
+        @foreach($modalidades as $modalidade)
+            <option value="{{$modalidade->id}}" {{$staff->modalidades()->find($modalidade->id)?"selected":""}}>{{$modalidade->nome}}</option>
+        @endforeach
+    </select>
+</div>
 
