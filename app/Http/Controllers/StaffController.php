@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Staff;
+use App\Models\Modalidade;
 use Illuminate\Http\Request;
 use App\Http\Requests\StaffRequest;
 use Illuminate\Support\Facades\Storage;
@@ -25,7 +26,8 @@ class StaffController extends Controller
     public function create()
     {
         $staff = new Staff;
-        return view('_admin.staffs.create', compact("staff"));
+        $modalidades= Modalidade::all();
+        return view('_admin.staffs.create', compact("staff","modalidades"));
     }
 
     /**
@@ -44,6 +46,7 @@ class StaffController extends Controller
             $staff->img = basename($imagem_path);
         }
         $staff->save();
+        $staff->modalidades()->attach($request->modalidades);
         return redirect()->route('admin.staffs.index')
             ->with('success', 'Staff criado com sucesso');
     }
@@ -63,7 +66,8 @@ class StaffController extends Controller
 
     public function edit(Staff $staff)
     {
-        return view('_admin.staffs.edit', compact('staff'));
+        $modalidades= Modalidade::all();
+        return view('_admin.staffs.edit', compact('staff','modalidades'));
     }
 
     /**
@@ -92,6 +96,8 @@ class StaffController extends Controller
          }
 
          $staff->save();
+         $staff->modalidades()->detach();
+         $staff->modalidades()->attach($request->modalidades);
          return redirect()->route('admin.staffs.index')->with('success', 'Staff atualizado com sucesso');
      }
 
