@@ -22,11 +22,12 @@ class EventRequest extends FormRequest
     public function rules(): array
     {
         $currentId = $this->event ? $this->event->id : null;
+
         return [
             "nome" => 'required|min:3|max:80|unique:events,nome,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" =>'required|min:8|max:80',
-            'data' => 'required|date|date_format:"Y-m-d"',
+            'data' => 'required|date|date_format:"Y-m-d\TH:i:s"',
             "tipo_eventos_mod_id" =>'required|exists:tipo_eventos_mod,id',
             'img' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];

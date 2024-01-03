@@ -1,77 +1,100 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsehub - Registo</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/logo/SVG/logo.svg" type="image/x-icon">
+</head>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<body>
+    <div class="background">
+        <div class="center">
+            <h1>Registo</h1>
+            <form method="POST" method="{{ route('register') }}">
+                @csrf
+                <div class="txt_field">
+                    <input type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"
+                        required autocomplete="name" autofocus>
+                    <span></span>
+                    <label>Nome</label>
+                    <a class="sign"><i class="fa-solid fa-signature"></i></a>
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
-            </div>
+                <div class="txt_field">
+                    <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
+                        value="{{ old('email') }}" required autocomplete="email">
+                    <span></span>
+                    <label>Email</label>
+                    <a class="mail"><i class="fa-solid fa-envelope"></i></a>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="txt_field">
+                    <input type="password" id="pass" class="@error('password') is-invalid @enderror" name="password"
+                        required autocomplete="new-password">
+                    <span></span>
+                    <label>Password</label>
+                    <button type="button" class="eye1"><i class="fa-solid fa-eye-slash" id="eye1"></i></button>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="txt_field">
+                    <input type="password" id="pass" name="password_confirmation" required autocomplete="new-password">
+                    <span></span>
+                    <label>Confirme a Password</label>
+                    <button type="button" class="eye2"><i class="fa-solid fa-eye-slash" id="eye2"></i></button>
+                </div>
+                <input type="submit" value="Registar">
+                <div class="signup_link">
+                    Já tem conta? <a href="{{ route('login') }}">Login</a>
+                </div>
+            </form>
         </div>
     </div>
-</div>
-@endsection
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        document.querySelector('.eye1').addEventListener('click', function () {
+      var x = document.getElementById("pass");
+      if (x.type === "password") {
+        x.type = "text";
+        $('#eye1').removeClass('fa-eye-slash');
+        $('#eye1').addClass('fa-eye');
+      } else {
+        x.type = "password";
+        $('#eye1').removeClass('fa-eye');
+        $('#eye1').addClass('fa-eye-slash');
+      }
+    });
+    document.querySelector('.eye2').addEventListener('click', function () {
+      var x = document.getElementById("pass");
+      if (x.type == "password") {
+        x.type = "text";
+        $('#eye2').removeClass('fa-eye-slash');
+        $('#eye2').addClass('fa-eye');
+      } else {
+        x.type = "password";
+        $('#eye2').removeClass('fa-eye');
+        $('#eye2').addClass('fa-eye-slash');
+      }
+    });
+    </script>
+</body>
+
+</html>

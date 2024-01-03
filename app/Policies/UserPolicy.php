@@ -21,7 +21,7 @@ class UserPolicy
     public function viewAny(User $user): bool
     {
         //
-        return true;
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class UserPolicy
         }
         return false;
     }
-    
+     
     public function updateRole(User $user, User $model)
     {
         return false;

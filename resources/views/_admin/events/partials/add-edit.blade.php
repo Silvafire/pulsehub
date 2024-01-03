@@ -8,9 +8,9 @@
     <textarea class="form-control" name="descricao" id="inputDescription">{{ old('descricao', $event->descricao) }}</textarea>
 </div>
 <div class="form-group">
-    <label for="inputAge">Data do Evento</label>
-    <input type="date" class="form-control" name="data" id="inputAge"
-        placeholder="Enter your age"value="{{ old('data', date_format(date_create($event->data),'Y-m-d')) }}" />
+    <label for="datetime-local">Data do Evento</label>
+    <input type="datetime-local" class="form-control" name="data" id="datetime-local"
+        placeholder="Enter your age"value="{{ old('data', date_format(date_create($event->data), 'Y-m-d H:i:s')) }}" />
 </div>
 <div class="form-group">
     <label for="inputImage">Imagem</label>
