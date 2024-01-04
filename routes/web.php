@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
@@ -39,50 +41,37 @@ Route::get('staff', [PageController::class, 'staff'])->name('staff');
 Route::get('post', [PageController::class, 'post'])->name('post');
 
 
-Route::resource('admin/users', UserController::class, ['as' => 'admin']);
-Route::resource('admin/events', EventController::class, ['as' => 'admin']);
-Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
-Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
-Route::resource('admin/tiposplanos', TiposPlanosController::class, ['as' => 'admin']);
-Route::resource('admin/post', PostController::class, ['as' => 'admin']);
-Route::resource('admin/tipopost', TipoPostController::class, ['as' => 'admin']);
-Route::resource('admin/postusers', PostUsersController::class, ['as' => 'admin']);
-Route::resource('admin/staffs', StaffController::class, ['as' => 'admin']);
-Route::resource('admin/tipo_eventos_mod', Tipo_evento_modController::class, ['as' => 'admin']);
-
-Route::resource('admin/services', ServiceController::class, ['as' => 'admin']);
-
-Route::get('admin/services/{service}/images', [ServiceController::class, 'images_index'])->name('admin.services.images.index');
-Route::get('admin/services/{service}/images/create', [ServiceController::class, 'images_create'])->name('admin.services.images.create');
-Route::post('admin/services/{service}/images', [ServiceController::class, 'images_store'])->name('admin.services.images.store');
-Route::get('admin/services/{service}/images/{imageService}/edit', [ServiceController::class, 'images_edit'])->name('admin.services.images.edit');
-Route::put('admin/services/{service}/images/{imageService}', [ServiceController::class, 'images_update'])->name('admin.services.images.update');
-Route::delete('admin/services/{service}/images/{imageService}', [ServiceController::class, 'images_destroy'])->name('admin.services.images.destroy');
-
-Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' => 'admin'], function () {
+/* Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' => 'admin'], function () {
  Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
  Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email']) ->name('users.sendActivationEmail');
-});
+}); */
 
 Auth::routes(['verify' => true]);
-Auth::routes(['register' => false, 'verify' => true]);
+Route::resource('/admin/users', UserController::class, ['as' => 'admin', 'middleware' => ['auth', 'verified']])->only(['edit', 'update']);
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-/*
-return redirect('/login', 403);
- */
-Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.',
-'prefix' => 'admin'], function () {
 
+Route::group(['middleware' => ['auth', 'verified', 'admin'] , 'as' => 'admin.', 'prefix' => 'admin'], function () {
+  
     Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
- Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
- Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
- Route::resource('admin/users', UserController::class, ['as' => 'admin']);
-Route::resource('admin/events', EventController::class, ['as' => 'admin']);
-Route::resource('admin/modalidades', ModalidadesController::class, ['as' => 'admin']);
-Route::resource('admin/planos', PlanosController::class, ['as' => 'admin']);
-Route::resource('admin/post', PostController::class, ['as' => 'admin']);
-Route::resource('admin/staffs', StaffController::class, ['as' => 'admin']);
+    Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
+    Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
+    Route::resource('users', UserController::class)->except(['edit', 'update']);
+    Route::resource('events', EventController::class);
+    Route::resource('modalidades', ModalidadesController::class);
+    Route::resource('planos', PlanosController::class);
+    Route::resource('post', PostController::class);
+    Route::resource('staffs', StaffController::class);
+    Route::resource('tiposplanos', TiposPlanosController::class);
+    Route::resource('tipopost', TipoPostController::class);
+    Route::resource('postusers', PostUsersController::class);
+    Route::resource('tipo_eventos_mod', Tipo_evento_modController::class);
+    Route::resource('services', ServiceController::class);
+    Route::get('services/{service}/images', [ServiceController::class, 'images_index'])->name('services.images.index');
+    Route::get('services/{service}/images/create', [ServiceController::class, 'images_create'])->name('services.images.create');
+    Route::post('services/{service}/images', [ServiceController::class, 'images_store'])->name('services.images.store');
+    Route::get('services/{service}/images/{imageService}/edit', [ServiceController::class, 'images_edit'])->name('services.images.edit');
+    Route::put('services/{service}/images/{imageService}', [ServiceController::class, 'images_update'])->name('services.images.update');
+    Route::delete('services/{service}/images/{imageService}', [ServiceController::class, 'images_destroy'])->name('services.images.destroy');
 
 });
-

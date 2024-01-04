@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
            'email' =>'required|email|unique:users,email,'.
                     ($this->user?$this->user->id:''),
            'img' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-           'perm' => 'required|in:A,N',
+           'perm' => 'sometimes|in:A,N',
            'data_nasc' => 'nullable|date|date_format:"Y-m-d"'
         ];
     }

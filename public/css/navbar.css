@@ -241,6 +241,7 @@ li {
 .button-nav:hover {
     color: var(--cl--black);
     background-color: var(--cl--yellow);
+    text-decoration: none;
 
 
 }
