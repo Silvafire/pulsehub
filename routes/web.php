@@ -37,7 +37,7 @@ Route::get('servicos', [PageController::class, 'servicos'])->name('servicos');
 Route::get('eventos', [PageController::class, 'eventos'])->name('eventos');
 Route::get('staff', [PageController::class, 'staff'])->name('staff');
 Route::get('post', [PageController::class, 'post'])->name('post');
-Route::get('admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
+
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
@@ -67,10 +67,14 @@ Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' =
 Auth::routes(['verify' => true]);
 Auth::routes(['register' => false, 'verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/*
+return redirect('/login', 403);
+ */
 Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.',
-'prefix' => 'admin'], function () { Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
+'prefix' => 'admin'], function () {
+
+    Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
  Route::get('/users/{user}/send_reactivate_mail', [UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
  Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
  Route::resource('admin/users', UserController::class, ['as' => 'admin']);
