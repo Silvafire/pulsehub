@@ -24,6 +24,7 @@
         <div class="bottom-title" id="bottom-title">
             <h2>Categorias de modalidades</h2>
             <!-- Carrossel de cards -->
+
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">

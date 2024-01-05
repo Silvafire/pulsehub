@@ -177,3 +177,8 @@ input[type="submit"]:hover {
 .signup_link a:hover {
     color: #ff8606;
 }
+
+button#reset{
+    background-color: #ff8606;
+    border-color: #ff8606;
+}

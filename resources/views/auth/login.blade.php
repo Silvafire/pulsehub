@@ -5,8 +5,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="txt_field">
-            <input type="text" class="@error('email') is-invalid @enderror" id="email" name="email"
-                value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <input type="text" class="@error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
             <span></span>
             <label>Email</label>
             <a class=" mail"><i class="fa-solid fa-envelope"></i></a>
