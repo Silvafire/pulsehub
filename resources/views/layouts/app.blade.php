@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsehub - Login</title>
+    <title>Pulsehub</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -14,7 +14,7 @@
 <body>
     <div class="background">
         <div class="center">
-            @yield('content')
+            @yield('content') 
         </div>
     </div>
     <script src="js/all.min.js"></script>

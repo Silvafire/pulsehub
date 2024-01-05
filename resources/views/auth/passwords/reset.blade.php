@@ -21,8 +21,8 @@
         </div>
 
         <div class="txt_field">
-            <input type="password" class="@error('password') is-invalid @enderror" name="password"
-                value="{{ old('password') }}" required autocomplete="password" autofocus>
+            <input type="password" class="@error('password') is-invalid @enderror" name="password" required
+                autocomplete="password" autofocus>
             <span></span>
             <label for="password">{{ __('Nova Password') }}</label>
             <a class=" password"><i class="fa-solid fa-envelope"></i></a>
@@ -34,16 +34,12 @@
         </div>
 
         <div class="txt_field">
-            <input id="password-confirm" type="password" class="@error('password') is-invalid @enderror" name="password"
-                value="{{ old('password') }}" required autocomplete="password" autofocus>
+            <input id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password"
+                autofocus>
             <span></span>
             <label for="password-confirm">{{ __('Confirmar Password') }}</label>
             <a class=" password-confirm"><i class="fa-solid fa-envelope"></i></a>
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+
         </div>
 
         <button type="submit" id="reset" class="btn btn-primary col-md-12 mb-4">

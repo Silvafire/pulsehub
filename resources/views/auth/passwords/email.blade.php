@@ -21,9 +21,9 @@
                 </span>
             @enderror
         </div>
-        
+
         <button type="submit" id="reset" class="btn btn-primary col-md-12 mb-4">
-            {{ __('Send Password Reset Link') }}
+            {{ __('Enviar email para resetar a password') }}
         </button>
 
     </form>
