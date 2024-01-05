@@ -25,7 +25,7 @@
                     </div>
                     <div class="card-body">
                         @foreach ($count_events_per_type as $item)
-                            <p>{{ $item->count }} Eventos</p>
+                            <p> {{ $item->tipo->nome }}: {{ $item->count }} Eventos</p>
                         @endforeach
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="card-body">
                         @foreach ($count_mod_per_type as $item)
-                            <p>{{ $item->count }} tipo</p>
+                            <p>{{ $item->tipo->nome }} : {{ $item->count }} Modalidades</p>
                         @endforeach
                     </div>
                 </div>
