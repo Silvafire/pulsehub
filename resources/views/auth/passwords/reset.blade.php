@@ -34,7 +34,7 @@
         </div>
 
         <div class="txt_field">
-            <input type="password" class="@error('password') is-invalid @enderror" name="password"
+            <input id="password-confirm" type="password" class="@error('password') is-invalid @enderror" name="password"
                 value="{{ old('password') }}" required autocomplete="password" autofocus>
             <span></span>
             <label for="password-confirm">{{ __('Confirmar Password') }}</label>
