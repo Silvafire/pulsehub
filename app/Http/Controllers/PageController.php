@@ -52,6 +52,14 @@ class PageController extends Controller
         return view('staff',compact('staffs'));
     }
 
+    public function servicosshow(Service $service)
+    {
+
+
+        return view('servicosshow', compact('service'));
+    }
+
+
     public function admindashboard()
     {
 
