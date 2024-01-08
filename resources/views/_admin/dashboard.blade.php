@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card shadow">
                     <div class="card-header p-4">
                         <h1 style="display:inline;"> {{ $count_users }} </h1>
@@ -17,7 +17,7 @@
                 </div>
 
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card shadow">
                     <div class="card-header p-4">
                         <h1 style="display:inline;"> {{ $count_events }} </h1>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card shadow">
                     <div class="card-header p-4">
                         <h1 style="display:inline;"> {{ $count_modalidades }} </h1>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card shadow">
                     <div class="card-header p-4">
                         <h1 style="display:inline;"> {{ $count_services }} </h1>
