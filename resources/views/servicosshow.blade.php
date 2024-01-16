@@ -11,7 +11,7 @@
     <div class="bannerdetalhe">
         <h2 class="text-center">Detalhes do {{ $service->nome }}</h2>
     </div>
-    <div>
+    <div class="container-grid">
         @foreach ($service->images as $image)
             <tr>
                 <td>

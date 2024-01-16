@@ -59,9 +59,10 @@
                     </div>
                     <div class="servicos-tag">
                         <h5>{{ $service->nome }}</h5>
-                        <p>{{ $service->descricao }}</p>
+                        <p>{{ $truncated = Str::of($service->descricao)->limit(30) }}</p>
                     </div>
-                    <input type="button" value="Ver Mais" class="btn-1 show-container" data-target="#container1">
+                    <a href="{{ route('servicosshow', $service) }}" class="d-flex justify-content-center"> <input
+                                type="button" value="Ver Mais" class="btn-1 show-container"></a>
                 </div>
             @endif
         @endforeach
