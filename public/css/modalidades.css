@@ -83,7 +83,7 @@ html, body {
     height: 100px;
     margin-top: 10%;
     margin-bottom: 20%;
-    object-fit: cover; /* Manter a proporção da imagem */
+    object-fit: fill; /* Manter a proporção da imagem */
 }
 
 /* Estilo para remover o fundo dos botões */
@@ -92,9 +92,8 @@ html, body {
     display: flex !important;
     justify-content: center;
     align-items: center;
+    background-color: none;
     width: 5%;
-    background: rgb(255, 255, 255); /* Altere o fundo das setas se necessário */
-    /* Adicione mais estilos conforme necessário */
 }
 
 .carousel-control-prev-icon,
@@ -103,6 +102,7 @@ html, body {
     width: 20px; /* Largura das setas */
     height: 20px; /* Altura das setas */
     background-size: 100% 100%;
+    background-color: none;
     background-repeat: no-repeat;
 }
 

@@ -26,11 +26,13 @@
             <!-- Carrossel de cards -->
 
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                           @if ($tipo_eventos_mods && count($tipo_eventos_mods))
-                                @foreach ($tipo_eventos_mods as $tipo_evento_mod)
+                    @foreach ($tipo_eventos_mods->chunk(3) as $key => $chunk)
+                        <div class="carousel-item{{ $key == 0 ? ' active' : '' }}">
+                            <div class="row justify-content-center">
+                                @foreach ($chunk as $tipo_evento_mod)
                                     <div class="col-md-3">
                                         <div class="card d-flex align-items-center justify-content-center">
                                             @if ($tipo_evento_mod->imagem)
@@ -43,109 +45,41 @@
                                         </div>
                                     </div>
                                 @endforeach
-                            @else
-                                <h6>Não existem tipo eventos/modalidades registrados</h6>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/ar-livre.svg') }}" class="card-img-top" alt="card_4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Ar livre</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/arte.svg') }}" class="card-img-top" alt="card_5">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Arte Marcial</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/casa.svg') }}" class="card-img-top" alt="card_6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Casa</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/danca.svg') }}" class="card-img-top" alt="card_7">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dança</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/ginastica.svg') }}" class="card-img-top" alt="card_8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Ginástica</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/jogos-de-desporto.svg') }}" class="card-img-top" alt="card_9">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Jogos de Desporto</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
                     <img src="{{ asset('img/icons8-arrow-100-l.png') }}" alt="Anterior">
-                    <span class="visually-hidden">Anterior</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="next">
                     <img src="{{ asset('img/icons8-arrow-100-r.png') }}" alt="Próximo">
-                    <span class="visually-hidden">Próximo</span>
-                </button>
-            </div>
+                </button></div>
         </div>
     </div>
 
 
     <div class="modalidades">
         <div class="modalidade">
-            <div class="content-1">
-                @if (($modalidades) && count($modalidades))
-                    @foreach ($modalidades as $modalidade)
+            @if ($modalidades && count($modalidades))
+                @foreach ($modalidades as $key => $modalidade)
+                    <div class="content-{{ $key % 2 + 1 }}">
                         <div class="image">
-                            <img src="{{asset('storage/modalidades_imagens/'. $modalidade->imagem )}}" alt="Descrição da imagem">
+                            <img src="{{ asset('storage/modalidades_imagens/' . $modalidade->imagem) }}"
+                                alt="Descrição da imagem">
                         </div>
                         <div class="text">
                             <h2>{{ $modalidade->nome }}</h2>
-                            <p>{{ $modalidade->descricao }}
-                            </p>
+                            <p>{{ $modalidade->descricao }}</p>
                             <button>Mais informação</button>
                         </div>
-                    @endforeach
-                @else
-                    <p>Nenhuma modalidade disponível no momento.</p>
-                @endif
-            </div>
+                    </div>
+                @endforeach
+            @else
+                <p>Nenhuma modalidade disponível no momento.</p>
+            @endif
         </div>
     </div>
 
