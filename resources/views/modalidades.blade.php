@@ -101,8 +101,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/jogos-de-desporto.svg') }}" class="card-img-top"
-                                        alt="card_9">
+                                    <img src="{{ asset('img/jogos-de-desporto.svg') }}" class="card-img-top" alt="card_9">
                                     <div class="card-body">
                                         <h5 class="card-title">Jogos de Desporto</h5>
                                         <p class="card-text">Descrição do card 2.</p>
@@ -131,55 +130,21 @@
     <div class="modalidades">
         <div class="modalidade">
             <div class="content-1">
-                <div class="image">
-                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
-                </div>
-                <div class="text">
-                    <h2>Ciclismo</h2>
-                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e
-                        poderosas!
-                    </p>
-                    <button>Mais informação</button>
-                </div>
-            </div>
-        </div>
-        <div class="modalidade">
-            <div class="content-2">
-                <div class="image">
-                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
-                </div>
-                <div class="text">
-                    <h2>Ciclismo</h2>
-                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e
-                        poderosas!</p>
-                    <button>Mais informação</button>
-                </div>
-            </div>
-        </div>
-        <div class="modalidade">
-            <div class="content-1">
-                <div class="image">
-                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
-                </div>
-                <div class="text">
-                    <h2>Ciclismo</h2>
-                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e
-                        poderosas!</p>
-                    <button>Mais informação</button>
-                </div>
-            </div>
-        </div>
-        <div class="modalidade">
-            <div class="content-2">
-                <div class="image">
-                    <img src="{{ asset('img/ciclismo.jpeg') }}" alt="Descrição da imagem">
-                </div>
-                <div class="text">
-                    <h2>Ciclismo</h2>
-                    <p>Aula de ciclismo indoor (”indoor cycling”) onde pedalas ao ritmo de músicas estimulantes e
-                        poderosas!</p>
-                    <button>Mais informação</button>
-                </div>
+                {{-- @if (($modalidades) && count($modalidades))
+                    @foreach ($modalidades as $modalidade)
+                        <div class="image">
+                            <img src="{{asset('storage/modalidades_imagens/'. $modalidade->imagem )}}" alt="Descrição da imagem">
+                        </div>
+                        <div class="text">
+                            <h2>{{ $modalidade->nome }}</h2>
+                            <p>{{ $modalidade->descricao }}
+                            </p>
+                            <button>Mais informação</button>
+                        </div>
+                    @endforeach
+                @else
+                    <p>Nenhuma modalidade disponível no momento.</p>
+                @endif --}}
             </div>
         </div>
     </div>
