@@ -19,33 +19,32 @@
         </div>
     </div>
     <!-- event Section Begin -->
-    <section class="event-section spad">
-        <div class="container" id="eventf">
-            <div class="row">
-                <div class="col-lg-8 p-0">
-                    @foreach ($events as $event)
-                        @if ($event)
-                            <div class="event-item">
-                                <div class="bi-pic">
-                                    <img src="{{ asset('storage/eventos_imagens/' . $event->img) }}" alt="">
-                                </div>
-                                <div class="bi-text">
-                                    <h5><a href="{{-- {{ route('event.details', ['id' => $event['id']]) }} --}}">{{ $event->nome }}</a>
-                                    </h5>
-                                    <ul>
-                                        <li>{{ $event->data }}</li>
-                                        <li>{{ $event->descricao }}</li>
-                                    </ul>
-                                </div>
-                            </div>
+    <main class="eventos">
+        <div class="container-grid">
+            @if (count($events) > 0)
+                @foreach ($events as $event)
+                    <div class="eventos-card card mb-3">
+                        @if (file_exists(public_path('storage/eventos_imagens/{{ $event->img }}')))
+                        <img class="card-img-top" alt="event img"
+                            src="{{ asset('storage/eventos_imagens/default.jpg') }}">
+                        @else
+                        <img class="card-img-top" alt="event img"
+                            src="{{ asset('storage/eventos_imagens/' . $event->img) }}">
                         @endif
-                    @endforeach
-                </div>
-            </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $event->nome }}</h5>
+                            <p class="card-text">{{ $event->descricao }}</p>
+                            <p class="card-text">{{ $event->tipo->nome }}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                @endforeach
+            @else
+                <h1 class="erro-message">Não existem Eventos</h1>
+            @endif
+        </div>
+    </main>
 
-        </div>
-        </div>
-    </section>
     <!-- event Section End -->
 
 @endsection
