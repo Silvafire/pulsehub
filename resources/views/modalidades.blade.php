@@ -28,7 +28,7 @@
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        {{-- <div class="row justify-content-center">
+                        <div class="row justify-content-center">
                            @if ($tipo_eventos_mods && count($tipo_eventos_mods))
                                 @foreach ($tipo_eventos_mods as $tipo_evento_mod)
                                     <div class="col-md-3">
@@ -46,7 +46,7 @@
                             @else
                                 <h6>Não existem tipo eventos/modalidades registrados</h6>
                             @endif
-                        </div> --}}
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row justify-content-center">
@@ -130,7 +130,7 @@
     <div class="modalidades">
         <div class="modalidade">
             <div class="content-1">
-                {{-- @if (($modalidades) && count($modalidades))
+                @if (($modalidades) && count($modalidades))
                     @foreach ($modalidades as $modalidade)
                         <div class="image">
                             <img src="{{asset('storage/modalidades_imagens/'. $modalidade->imagem )}}" alt="Descrição da imagem">
@@ -144,7 +144,7 @@
                     @endforeach
                 @else
                     <p>Nenhuma modalidade disponível no momento.</p>
-                @endif --}}
+                @endif
             </div>
         </div>
     </div>

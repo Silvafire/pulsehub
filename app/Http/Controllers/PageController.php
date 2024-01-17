@@ -36,7 +36,9 @@ class PageController extends Controller
 
     public function modalidades()
     {
-        return view('modalidades');
+        $modalidades = Modalidade::all();
+        $tipo_eventos_mods = Tipo_eventos_mod::all();
+        return view('modalidades', compact('modalidades', 'tipo_eventos_mods'));
     }
 
     public function servicos()
