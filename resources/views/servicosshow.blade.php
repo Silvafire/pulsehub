@@ -9,17 +9,18 @@
 
 @section('content')
     <div class="bannerdetalhe">
-        <h2 class="text-center">Detalhes do {{ $service->nome }}</h2>
+        <h2 class="text-center">{{ $service->nome }}</h2>
     </div>
-    <div class="container-grid">
+    <div class="container">
         @foreach ($service->images as $image)
             <tr>
                 <td>
-                    <img src="{{ asset('storage/image_services/' . $image->imagem) }}" class="img-post" alt=""
-                        style="width: 80px; height: auto;">
+                    <img src="{{ asset('storage/image_services/' . $image->imagem) }}" class="imagensdetalhe" alt="">
                 </td>
+            </tr>
         @endforeach
     </div>
+    <div class="descricaodetalhe"><p>{!! $service->descricao !!}</p></div>
 @endsection
 
 @section('moreScripts')

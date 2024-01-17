@@ -27,7 +27,7 @@
             @foreach($service as $service)
             <tr>
               <td>{{$service->nome}}</td>
-              <td>{{$service->descricao}}</td>
+              <td>{{ Str::of($service->descricao)->limit(70) }}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.services.show',$service)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.services.edit',$service)}}"><i class="fas fa-pen fa-xs"></i></a>

@@ -10,14 +10,14 @@
 		
 		<div class="card-body">
 
-			<div><strong>Nome:</strong>{{$service->nome}}</div>
-			<div><strong>Descrição:</strong>{{$service->descricao}}</div>
-			<div><strong>Imagens:</strong>
+			<div><strong>Nome: </strong>{{$service->nome}}</div>
+			<div><strong>Descrição: </strong>{!! $service->descricao !!}</div>
+			<div><strong>Imagens: </strong>
 			@foreach($service->images as $image)
 				<img src="{{asset('storage/image_services/'. $image->imagem)}}" class="img-post" alt="">
 			@endforeach
 			</div>
-		
+			<a href="{{route('admin.services.index')}}" class="btn btn-default">Voltar</a>
 		</div>
 	</div>
 </div>

@@ -29,7 +29,7 @@
                         </div>
                         <div class="servicos-tag">
                             <h5>{{ $service->nome }}</h5>
-                            <p>{{ $truncated = Str::of($service->descricao)->limit(30) }}</p>
+                            <p>{{ $truncated = Str::of($service->descricao)->limit(135) }}</p>
                         </div>
                         <a href="{{ route('servicosshow', $service) }}" class="d-flex justify-content-center"> <input
                                 type="button" value="Ver Mais" class="btn-1 show-container"></a>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="servicos-tag">
                         <h5>{{ $service->nome }}</h5>
-                        <p>{{ $truncated = Str::of($service->descricao)->limit(30) }}</p>
+                        <p>{!! Str::of($service->descricao)->limit(135) !!}</p> 
                     </div>
                     <a href="{{ route('servicosshow', $service) }}" class="d-flex justify-content-center"> <input
                                 type="button" value="Ver Mais" class="btn-1 show-container"></a>
