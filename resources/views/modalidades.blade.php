@@ -28,35 +28,25 @@
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/cardio.svg') }}" class="card-img-top" alt="card_1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Cardio</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
+                        {{-- <div class="row justify-content-center">
+                           @if ($tipo_eventos_mods && count($tipo_eventos_mods))
+                                @foreach ($tipo_eventos_mods as $tipo_evento_mod)
+                                    <div class="col-md-3">
+                                        <div class="card d-flex align-items-center justify-content-center">
+                                            @if ($tipo_evento_mod->imagem)
+                                                <img src="{{ asset('storage/tipo_modalidades/' . $tipo_evento_mod->imagem) }}"
+                                                    class="card-img-top" alt="Imagem do tipo eventos modo">
+                                            @endif
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ $tipo_evento_mod->nome }}</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/forca.svg') }}" class="card-img-top" alt="card_2">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Força</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/cerebro.svg') }}" class="card-img-top" alt="card_3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Corpo e mente</h5>
-                                        <p class="card-text">Descrição do card 2.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                @endforeach
+                            @else
+                                <h6>Não existem tipo eventos/modalidades registrados</h6>
+                            @endif
+                        </div> --}}
                     </div>
                     <div class="carousel-item">
                         <div class="row justify-content-center">
@@ -111,7 +101,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="card d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('img/jogos-de-desporto.svg') }}" class="card-img-top" alt="card_9">
+                                    <img src="{{ asset('img/jogos-de-desporto.svg') }}" class="card-img-top"
+                                        alt="card_9">
                                     <div class="card-body">
                                         <h5 class="card-title">Jogos de Desporto</h5>
                                         <p class="card-text">Descrição do card 2.</p>
@@ -122,11 +113,13 @@
                     </div>
 
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
                     <img src="{{ asset('img/icons8-arrow-100-l.png') }}" alt="Anterior">
                     <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
                     <img src="{{ asset('img/icons8-arrow-100-r.png') }}" alt="Próximo">
                     <span class="visually-hidden">Próximo</span>
                 </button>
