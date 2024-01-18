@@ -80,9 +80,7 @@ class PageController extends Controller
 
 
 
-        $count_services = Service::count();
-        $count_services_per_image = ImageService::select('imagem_id', DB::raw('count(*) as
-        count'))->groupBy('imagem_id')->get();
+        $services = Service::all();
 
 
 
@@ -90,6 +88,6 @@ class PageController extends Controller
         $count_users_per_role = User::select('perm', DB::raw('count(*) as
        count'))->groupBy('perm')->get();
 
-        return view('_admin.dashboard', compact('count_events','count_events_per_type', 'count_users', 'count_users_per_role','count_modalidades','count_mod_per_type','count_services','count_services_per_image'));
+        return view('_admin.dashboard', compact('count_events','count_events_per_type', 'count_users', 'count_users_per_role','count_modalidades','count_mod_per_type','services'));
     }
 }
