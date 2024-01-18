@@ -51,11 +51,25 @@
                     </div>
                     <div class="card-body">
                         @foreach ($count_services_per_image as $item)
-                            <p>{{ $item->count }} Imagens</p>
+                            <p>{{ $item->service->nome }} : {{ $item->count }} Imagens</p>
                         @endforeach
                     </div>
                 </div>
             </div>
+         {{--    <div class="col-3">
+                <div class="card shadow">
+                    <div class="card-header p-4">
+                        <h1 style="display:inline;"> {{ $count_services }} </h1>
+                        <h3 style="display:inline;"> Serviços </h3>
+                    </div>
+                    <div class="card-body">
+                        @foreach ($count_services_per_image as $item)
+                        <p>{{ $item  }} :{{ $item->count }} Imagens</p>
+
+                        @endforeach
+                    </div>
+                </div>
+            </div> --}}
         </div>
     </div>
 @endsection

@@ -25,7 +25,11 @@
                 @if ($loop->iteration <= 3)
                     <div class="servicos-card">
                         <div class="img-card">
-                            <img src="{{ asset('img/servicos (3).png') }}" alt="#">
+                            @if($service->images->count() == 0)
+                                <img src="{{ asset('img/servicos (3).png') }}" alt="#">
+                            @else
+                                <img src="{{ asset('storage/image_services/' . $service->images->first()->imagem) }}" alt="#">
+                            @endif
                         </div>
                         <div class="servicos-tag">
                             <h5>{{ $service->nome }}</h5>
@@ -59,7 +63,7 @@
                     </div>
                     <div class="servicos-tag">
                         <h5>{{ $service->nome }}</h5>
-                        <p>{!! Str::of($service->descricao)->limit(135) !!}</p> 
+                        <p>{!! Str::of($service->descricao)->limit(135) !!}</p>
                     </div>
                     <a href="{{ route('servicosshow', $service) }}" class="d-flex justify-content-center"> <input
                                 type="button" value="Ver Mais" class="btn-1 show-container"></a>

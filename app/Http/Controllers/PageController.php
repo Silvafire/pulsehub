@@ -81,8 +81,8 @@ class PageController extends Controller
 
 
         $count_services = Service::count();
-        $count_services_per_image = ImageService::select('imagem', DB::raw('count(*) as
-        count'))->groupBy('imagem')->get();
+        $count_services_per_image = ImageService::select('imagem_id', DB::raw('count(*) as
+        count'))->groupBy('imagem_id')->get();
 
 
 

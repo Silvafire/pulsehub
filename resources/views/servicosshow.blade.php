@@ -12,7 +12,7 @@
         <h2 class="text-center">{{ $service->nome }}</h2>
     </div>
     <div class="container">
-        @foreach ($service->images as $image)
+        @foreach ($service->images->skip(1) as $image)
             <tr>
                 <td>
                     <img src="{{ asset('storage/image_services/' . $image->imagem) }}" class="imagensdetalhe" alt="">
