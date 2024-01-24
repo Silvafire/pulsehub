@@ -40,6 +40,7 @@ Route::get('eventos', [PageController::class, 'eventos'])->name('eventos');
 Route::get('staff', [PageController::class, 'staff'])->name('staff');
 Route::get('post', [PageController::class, 'post'])->name('post');
 Route::get('servicosshow/{service}', [PageController::class, 'servicosshow'])->name('servicosshow');
+Route::get('eventshow/{event}', [PageController::class, 'eventshow'])->name('eventshow');
 
 
 /* Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' => 'admin'], function () {
