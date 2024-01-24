@@ -42,6 +42,7 @@
     </div>
 </div>
 
+
 <div class="profissionais">
     <h1>Planos de Atletas</h1>
     <div class="cards">

@@ -10,10 +10,9 @@ class ImageService extends Model
     use HasFactory;
     protected $table='image_services';
     public $timestamps=false;
-    protected $fillable=['imagem','service_id'];
-    
+    protected $fillable=['imagem','imagem_id'];
+
     public function service(){
-        return $this->belongsTo(Service::class,'service_id','id');
- 
+        return $this->belongsTo(Service::class, 'imagem_id', 'id');
     }
 }
