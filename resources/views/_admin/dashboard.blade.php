@@ -56,6 +56,23 @@
                     </div>
                 </div>
             </div>
+            <div class="col-3">
+                <div class="card shadow">
+                    <div class="card-header p-4">
+                        <h1 style="display:inline;"> {{ $count_planos }} </h1>
+                        <h3 style="display:inline;"> {{ $count_planos == 1 ? 'Plano' : 'Planos' }} de Treino </h3>
+                    </div>
+                    <div class="card-body">
+                        @foreach ($count_planos_per_type as $item)
+                            @if ($item->tipo_plano)
+                                <p>{{ $item->tipo_plano->nome }} : {{ $item->count }} {{ $item->count == 1 ? 'Plano' : 'Planos' }}</p>
+                            @else
+                                <p>Plano não disponível</p>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
