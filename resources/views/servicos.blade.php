@@ -25,7 +25,7 @@
                 @if ($loop->iteration <= 3)
                     <div class="servicos-card">
                         <div class="img-card">
-                            @if($service->images->count() == 0)
+                        @if($service->images->count() == 0)
                                 <img src="{{ asset('img/servicos (3).png') }}" alt="#">
                             @else
                                 <img src="{{ asset('storage/image_services/' . $service->images->first()->imagem) }}" alt="#">

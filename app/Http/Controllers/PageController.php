@@ -47,10 +47,16 @@ class PageController extends Controller
         $services = Service::all();
         return view('servicos', compact('services'));
     }
+
     public function eventos()
     {
         $events = Event::all();
         return view('eventos', compact('events'));
+    }
+    
+    public function eventshow(Event $event)
+    {
+        return view('eventshow', compact('event'));
     }
 
     public function staff()
@@ -61,8 +67,6 @@ class PageController extends Controller
 
     public function servicosshow(Service $service)
     {
-
-
         return view('servicosshow', compact('service'));
     }
 
