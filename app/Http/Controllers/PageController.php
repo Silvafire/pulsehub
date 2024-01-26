@@ -29,6 +29,12 @@ class PageController extends Controller
         return view('planostreino', compact('tiposplanos'));
     }
 
+    public function planosdetails()
+    {
+        $plano = TiposPlano::all();
+        return view('planosdetails', compact('plano'));
+    }
+
     public function blog()
     {
         $posts = Post::all();
@@ -53,7 +59,7 @@ class PageController extends Controller
         $events = Event::all();
         return view('eventos', compact('events'));
     }
-    
+
     public function eventshow(Event $event)
     {
         return view('eventshow', compact('event'));
@@ -87,7 +93,7 @@ class PageController extends Controller
         $count_planos_per_type = Plano::select('tipo_plano_id', DB::raw('count(*) as
         count'))->groupBy('tipo_plano_id')->get();
 
-        
+
         $count_services = Service::count();
         $count_services_per_image = ImageService::select('imagem_id', DB::raw('count(*) as
         count'))->groupBy('imagem_id')->get();
