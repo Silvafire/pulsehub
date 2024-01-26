@@ -22,7 +22,8 @@ class PlanosRequest extends FormRequest
     {
         $currentId = $this->plano ? $this->plano->id : null;
         return [
-            "series" => 'required|integer|min:1',
+        "nome_exercicio" => 'required|min:3|max:80|unique:planos,nome_exercicio,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
+        "series" => 'required|integer|min:1',
         "duracao_total" => 'required|integer|min:1',
         "tmp_exercicio" => 'required|integer|min:1',
         "repeticoes" => 'required|integer|min:1',
@@ -32,6 +33,7 @@ class PlanosRequest extends FormRequest
     public function messages()
     {
         return [
+            'nome_exercicio' => 'apenas letras e espaços',
             'series' => 'numeros inteiros',
             'duracao_total' => 'A descrição deve conter apenas letras e espaços',
             'tmp_exercicio' => 'tempo nao possivel',

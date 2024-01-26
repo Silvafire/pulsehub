@@ -1,4 +1,9 @@
 <div class="form-group">
+    <label for="inputName">Nome do exercicio</label>
+    <input type="text" class="form-control" name="nome_exercicio" id="inputName" value="{{old('nome_exercicio',$plano->nome_exercicio)}}" />
+</div>
+
+<div class="form-group">
     <label for="inputName">Series</label>
     <input type="number" class="form-control" name="series" id="inputRepeticoes" min="1" value="{{old('series',$plano->series)}}" required>
 </div>

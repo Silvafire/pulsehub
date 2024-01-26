@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('planos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome_exercicio', 100);
             $table->integer('series');
             $table->integer('duracao_total');
             $table->integer('tmp_exercicio');

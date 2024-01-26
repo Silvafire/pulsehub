@@ -9,6 +9,7 @@
 		</div>
 		<div class="card-body">
 
+            <div><strong>Series:</strong>{{$plano->nome_exercicio}}</div>
 			<div><strong>Series:</strong>{{$plano->series}}</div>
 			<div><strong>Duracao_Total:</strong>{{$plano->duracao_total}}</div>
 			<div><strong>Tmp_Exercicio:</strong>{{$plano->tmp_exercicio}}</div>
