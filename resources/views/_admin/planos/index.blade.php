@@ -21,6 +21,7 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
+              <th>Nome_Exercicio</th>
               <th>Series</th>
               <th>Duracao_Total</th>
               <th>Tmp_Exercicio</th>
@@ -31,6 +32,7 @@
           <tbody>
             @foreach($planos as $plano)
             <tr>
+              <td>{{$plano->nome_exercicio}}</td>
               <td>{{$plano->series}}</td>
               <td>{{$plano->duracao_total}}</td>
               <td>{{$plano->tmp_exercicio}}</td>
