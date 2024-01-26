@@ -37,8 +37,8 @@
                         <h3 style="display:inline;"> Modalidades </h3>
                     </div>
                     <div class="card-body">
-                        @foreach ($count_services_per_image as $item)
-                            <p>{{ $item->service->nome }} : {{ $item->count }} Imagens</p>
+                        @foreach ($count_mod_per_type as $item)
+                            <p>{{ $item->tipo->nome }} : {{ $item->count }} Modalidades</p>
                         @endforeach
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="card-body">
                         @foreach ($count_services_per_image as $item)
-                        <p>{{ $item  }} :{{ $item->count }} Imagens</p>
+                        <p>{{ $item->service->nome }} : {{ $item->count }} Imagens</p>
 
                         @endforeach
                     </div>
