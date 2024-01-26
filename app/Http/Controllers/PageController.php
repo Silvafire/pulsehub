@@ -10,6 +10,7 @@ use App\Models\Service;
 use App\Models\Staff;
 use App\Models\Post;
 use App\Models\TiposPlano;
+use App\Models\Plano;
 use App\Models\Tipo_eventos_mod;
 use App\Models\ImageService;
 
@@ -82,7 +83,9 @@ class PageController extends Controller
         $count_mod_per_type = Modalidade::select('tipo_eventos_mod_id', DB::raw('count(*) as
         count'))->groupBy('tipo_eventos_mod_id')->get();
 
-
+        $count_planos = Plano::count();
+        $count_planos_per_type = Plano::select('tipo_plano_id', DB::raw('count(*) as
+        count'))->groupBy('tipo_plano_id')->get();
 
         
         $count_services = Service::count();
@@ -94,6 +97,6 @@ class PageController extends Controller
         $count_users_per_role = User::select('perm', DB::raw('count(*) as
        count'))->groupBy('perm')->get();
 
-        return view('_admin.dashboard', compact('count_events','count_events_per_type', 'count_users', 'count_users_per_role','count_modalidades','count_mod_per_type','count_services','count_services_per_image'));
+        return view('_admin.dashboard', compact('count_events','count_events_per_type', 'count_users', 'count_users_per_role','count_modalidades','count_mod_per_type','count_services','count_services_per_image','count_planos', 'count_planos_per_type'));
     }
 }
