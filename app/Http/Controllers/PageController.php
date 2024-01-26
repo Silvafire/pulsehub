@@ -30,15 +30,15 @@ class PageController extends Controller
     }
 
     public function planosdetails(TiposPlano $tipoplano)
-{
-    $planos = $tipoplano->planos; 
-    return view('planosdetails', compact('tipoplano', 'planos'));
-}
+    {
+        $planos = $tipoplano->planos;
+        return view('planosdetails', compact('tipoplano', 'planos'));
+    }
 
     public function blog()
     {
         $posts = Post::all();
-        return view('blog',compact('posts'));
+        return view('blog', compact('posts'));
     }
 
     public function modalidades()
@@ -46,6 +46,11 @@ class PageController extends Controller
         $modalidades = Modalidade::all();
         $tipo_eventos_mods = Tipo_eventos_mod::all();
         return view('modalidades', compact('modalidades', 'tipo_eventos_mods'));
+    }
+
+    public function modalidadeshow(Modalidade $modalidade)
+    {
+        return view('modalidadeshow', compact('modalidade'));
     }
 
     public function servicos()
@@ -68,7 +73,7 @@ class PageController extends Controller
     public function staff()
     {
         $staffs = Staff::all();
-        return view('staff',compact('staffs'));
+        return view('staff', compact('staffs'));
     }
 
     public function servicosshow(Service $service)
@@ -103,6 +108,6 @@ class PageController extends Controller
         $count_users_per_role = User::select('perm', DB::raw('count(*) as
        count'))->groupBy('perm')->get();
 
-        return view('_admin.dashboard', compact('count_events','count_events_per_type', 'count_users', 'count_users_per_role','count_modalidades','count_mod_per_type','count_services','count_services_per_image','count_planos', 'count_planos_per_type'));
+        return view('_admin.dashboard', compact('count_events', 'count_events_per_type', 'count_users', 'count_users_per_role', 'count_modalidades', 'count_mod_per_type', 'count_services', 'count_services_per_image', 'count_planos', 'count_planos_per_type'));
     }
 }

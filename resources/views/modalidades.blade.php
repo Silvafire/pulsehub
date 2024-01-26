@@ -73,7 +73,7 @@
                         <div class="text">
                             <h2>{{ $modalidade->nome }}</h2>
                             <p>{{ $modalidade->descricao }}</p>
-                            <button>Mais informação</button>
+                            <button><a href="{{ route('modalidadeshow', $modalidade) }}">Mais informação</a></button>
                         </div>
                     </div>
                 @endforeach
