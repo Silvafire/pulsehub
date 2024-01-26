@@ -29,11 +29,11 @@ class PageController extends Controller
         return view('planostreino', compact('tiposplanos'));
     }
 
-    public function planosdetails()
-    {
-        $plano = TiposPlano::all();
-        return view('planosdetails', compact('plano'));
-    }
+    public function planosdetails(TiposPlano $tipoplano)
+{
+    $planos = $tipoplano->planos; 
+    return view('planosdetails', compact('tipoplano', 'planos'));
+}
 
     public function blog()
     {

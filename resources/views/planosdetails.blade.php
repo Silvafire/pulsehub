@@ -10,14 +10,28 @@
 
 <section class="banner">
     <div class="content">
-        <div class="title">Detalhes</div>
+        <div class="title">{{ $tipoplano->nome }}</div>
     </div>
     <div class="baq">
-
     </div>
 </section>
 
 
+<h3>Detalhes do Tipo de Plano</h3>
+            <p>Descrição: {{ $tipoplano->descricao }}</p>
+
+
+
+            <h3>Planos Relacionados</h3>
+            @foreach ($planos as $plano)
+                <div class="plano-card">
+                    <p>Séries: {{ $plano->series }}</p>
+                    <p>Duração Total: {{ $plano->duracao_total }}</p>
+                    <p>Tempo de Exercício: {{ $plano->tmp_exercicio }}</p>
+                    <p>Repetições: {{ $plano->repeticoes }}</p>
+                   
+                </div>
+            @endforeach
 
 
 <div class="profissionais">

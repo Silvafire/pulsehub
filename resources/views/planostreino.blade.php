@@ -22,19 +22,19 @@
 
         @if(!is_null($tiposplanos) && count($tiposplanos) > 0)
         @foreach($tiposplanos as $tipoplano)
-        <div class="cardtreino">
-            <div class="card-img">
-                <img src="{{ asset('storage/tiposplanos_imagens/' . $tipoplano->imagem) }}" alt="Musculação">
-            </div>
-            <div class="card-texto">
-                <h2>{{ $tipoplano->nome }}</h2>
-                <p>{{ $tipoplano->descricao}}</p>
-                <div class="bot">
-                    <a href="{{ route('planosdetails', $tipoplano) }}" class="cta-button2">Ler Mais</a>
-                </div>
+    <div class="cardtreino">
+        <div class="card-img">
+            <img src="{{ asset('storage/tiposplanos_imagens/' . $tipoplano->imagem) }}" alt="Musculação">
+        </div>
+        <div class="card-texto">
+            <h2>{{ $tipoplano->nome }}</h2>
+            <p>{{ $tipoplano->descricao}}</p>
+            <div class="bot">
+                <a href="{{ route('planosdetails', $tipoplano) }}" class="cta-button2">Ler Mais</a>
             </div>
         </div>
-        @endforeach
+    </div>
+@endforeach
         @else
         <p>Nenhum tipo de plano disponível no momento.</p>
         @endif

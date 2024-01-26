@@ -41,7 +41,7 @@ Route::get('staff', [PageController::class, 'staff'])->name('staff');
 Route::get('post', [PageController::class, 'post'])->name('post');
 Route::get('servicosshow/{service}', [PageController::class, 'servicosshow'])->name('servicosshow');
 Route::get('eventshow/{event}', [PageController::class, 'eventshow'])->name('eventshow');
-Route::get('planosdetails', [PageController::class, 'planosdetails'])->name('planosdetails');
+Route::get('planosdetails/{tipoplano}', [PageController::class, 'planosdetails'])->name('planosdetails');
 
 
 /* Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' => 'admin'], function () {
