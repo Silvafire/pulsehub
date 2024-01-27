@@ -21,7 +21,7 @@
 <div class="descdet">
 
 <h1>Detalhes do Tipo de Plano</h1>
-<p>Descrição: {{ $tipoplano->descricao }}</p>
+<p>{{ $tipoplano->descricao }}</p>
 
 </div>
 
