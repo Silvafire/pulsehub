@@ -162,6 +162,7 @@ h6 {
 .button:hover{
     color: white;
     background-color:#00000000;
+    text-decoration: none;
 }
 
 .hero-buttons {
@@ -413,7 +414,7 @@ h6 {
     @media(max-width: 850px){
        text-align: center;
     }
-    
+
 }
 
 .card-sub-content {
@@ -424,7 +425,7 @@ h6 {
     align-items: center;
     border-top: 1px solid white;
     padding-top: 1rem;
-    
+
     @media(max-width: 850px){
         flex-direction: column;
         gap: 1.5rem;
@@ -485,7 +486,7 @@ h6 {
 .cta-sub:hover{
     background-color: #ffffff;
     color: #000000;
-    
+
 }
 
 .container-mambership {

@@ -115,29 +115,29 @@
                         <ul>
                             <li>Acesso Total</li>
                         </ul>
-                        <span>55/Mês</span>
+                        <span>35€/Mês</span>
                         <button class="cta-sub">Subscrever</button>
                     </div>
                 </div>
 
                 <div class="card-sub">
                     <div class="card-sub-content">
-                        <h3>Acesso Total</h3>
+                        <h3>3x week plan</h3>
                         <ul>
-                            <li>Acesso Total</li>
+                            <li>3X Por Semana </li>
                         </ul>
-                        <span>55/Mês</span>
+                        <span>25€/Mês</span>
                         <button class="cta-sub">Subscrever</button>
                     </div>
                 </div>
 
                 <div class="card-sub">
                     <div class="card-sub-content">
-                        <h3>Acesso Total</h3>
+                        <h3>ANUAL</h3>
                         <ul>
                             <li>Acesso Total</li>
                         </ul>
-                        <span>55/Mês</span>
+                        <span>400€/Anual</span>
                         <button class="cta-sub">Subscrever</button>
                     </div>
                 </div>
