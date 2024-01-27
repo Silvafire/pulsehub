@@ -22,7 +22,7 @@
                 <th>Nome</th>
                 <th>Apelido</th>
                 <th>Imagem</th>
-               <th>Categoria</th>
+               <th>Modalidade</th>
                <th>Editar</th>
           </tr>
           </thead>
@@ -32,7 +32,13 @@
               <td>{{$staff->nome}}</td>
               <td>{{$staff->apelido}}</td>
               <td> <img height='80' src="{{asset('storage/staff_imagens/'. $staff->img )}}" alt="Imagem da modalidade"></td>
-              <td>{{ $staff->nome}}</td>
+              <td>
+                <ul>
+                    @foreach ($staff->modalidades as $modalidade)
+                 <li>{{$modalidade->nome}}</li>
+                @endforeach
+                </ul>
+              </td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.staffs.show',$staff)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.staffs.edit',$staff)}}"><i class="fas fa-pen fa-xs"></i></a>

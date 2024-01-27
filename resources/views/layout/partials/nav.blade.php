@@ -56,7 +56,7 @@
                             @if (auth()->check())
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{--  <span class="mr-2 d-none d-lg-inline text-gray-200 small">
+                                      {{-- <span class="d-none">
                                     {{ auth()->user()->name }}
                                 </span> --}}
                                     @if (empty(auth()->user()->img))

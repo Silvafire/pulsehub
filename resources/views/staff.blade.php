@@ -24,7 +24,10 @@
                 </div>
                 <div class="staff-tag">
                     <h5>{{ $staff->nome }}</h5>
-                    <p>{{ $staff->especializacao }}</p>
+                    @foreach ($staff->modalidades as $modalidade)
+                    <p>{{ $modalidade->nome }}</p>
+                   @endforeach
+
                 </div>
                 <div class="social-media">
                     <a href="{{ $staff->link_email }}"><img src="{{asset('img/email.svg')}}" alt="email icon"></a>
