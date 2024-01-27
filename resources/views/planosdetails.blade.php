@@ -18,78 +18,39 @@
     </div>
 </section>
 
+<div class="descdet">
 
-<h3>Detalhes do Tipo de Plano</h3>
-            <p>Descrição: {{ $tipoplano->descricao }}</p>
+<h1>Detalhes do Tipo de Plano</h1>
+<p>Descrição: {{ $tipoplano->descricao }}</p>
 
-<h3>Planos Relacionados</h3>
+</div>
 
+
+<div class="segparte">
 <div class="cardetalhe">
-<div class="card-row">
-
-            @if(!is_null($planos) && count($planos) > 0)
+    <h1>Planos Relacionados</h1>
+    <div class="card-row2">
+        @if(!is_null($planos) && count($planos) > 0)
             @foreach ($planos as $plano)
-<div class="cardex">
-        <p>Séries: {{ $plano->series }}</p>
-        <p>Duração Total: {{ $plano->duracao_total }}</p>
-        <p>Tempo de Exercício: {{ $plano->tmp_exercicio }}</p>
-        <p>Repetições: {{ $plano->repeticoes }}</p>
-
-</div>
+                <div class="cardex">
+                    <h2>Exercício: {{ $plano->nome_exercicio }}</h2>
+                    <div class="textoad">
+                        <div class="posição-esquerda">
+                            <p>Tempo de Exercício: {{ $plano->tmp_exercicio }} minutos</p>
+                            <p>Duração Total: {{ $plano->duracao_total }} minutos</p>
+                        </div>
+                        <div class="posição-direita">
+                            <p>Repetições: {{ $plano->repeticoes }}</p>
+                            <p>Séries: {{ $plano->series }}</p>
+                        </div>
+                    </div>
+                </div>
             @endforeach
-            @else
+        @else
             <p>Nenhum detalhe disponível no momento.</p>
-            @endif
-</div>
-</div>
-
-<div class="profissionais">
-    <h1>Planos de Atletas</h1>
-    <div class="cards">
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/carlos alcaraz.jpg') }}" alt="">
-            </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
-
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/David Laid.jpg') }}" alt="">
-            </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
-
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/LeBron James.jpg') }}" alt="">
-            </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
-
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/noah_lyles.jpg') }}" alt="noah">
-            </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
+        @endif
     </div>
+</div>
 </div>
 @endsection
 
