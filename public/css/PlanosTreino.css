@@ -159,13 +159,13 @@ h6 {
     max-width: 1280px;
     margin-inline: auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(270px, 1fr)); /* Ajuste para 3 colunas */
+    grid-template-columns: repeat(3, minmax(270px, 1fr));
     row-gap: 3rem;
     column-gap: 1.5rem;
 }
 
 .cardtreino {
-    max-width: 420px; /* Ajuste para o mesmo tamanho */
+    max-width: 420px;
     height: 620px;
     gap: 1rem;
     transition: transform 1s ease;
@@ -295,10 +295,8 @@ h6 {
 
 
 .bannerdet img{
-
     width: 100%;
 	height: 100vh;
-	display: block;
 	filter: brightness(70%);
 
 }
@@ -347,6 +345,110 @@ h6 {
     margin-top: 20px;
 
 }
+
+.descdet {
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+.descdet p{
+padding-top: 40px;
+    padding-bottom: 40px;
+    width: 1280px;
+    margin: auto;
+    font-size: 13pt;
+}
+.descdet h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--ff--montserrat);
+}
+
+/* ////////////////////Planos details cards ///////////////////*/
+
+.segparte {
+    background-color: #000000;
+}
+
+.cardetalhe {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    max-width: 1700px;
+    margin: auto;
+}
+
+.cardex:hover {
+    transform: scale(1.05);
+    transition: 1s;
+    background-color: #ffffff;
+
+}
+.cardex:hover p {
+    color: #000000;
+}
+
+.card-row2 {
+    max-width: 1280px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(270px, 1fr));
+    row-gap: 3rem;
+    column-gap: 1.5rem;
+}
+
+.cardetalhe h2{
+    text-align: center;
+    font-family: var(--ff--montserrat);
+    font-size: 22pt;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.cardetalhe h1 {
+    padding-bottom: 100px;
+    text-align: center;
+    font-family: var(--ff--montserrat);
+    font-weight: bold;
+}
+
+.cardex{
+    border: 3px solid #ff8606;
+    border-radius: 20px;
+    position: relative;
+    max-width: 600px;
+    height: 270px;
+    gap: 1rem;
+    transition: transform 1s ease;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cardex p{
+    font-family: var(--ff--Roboto);
+    margin-left: 15px;
+    padding-top: 20px;
+    font-size: 15pt;
+    text-align: center;
+    position: relative;
+    word-wrap: break-word;
+    color: #ffffff;
+}
+
+.cardex .textoad {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardex .posição-esquerda {
+    width: 50%;
+}
+
+.cardex .posição-direita {
+    width: 48%;
+}
+
+
 /* ////////////////////Responsivo ///////////////////*/
 
 @media (max-width: 1320px) {
