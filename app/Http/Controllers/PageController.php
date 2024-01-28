@@ -20,7 +20,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $staffs = Staff::all();
+        return view('index', compact('staffs'));
     }
 
     public function planostreino()
