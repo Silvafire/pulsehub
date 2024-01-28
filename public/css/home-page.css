@@ -384,6 +384,15 @@ h6 {
 .modalidade-card[data-item-image="jujitsu"] {
     background-image: url(../img/jiu-jitsu.png);
 }
+.modalidade-card[data-item-image="yoga"] {
+    background-image: url(../img/yoga.jpg);
+}
+.modalidade-ver:hover{
+    color: var(--cl--yellow);
+}
+.modalidade-ver{
+    margin-inline: auto;
+}
 
 /* --------------------------------- MEMBERSHIPP--------------------------- */
 

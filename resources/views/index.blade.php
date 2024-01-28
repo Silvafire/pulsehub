@@ -82,22 +82,22 @@
                             <div class="card-title">
                                 <img class="logo-outline-card" src="{{ asset('img/outline-white.svg') }}"
                                     alt="logo outline">
-                                <h3>Box</h3>
+                                <h3>Jiu-Jitsu</h3>
                             </div>
                             <div class="card-price">
                                 <p>Desde</p>
-                                <span>55€</span>
+                                <span>40€</span>
                             </div>
                             <button class="button-cta">Inscrever</button>
                         </div>
                     </div>
 
-                    <div class="modalidade-card">
+                    <div class="modalidade-card" data-item-image="yoga">
                         <div class="card-container">
                             <div class="card-title">
                                 <img class="logo-outline-card" src="{{ asset('img/outline-white.svg') }}"
                                     alt="logo outline">
-                                <h3>Box</h3>
+                                <h3>yoga</h3>
                             </div>
                             <div class="card-price">
                                 <p>Desde</p>
@@ -107,6 +107,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="{{route('modalidades')}}" class="button modalidade-ver">Ver Mais</a>
             </div>
         </section>
 
