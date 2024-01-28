@@ -46,49 +46,16 @@
 <div class="profissionais">
     <h1>Planos de Atletas</h1>
     <div class="cards">
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/carlos alcaraz.jpg') }}" alt="">
+        @for ($i = 0; $i < 4; $i++)
+            <div class="cardprof">
+                <div class="profimg">
+                    <img src="{{ asset('img/carlos alcaraz.jpg') }}" alt="">
+                </div>
+                <div class="botao">
+                    <a class="cta-button3">Ler Mais</a>
+                </div>
             </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
-
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/David Laid.jpg') }}" alt="">
-            </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
-
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/LeBron James.jpg') }}" alt="">
-            </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
-
-        <div class="cardprof">
-
-            <div class="profimg">
-                <img src="{{ asset('img/noah_lyles.jpg') }}" alt="noah">
-            </div>
-            <div class="botao">
-                <a class="cta-button3">Ler Mais</a>
-            </div>
-
-        </div>
+        @endfor
     </div>
 </div>
 @endsection

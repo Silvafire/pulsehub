@@ -286,7 +286,7 @@ h6 {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: white !important;
     background-color: #ff8606;
     font-family: var(--ff--Roboto);
 }
@@ -416,7 +416,7 @@ padding-top: 40px;
     border-radius: 20px;
     position: relative;
     max-width: 600px;
-    height: 270px;
+    height: 250px;
     gap: 1rem;
     transition: transform 1s ease;
     flex-direction: column;
@@ -424,7 +424,9 @@ padding-top: 40px;
     text-align: center;
 }
 
-.cardex p{
+.cardex .textoad {
+    display: flex;
+    justify-content: space-between;
     font-family: var(--ff--Roboto);
     margin-left: 15px;
     padding-top: 20px;
@@ -433,11 +435,7 @@ padding-top: 40px;
     position: relative;
     word-wrap: break-word;
     color: #ffffff;
-}
-
-.cardex .textoad {
-    display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .cardex .posição-esquerda {
