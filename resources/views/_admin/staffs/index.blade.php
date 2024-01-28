@@ -49,7 +49,7 @@
                   <i class="fas fa-trash fa-xs"></i></button>
                 </form>
               </td>
-            </tr>
+            </tr>   
             @endforeach
           </tbody>
         </table>
