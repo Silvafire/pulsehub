@@ -258,6 +258,7 @@ h6 {
     height: 700px;
     width: 400px;
     position: relative;
+    margin-bottom: 25px;
 }
 
 .profimg {
@@ -285,7 +286,7 @@ h6 {
     font-size: 16pt;
     font-weight: bold;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     color: white !important;
     background-color: #ff8606;
     font-family: var(--ff--Roboto);
