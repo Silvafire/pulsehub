@@ -20,8 +20,9 @@ class PageController extends Controller
 {
     public function index()
     {
+        $modalidades = Modalidade::all();
         $staffs = Staff::all();
-        return view('index', compact('staffs'));
+        return view('index', compact('staffs','modalidades'));
     }
 
     public function planostreino()
