@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 100);
             $table->text('descricao');
+            $table->enum('classe', ['normal', 'atleta'])->default('normal');
             $table->string('imagem');
-
             $table->softDeletes(); // Adiciona a coluna deleted_at para soft deletes
         });
     }

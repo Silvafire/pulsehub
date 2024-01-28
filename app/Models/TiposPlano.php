@@ -11,7 +11,7 @@ class TiposPlano extends Model
     use HasFactory, SoftDeletes;
     protected $table='tipo_planos';
     public $timestamps=false;
-    protected $fillable=['nome','descricao'];
+    protected $fillable=['nome','descricao','classe'];
 
     public function planos(){
         return $this->hasMany(Plano::class,'tipo_plano_id','id');

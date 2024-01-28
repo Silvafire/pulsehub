@@ -21,6 +21,7 @@
               <th>Imagem</th>
               <th>Nome</th>
               <th>Descrição</th>
+              <th>Classe</th>
               <th>Editar</th>
             </tr>
           </thead>
@@ -30,6 +31,7 @@
             <td> <img height='80' src="{{asset('storage/tiposplanos_imagens/'. $tiposplano->imagem )}}" alt="Imagem do tipo plano"></td>
               <td>{{$tiposplano->nome}}</td>
               <td>{{$tiposplano->descricao}}</td>
+              <td>{{$tiposplano->classe}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.tiposplanos.show',$tiposplano)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.tiposplanos.edit',$tiposplano)}}"><i class="fas fa-pen fa-xs"></i></a>

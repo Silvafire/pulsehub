@@ -24,6 +24,7 @@ class TiposPlanoRequest extends FormRequest
         return [
             "nome" => 'required|min:3|max:80|unique:tipo_planos,nome,' . $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" =>'required|min:15',
+            'classe' => 'required|in:normal,atleta',
             'imagem' =>$this->tiposplano ? 'nullable':'required'.'|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
