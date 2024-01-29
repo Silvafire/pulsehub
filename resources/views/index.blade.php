@@ -73,7 +73,7 @@
                                 <p>Desde</p>
                                 <span>55€</span>
                             </div>
-                            <button class="button-cta">Inscrever</button>
+                            <button class="button-cta"  onclick="openModal()">Inscrever</button>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                                 <p>Desde</p>
                                 <span>40€</span>
                             </div>
-                            <button class="button-cta">Inscrever</button>
+                            <button class="button-cta"  onclick="openModal()">Inscrever</button>
                         </div>
                     </div>
 
@@ -103,11 +103,11 @@
                                 <p>Desde</p>
                                 <span>55€</span>
                             </div>
-                            <button class="button-cta">Inscrever</button>
+                            <button class="button-cta"  onclick="openModal()">Inscrever</button>
                         </div>
                     </div>
                 </div>
-                <a href="{{route('modalidades')}}" class="button modalidade-ver">Ver Mais</a>
+                <a href="{{ route('modalidades') }}" class="button modalidade-ver">Ver Mais</a>
             </div>
         </section>
 
@@ -121,7 +121,7 @@
                             <li>Acesso Total</li>
                         </ul>
                         <span>35€/Mês</span>
-                        <button class="cta-sub">Subscrever</button>
+                        <button class="cta-sub" onclick="openModal()">Subscrever</button>
                     </div>
                 </div>
 
@@ -132,7 +132,7 @@
                             <li>3X Por Semana </li>
                         </ul>
                         <span>25€/Mês</span>
-                        <button class="cta-sub">Subscrever</button>
+                        <button class="cta-sub" onclick="openModal()">Subscrever</button>
                     </div>
                 </div>
 
@@ -143,7 +143,7 @@
                             <li>Acesso Total</li>
                         </ul>
                         <span>400€/Anual</span>
-                        <button class="cta-sub">Subscrever</button>
+                        <button class="cta-sub" onclick="openModal()">Subscrever</button>
                     </div>
                 </div>
             </div>
@@ -154,21 +154,25 @@
                 <div class="container-grid">
                     @if (count($staffs) > 0)
 
-                    @foreach ($staffs->sortByDesc('created_at')->take(4) as $staff)
+                        @foreach ($staffs->sortByDesc('created_at')->take(4) as $staff)
                             <div class="staff-card">
                                 <div class="img-card">
-                                    <img src="{{ asset('storage/staff_imagens/' . $staff->img) }}" alt="Staff imagem pessoal">
+                                    <img src="{{ asset('storage/staff_imagens/' . $staff->img) }}"
+                                        alt="Staff imagem pessoal">
                                 </div>
                                 <div class="staff-tag">
                                     <h5>{{ $staff->nome }}</h5>
                                     @foreach ($staff->modalidades as $modalidade)
-                                    <p>{{ $modalidade->nome }}</p>
-                                   @endforeach
+                                        <p>{{ $modalidade->nome }}</p>
+                                    @endforeach
                                 </div>
                                 <div class="social-media">
-                                    <a href="{{ $staff->link_email }}"><img src="{{asset('img/email.svg')}}" alt="email icon"></a>
-                                    <a href="{{ $staff->link_instagram }}"><img src="{{asset('img/insta.svg')}}" alt="instagram icon"></a>
-                                    <a href="{{ $staff->link_facebook }}"><img src="{{asset('img/facebook.svg')}}" alt="facebook icon"></a>
+                                    <a href="{{ $staff->link_email }}"><img src="{{ asset('img/email.svg') }}"
+                                            alt="email icon"></a>
+                                    <a href="{{ $staff->link_instagram }}"><img src="{{ asset('img/insta.svg') }}"
+                                            alt="instagram icon"></a>
+                                    <a href="{{ $staff->link_facebook }}"><img src="{{ asset('img/facebook.svg') }}"
+                                            alt="facebook icon"></a>
                                 </div>
                             </div>
                         @endforeach
@@ -185,9 +189,28 @@
                 <buttton class="loja-cta"> Compra Agora! </buttton>
             </div>
         </section>
+
+        <div id="myModal" class="modal-overlay">
+            <div class="modal-content-home">
+                <img style="width:200px" src="{{asset('img/Logo-PulseHub-Branco.png')}}" alt="logo">
+                <p>Página em Desenvolvimento!</p>
+
+                <button class="close-btn" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
     </main>
 @endsection
 
 @section('moreScripts')
+    <script>
+        function openModal() {
+            document.getElementById('myModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+    </script>
+
     <!-- opcional -->
 @endsection
