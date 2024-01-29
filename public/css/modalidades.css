@@ -139,7 +139,7 @@ body {
     height: auto;
 }
 
-.modalidade .image img{
+.modalidade .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -206,4 +206,107 @@ body {
     /* You can customize the color on hover if needed */
     text-decoration: none;
     /* Removes the underline from the link */
+}
+
+
+
+/*showmodalidades*/
+
+.showmodalidades{
+    padding-top: 100px;
+}
+
+.categoriashow{
+    padding-top: 3%;
+    padding-left: 15%;
+    font-size: 18px;
+}
+
+.categoriashow p {
+    color: #FF8606 !important; /* Cor do texto */
+}
+
+.nomeshow{
+    padding-left: 15%;
+
+}
+
+.nomeshow h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.showmodalidades .image {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.showmodalidades .image img {
+    width: 45%;
+    display: block;
+    height: 70%;
+    filter: brightness(70%);
+    padding-bottom: 30px;
+}
+
+.modalidadeshows{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.descricao{
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.plan-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    text-align: right; /* Align the group to the right */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Reset text alignment within the list */
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.staff-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.staff-cards .card {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.staff-cards .card img {
+    width: 100%;
+    height: 240px; /* Set a fixed height for all images */
+    object-fit: cover;
+}
+
+.staff-cards .card-body {
+    padding: 20px;
+}
+
+.showsatff{
+    padding-bottom: 30px;
+}
+
+.showplanos{
+    padding-bottom: 30px;
 }
