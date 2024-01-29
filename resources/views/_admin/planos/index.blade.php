@@ -26,6 +26,8 @@
               <th>Duracao_Total</th>
               <th>Tmp_Exercicio</th>
               <th>Repeticoes</th>
+              <th>Tipo plano</th>
+              <th>Modalidade</th>
               <th>Editar</th>
             </tr>
           </thead>
@@ -37,6 +39,8 @@
               <td>{{$plano->duracao_total}}</td>
               <td>{{$plano->tmp_exercicio}}</td>
               <td>{{$plano->repeticoes}}</td>
+              <td>{{$plano->tipo_plano->nome}}</td>
+              <td>{{$plano->modalidade->nome}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.planos.show',$plano)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.planos.edit',$plano)}}"><i class="fas fa-pen fa-xs"></i></a>
@@ -69,6 +73,8 @@
       [0, 'asc']
     ],
     "columns": [
+      null,
+      null,
       null,
       null,
       null,
