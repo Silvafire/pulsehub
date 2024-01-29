@@ -7,7 +7,7 @@
 @section('title', 'Modalidades')
 
 @section('content')
-    <div class="banner">
+    <div id="page-top" class="banner">
         <div id="img" class="darken">
             <img src="{{ asset('img/fundo_modalidades.jpg') }}" alt="fundo de modalidades">
         </div>
@@ -26,38 +26,40 @@
     <div class="container">
         <div class="bottom-title" id="categorias">
             <h2>Categorias das modalidades</h2>
-            <!-- Carrossel de cards -->
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    @foreach ($tipo_eventos_mods->chunk(3) as $key => $chunk)
-                        <div class="carousel-item{{ $key == 0 ? ' active' : '' }}">
-                            <div class="row justify-content-center">
-                                @foreach ($chunk as $tipo_evento_mod)
-                                    <div class="col-md-3">
-                                        <div class="card d-flex align-items-center justify-content-center">
-                                            @if ($tipo_evento_mod->imagem)
-                                                <img src="{{ asset('storage/tipo_modalidades/' . $tipo_evento_mod->imagem) }}"
-                                                    class="card-img-top" alt="Imagem do tipo eventos modo">
-                                            @endif
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{ $tipo_evento_mod->nome }}</h5>
+
+            @if($tipo_eventos_mods->isEmpty())
+                <p>Não há categorias disponíveis no momento.</p>
+            @else
+                <!-- Carrossel de cards -->
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach ($tipo_eventos_mods->chunk(3) as $key => $chunk)
+                            <div class="carousel-item{{ $key == 0 ? ' active' : '' }}">
+                                <div class="row justify-content-center">
+                                    @foreach ($chunk as $tipo_evento_mod)
+                                        <div class="col-md-3">
+                                            <div class="card d-flex align-items-center justify-content-center">
+                                                @if ($tipo_evento_mod->imagem)
+                                                    <img src="{{ asset('storage/tipo_modalidades/' . $tipo_evento_mod->imagem) }}" class="card-img-top" alt="Imagem do tipo eventos modo">
+                                                @endif
+                                                <div class="card-body">
+                                                    <h5 class="card-title">{{ $tipo_evento_mod->nome }}</h5>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <img src="{{ asset('img/icons8-arrow-100-l.png') }}" alt="Anterior">
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <img src="{{ asset('img/icons8-arrow-100-r.png') }}" alt="Próximo">
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <img src="{{ asset('img/icons8-arrow-100-l.png') }}" alt="Anterior">
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                    <img src="{{ asset('img/icons8-arrow-100-r.png') }}" alt="Próximo">
-                </button>
-            </div>
+            @endif
         </div>
     </div>
 
