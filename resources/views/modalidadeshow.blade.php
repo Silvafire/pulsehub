@@ -9,7 +9,7 @@
 @section('content')
 
 
-    <div class="showmodalidades">
+    <div id="page-top" class="showmodalidades">
         <div class="categoriashow">
             <p>{{ $modalidade->tipo->nome }}</p>
         </div>
@@ -43,6 +43,8 @@
                                 @endforeach
                             </div>
                         </div>
+                        @else
+                        <p>Nenhum staff associado a esta modalidade.</p>
                     @endif
                 </div>
 
