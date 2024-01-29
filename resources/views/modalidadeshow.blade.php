@@ -67,8 +67,8 @@
                                 @if ($count % 3 == 0)
                                     <div class="plan-group">
                                 @endif
-                                <ul>{{ $nome }} {{ count($duracoes) }}:
-                                    <li>Duração mínima: {{ min($duracoes) }} min,</li>
+                                <ul>{{ $nome }}: {{ count($duracoes) }} planos
+                                    <li>Duração mínima: {{ min($duracoes) }} min</li>
                                     <li>Duração máxima: {{ max($duracoes) }} min</li>
                                 </ul>
                                 @php $count++ @endphp
