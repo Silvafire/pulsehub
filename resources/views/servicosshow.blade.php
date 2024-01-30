@@ -8,7 +8,7 @@
 @section('title', 'Serviços Detalhes')
 
 @section('content')
-    <div class="bannerdetalhe">
+    <div class="bannerdetalhe" id="page-top">
         <h2 class="text-center">{{ $service->nome }}</h2>
     </div>
     <div class="container">
