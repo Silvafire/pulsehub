@@ -79,7 +79,7 @@
                                 <p>Desde</p>
                                 <span>55€</span>
                             </div>
-                            <button class="button-cta" onclick="openModal()">Inscrever</button>
+                            <button class="button-cta" onclick="abrir()">Inscrever</button>
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@
                                 <p>Desde</p>
                                 <span>40€</span>
                             </div>
-                            <button class="button-cta" onclick="openModal()">Inscrever</button>
+                            <button class="button-cta" onclick="abrir()">Inscrever</button>
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@
                                 <p>Desde</p>
                                 <span>55€</span>
                             </div>
-                            <button class="button-cta" onclick="openModal()">Inscrever</button>
+                            <button class="button-cta" onclick="abrir()">Inscrever</button>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                             <li>Acesso Total</li>
                         </ul>
                         <span>35€/Mês</span>
-                        <button class="cta-sub" onclick="openModal()">Subscrever</button>
+                        <button class="cta-sub" onclick="abrir()">Subscrever</button>
                     </div>
                 </div>
 
@@ -138,7 +138,7 @@
                             <li>3X Por Semana </li>
                         </ul>
                         <span>25€/Mês</span>
-                        <button class="cta-sub" onclick="openModal()">Subscrever</button>
+                        <button class="cta-sub" onclick="abrir()">Subscrever</button>
                     </div>
                 </div>
 
@@ -149,7 +149,7 @@
                             <li>Acesso Total</li>
                         </ul>
                         <span>400€/Anual</span>
-                        <button class="cta-sub" onclick="openModal()">Subscrever</button>
+                        <button class="cta-sub" onclick="abrir()">Subscrever</button>
                     </div>
                 </div>
             </div>
@@ -202,7 +202,7 @@
                 <img style="width:200px" src="{{ asset('img/Logo-PulseHub-Branco.png') }}" alt="logo">
                 <p>Página em Desenvolvimento!</p>
 
-                <button class="close-btn" onclick="closeModal()">Fechar</button>
+                <button class="close-btn" onclick="fechar()">Fechar</button>
             </div>
         </div>
     </main>
@@ -249,8 +249,17 @@
       $('#exampleModal').modal('hide');
     }
 
+
     document.getElementById('openModalBtn').addEventListener('click', openModal);
     document.getElementById('closeModalBtn').addEventListener('click', closeModal);
   });
+
+  function abrir() {
+    document.getElementById('myModal').style.display = 'flex';
+  }
+
+  function fechar() {
+    document.getElementById('myModal').style.display = 'none';
+  }
 </script>
 @endsection
