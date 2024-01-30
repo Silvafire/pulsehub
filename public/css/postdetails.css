@@ -142,7 +142,7 @@ h6 {
 
 #nomepost2{
     font-size: 20pt;
-    font-weight: 900;
+    font-weight: var(--fw--400);
     color: #000;
     /*font-family: var(--ff--Volkhov);*/
     font-family: 'HT Modern Hand Sans', sans-serif;
@@ -198,18 +198,3 @@ h6 {
     width: 100%;
     height: auto;
 }
-
-.vermais2 {
-    color: #ff8606;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: var(--ff--Roboto);
-}
-
-.vermais2:hover {
-    color: #fda445;
-    text-decoration: none;
-}
-
