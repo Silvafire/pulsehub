@@ -10,7 +10,7 @@
 <!-- Custom styles for this page -->
 <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
-<nav  class="barra-nav">
+<nav class="barra-nav">
     <div class="container-nav">
         <a href="{{ route('index') }}">
             <div class="logo">
@@ -56,9 +56,15 @@
                             @if (auth()->check())
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      {{-- <span class="d-none">
-                                    {{ auth()->user()->name }}
-                                </span> --}}
+                                    <span class="mr-2 d-none d-lg-inline text-gray-200 small">
+                                        @php
+                                            $fullName = auth()->user()->name;
+                                            $nameParts = explode(' ', $fullName);
+                                            $firstName = $nameParts[0];
+                                            $lastName = end($nameParts);
+                                            echo $firstName . ' ' . $lastName;
+                                        @endphp
+                                    </span>
                                     @if (empty(auth()->user()->img))
                                         <img class="img-profile rounded-circle" alt="User Photo"
                                             src="{{ asset('storage/users_fotos/user.svg') }}">
@@ -69,26 +75,27 @@
                                 </a>
 
 
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.users.edit', auth()->user()) }}">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
-                                </a>
-                                @if (Auth::user()->perm == 'A')
-                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="{{ route('admin.users.edit', auth()->user()) }}">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Dashboard
+                                        Perfil
                                     </a>
-                                @endif
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        @else
-                            <a href="{{ route('login') }}" class="button-nav">Login</a>
+                                    @if (Auth::user()->perm == 'A')
+                                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Dashboard
+                                        </a>
+                                    @endif
+                                    <a class="dropdown-item" href="#" data-toggle="modal"
+                                        data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            @else
+                                <a href="{{ route('login') }}" class="button-nav">Login</a>
                             @endif
                         </li>
 

@@ -192,7 +192,13 @@
                             @if (auth()->check())
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-200 small">
-                                    {{ auth()->user()->name }}
+                                    @php
+                                        $fullName = auth()->user()->name;
+                                        $nameParts = explode(' ', $fullName);
+                                        $firstName = $nameParts[0];
+                                        $lastName = end($nameParts);
+                                        echo $firstName . ' ' . $lastName;
+                                    @endphp
                                 </span>
                                 @if (auth()->user()->photo == null)
                                 <img class="img-profile rounded-circle" alt="User Photo" src="{{ asset('storage/users_fotos/' . auth()->user()->img) }}">
