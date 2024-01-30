@@ -1,14 +1,17 @@
 @font-face {
-    font-family: "ErasDemi";
-    src: url("../fonts/eras-demi-itc/ERASDEMI.TTF");
+    font-family: 'HT Modern Hand Sans';
+    src: url('path/to/ht-modern-hand-sans.woff2') format('woff2'),
+        url('path/to/ht-modern-hand-sans.woff') format('woff');
+    /* Add additional font formats as needed */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "ErasDemi";
+    font-family: 'HT Modern Hand Sans', sans-serif;
 }
+
 .background {
     margin: 0;
     padding: 0;
@@ -19,6 +22,7 @@
     height: 100vh;
     overflow: hidden;
 }
+
 .center {
     position: absolute;
     top: 50%;
@@ -30,21 +34,25 @@
     border-radius: 25px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
 }
+
 .center h1 {
     text-align: center;
     padding: 20px 0;
     color: #e9f4fb;
     border-bottom: 1px solid #e9f4fb;
 }
+
 .center form {
     padding: 0 40px;
     box-sizing: border-box;
 }
+
 form .txt_field {
     position: relative;
     border-bottom: 2px solid #e9f4fb;
     margin: 30px 0;
 }
+
 .txt_field input {
     width: 100%;
     color: #e9f4fb;
@@ -55,6 +63,7 @@ form .txt_field {
     background: none;
     outline: none;
 }
+
 .txt_field label {
     position: absolute;
     top: 50%;
@@ -65,6 +74,7 @@ form .txt_field {
     pointer-events: none;
     transition: 0.5s;
 }
+
 .txt_field span::before {
     content: "";
     position: absolute;
@@ -75,15 +85,18 @@ form .txt_field {
     background: #ff8606;
     transition: 0.5s;
 }
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label {
+
+.txt_field input:focus~label,
+.txt_field input:valid~label {
     top: -5px;
     color: #ff8606;
 }
-.txt_field input:focus ~ span::before,
-.txt_field input:valid ~ span::before {
+
+.txt_field input:focus~span::before,
+.txt_field input:valid~span::before {
     width: 100%;
 }
+
 .sign {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
@@ -94,9 +107,11 @@ form .txt_field {
     font-size: 18px;
     color: #e9f4fb;
 }
+
 .sign:hover {
     color: #ff8606;
 }
+
 .mail {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
@@ -107,9 +122,11 @@ form .txt_field {
     font-size: 18px;
     color: #e9f4fb;
 }
+
 .mail:hover {
     color: #ff8606;
 }
+
 .eye1 {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
@@ -120,9 +137,11 @@ form .txt_field {
     font-size: 18px;
     color: #e9f4fb;
 }
+
 .eye1:hover {
     color: #ff8606;
 }
+
 .eye2 {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
@@ -133,21 +152,26 @@ form .txt_field {
     font-size: 18px;
     color: #e9f4fb;
 }
+
 .eye2:hover {
     color: #ff8606;
 }
+
 .pass {
     color: #e9f4fb;
     cursor: pointer;
     text-decoration: none;
 }
+
 .pass:hover {
     color: #ff8606;
 }
+
 .forget {
     width: 100%;
     height: 40px;
 }
+
 input[type="submit"] {
     width: 100%;
     height: 50px;
@@ -160,25 +184,29 @@ input[type="submit"] {
     cursor: pointer;
     outline: none;
 }
+
 input[type="submit"]:hover {
     border-color: #ff8606;
     transition: 0.5s;
 }
+
 .signup_link {
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
     color: #e9f4fb;
 }
+
 .signup_link a {
     color: #e9f4fb;
     text-decoration: none;
 }
+
 .signup_link a:hover {
     color: #ff8606;
 }
 
-button#reset{
+button#reset {
     background-color: #ff8606;
     border-color: #ff8606;
 }
