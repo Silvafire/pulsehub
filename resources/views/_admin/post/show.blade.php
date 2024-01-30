@@ -14,7 +14,7 @@
             <div><strong>Titulo: </strong>{{$post->titulo}}</div>
 			<div><strong>Descrição: </strong>{{$post->descricao}}</div>
 			<div><strong>Informação: </strong>{{$post->informacao}}</div>
-
+        </div>
 	</div>
 </div>
 @endsection
