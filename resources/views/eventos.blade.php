@@ -7,7 +7,7 @@
 @section('title', 'Eventos')
 
 @section('content')
-    <div class="banner">
+    <div class="banner " id="page-top">
         <img class="darken" src="{{ asset('img/fundo_eventos.jpg') }}" alt="fundo de eventos">
         <div class="middle-title">
             <h1>Eventos</h1>
