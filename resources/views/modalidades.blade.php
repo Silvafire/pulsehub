@@ -25,7 +25,7 @@
 
     <div class="container">
         <div class="bottom-title" id="categorias">
-            <h2>Categorias das modalidades</h2>
+            <h2 classe="h2tit">Categorias das modalidades</h2>
 
             @if($tipo_eventos_mods->isEmpty())
                 <p>Não há categorias disponíveis no momento.</p>
@@ -37,7 +37,7 @@
                             <div class="carousel-item{{ $key == 0 ? ' active' : '' }}">
                                 <div class="row justify-content-center">
                                     @foreach ($chunk as $tipo_evento_mod)
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-4">
                                             <div class="card d-flex align-items-center justify-content-center">
                                                 @if ($tipo_evento_mod->imagem)
                                                     <img src="{{ asset('storage/tipo_modalidades/' . $tipo_evento_mod->imagem) }}" class="card-img-top" alt="Imagem do tipo eventos modo">

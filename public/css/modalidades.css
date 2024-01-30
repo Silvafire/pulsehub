@@ -213,26 +213,27 @@ body {
 
 /*showmodalidades*/
 
-.showmodalidades{
+.showmodalidades {
     padding-top: 100px;
 }
 
-.categoriashow{
+.categoriashow {
     padding-top: 3%;
     padding-left: 15%;
     font-size: 18px;
 }
 
 .categoriashow p {
-    color: #FF8606 !important; /* Cor do texto */
+    color: #FF8606 !important;
+    /* Cor do texto */
 }
 
-.nomeshow{
+.nomeshow {
     padding-left: 15%;
 
 }
 
-.nomeshow h2{
+.nomeshow h2 {
     font-size: 40px;
     font-weight: bold;
     color: black;
@@ -255,12 +256,12 @@ body {
     padding-bottom: 30px;
 }
 
-.modalidadeshows{
+.modalidadeshows {
     padding-left: 15%;
     padding-right: 15%;
 }
 
-.descricao{
+.descricao {
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -270,13 +271,15 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    text-align: right; /* Align the group to the right */
+    text-align: right;
+    /* Align the group to the right */
 }
 
 ul {
     list-style: none;
     padding: 0;
-    text-align: left; /* Reset text alignment within the list */
+    text-align: left;
+    /* Reset text alignment within the list */
 }
 
 ul li {
@@ -296,7 +299,8 @@ ul li {
 
 .staff-cards .card img {
     width: 100%;
-    height: 240px; /* Set a fixed height for all images */
+    height: 240px;
+    /* Set a fixed height for all images */
     object-fit: cover;
 }
 
@@ -304,10 +308,169 @@ ul li {
     padding: 20px;
 }
 
-.showsatff{
+.showsatff {
     padding-bottom: 30px;
 }
 
-.showplanos{
+.showplanos {
     padding-bottom: 30px;
+}
+
+
+/* Responsivo */
+
+@media only screen and (max-width: 1160px) {
+
+    .banner {
+        padding-top: 60px;
+        height: 550px;
+    }
+
+    .middle-title {
+        top: 30%;
+    }
+
+    .middle-title h1 {
+        font-size: 3em;
+    }
+
+    /* Estilo para o botão */
+    .button-container {
+        bottom: 10%;
+    }
+
+    .custom-button img {
+        width: 40px;
+    }
+
+    .showmodalidades .image img {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width: 870px) {
+
+    .plan-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+
+    .card {
+        width: 150px;
+        height: 250px;
+        padding-bottom: 5px;
+    }
+
+    .card-img-top {
+        height: 100px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important;
+    }
+
+    .categorias {
+        margin-top: -30% !important;
+    }
+
+    .modalidade .content-1 .image,
+    .modalidade .content-2 .image {
+        order: 1;
+    }
+
+    .modalidade .content-1 .text,
+    .modalidade .content-2 .text {
+        order: 2;
+    }
+
+    .modalidadeshows .card {
+        height: 300px;
+    }
+}
+
+
+
+@media only screen and (max-width: 750px) {
+    .middle-title {
+        top: 30%;
+    }
+
+    .middle-title h1 {
+        font-size: 2em;
+    }
+
+    /* Estilo para o botão */
+    .button-container {
+        bottom: 10%;
+    }
+
+    .bottom-title {
+        padding-top: 10px !important;
+    }
+
+    .banner{
+        height: 450px;
+    }
+
+    .custom-button img {
+        width: 30px;
+    }
+
+    .modalidade .content-1,
+    .modalidade .content-2 {
+        display: block;
+        padding-bottom: 60px;
+    }
+
+    .modalidade .image {
+        width: 100%;
+        height: auto;
+    }
+
+    .modalidade .image img {
+        height: 300px !important;
+        object-fit: cover;
+    }
+
+    .modalidade .text {
+        padding-top: 10px !important;
+        width: 100%;
+    }
+
+    .modalidade .text h2 {
+        padding-left: 20px !important;
+    }
+
+    .modalidade .text p {
+        padding-top: 0px !important;
+        padding-left: 20px !important;
+        padding-bottom: 10px !important;
+        width: 100% !important;
+    }
+
+    .modalidade .text button {
+        margin-left: 20px !important;
+    }
+
+    .showmodalidades .image img {
+        width: 80%;
+    }
+
+    .categoriashow,
+    .nomeshow {
+        padding-left: 10% !important;
+    }
+
+    .modalidadeshows {
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
 }
