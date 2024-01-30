@@ -9,7 +9,8 @@
 
 @section('content')
     <!-- Hero -->
-    <img class="bg-image" id="page-top" src="{{ asset('img/bannerservicos.jpg') }}"
+  
+    <img class="bgimage" id="page-top" src="{{ asset('img/bannerservicos.jpg') }}"
         style="
         background-size: cover;
         object-fit: cover;
@@ -17,7 +18,9 @@
         width: 100%;
       ">
     <!-- Hero -->
-
+    <div class="tituloresponsivo">
+        <h2>Serviços</h2>
+    </div>
     <main class="servicos">
 
         <div class="container-grid" >
@@ -43,7 +46,7 @@
         </div>
 
 
-        <img class="bg-image" src="{{ asset('img/dividerservicos.jpg') }}"
+        <img class="bgimage2" src="{{ asset('img/dividerservicos.jpg') }}"
             style="
         background-size: cover;
         object-fit: cover;
@@ -75,6 +78,30 @@
                 @endif
         @endforeach
     </div>
+
+
+
+    <div class="container-gridresp" >
+            @foreach ($services as $service)
+                    <div class="servicos-card">
+                        <div class="img-card">
+                        @if($service->images->count() == 0)
+                                <img src="{{ asset('img/servicos (3).png') }}" alt="#">
+                            @else
+                                <img src="{{ asset('storage/image_services/' . $service->images->first()->imagem) }}" alt="#">
+                            @endif
+                        </div>
+                        <div class="servicos-tag">
+                            <h5>{{ $service->nome }}</h5>
+                            <p>{{ $truncated = Str::of($service->descricao)->limit(135) }}</p>
+                        </div>
+                        <a href="{{ route('servicosshow', $service) }}" class="d-flex justify-content-center"> <input
+                                type="button" value="Ver Mais" class="btn-1 show-container"></a>
+                    </div>
+            @endforeach
+        </div>
+
+
 
 @endsection
 
