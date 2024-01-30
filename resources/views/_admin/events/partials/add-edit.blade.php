@@ -10,7 +10,7 @@
 <div class="form-group">
     <label for="datetime-local">Data do Evento</label>
     <input type="datetime-local" class="form-control" name="data" id="datetime-local"
-        placeholder="Enter your age"value="{{ old('data', date_format(date_create($event->data), 'Y-m-d H:i:s')) }}" />
+        placeholder="Enter your age"value="{{ old('datetime', date_format(date_create($event->data), 'Y-m-d H:i:s')) }}" />
 </div>
 <div class="form-group">
     <label for="inputImage">Imagem</label>
