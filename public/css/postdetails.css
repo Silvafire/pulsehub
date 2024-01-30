@@ -144,14 +144,16 @@ h6 {
     font-size: 20pt;
     font-weight: 900;
     color: #000;
-    font-family: var(--ff--Volkhov);
+    /*font-family: var(--ff--Volkhov);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
     text-align: left;
 }
 
 #tipopost2{
     font-size: 15pt;
     color: #000;
-    font-family: var(--ff--Roboto);
+    /*font-family: var(--ff--Roboto);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
 }
 
 .divisorbloco {
