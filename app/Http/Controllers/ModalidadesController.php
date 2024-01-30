@@ -47,7 +47,7 @@ class ModalidadesController extends Controller
         }
         $modalidade->save();
         return redirect()->route('admin.modalidades.index')
-            ->with('success', 'modalidadeo criado com sucesso');
+            ->with('success', 'modalidade criada com sucesso');
     }
 
     /**
@@ -87,7 +87,7 @@ class ModalidadesController extends Controller
             $modalidade->imagem = basename($imagem_path);
         }
         $modalidade->save();
-        return redirect()->route('admin.modalidades.index')->with('success', 'Modalidade atualizado com sucesso');
+        return redirect()->route('admin.modalidades.index')->with('success', 'Modalidade atualizada com sucesso');
     }
 
 
