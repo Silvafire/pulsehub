@@ -15,8 +15,10 @@
             </div>
             <div class="hero-buttons">
                 <a class="button" href="#">Subscrição</a>
-                <button class="button outline" href="#"><img style="width: 25px; height:25px;"
-                        src="{{ 'img/svg-branco-clip.svg' }}" alt="clip" id="openModalBtn">Video</button>
+                <button class="button outline" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <img style="width: 25px; height: 25px;" src="{{ 'img/svg-branco-clip.svg' }}" alt="clip" id="openModalBtn">
+    Video
+</button>
             </div>
         </div>
     </section>
@@ -217,18 +219,51 @@
             </div>
         </div>
     </main>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Vídeo Promocional PulseHub</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Voltar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Your modal content goes here -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe id="youtubeVideo" width="1280" height="720" src="https://www.youtube.com/embed/f2cJ01fHkBE" title="PulseHub - Vídeo Promocional" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 @endsection
 
 @section('moreScripts')
-    <script>
-        function openModal() {
-            document.getElementById('myModal').style.display = 'flex';
-        }
+<script>
+  $(document).ready(function () {
+    
+    $('#exampleModal').on('hidden.bs.modal', function () {
+      var youtubeVideo = document.getElementById('youtubeVideo');
+      var iframeSrc = youtubeVideo.src;
+      youtubeVideo.src = iframeSrc; 
+    });
 
-        function closeModal() {
-            document.getElementById('myModal').style.display = 'none';
-        }
-    </script>
+    function openModal() {
+      $('#exampleModal').modal('show');
+    }
 
-    <!-- opcional -->
+    function closeModal() {
+      $('#exampleModal').modal('hide');
+    }
+
+    document.getElementById('openModalBtn').addEventListener('click', openModal);
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+  });
+</script>
 @endsection
