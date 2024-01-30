@@ -181,6 +181,7 @@
                     @endif
 
                 </div>
+                <a href="{{ route('staff') }}" class="button modalidade-ver">Ver Mais</a>
             </div>
         </section>
         <section class="loja">
