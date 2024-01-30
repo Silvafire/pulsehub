@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    max-width: 1280px;
+    width: 1280px;
     margin-inline: auto;
     display: flex;
     justify-content: center;
@@ -19,6 +19,7 @@ body {
 
 .container-grid {
     max-width: 1280px;
+    max-height: 700px;
     margin-inline: auto;
     display: grid;
     row-gap: 3rem;
@@ -42,15 +43,15 @@ body {
 }
 
 .servicos-card {
-    position: relative; /* Added */
+    position: relative;
     max-width: 410px;
     height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Ensure space between items */
+    justify-content: space-between;
     gap: 1rem;
-    margin-bottom: 20px; /* Adjust margin if needed */
+    margin-bottom: 20px;
 }
 
 .servicos-tag {
@@ -168,4 +169,58 @@ body {
     padding-bottom: 40px;
     width: 1280px;
     margin: auto;
+}
+.tituloresponsivo {
+    display: none;
+}
+.container-gridresp {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .bgimage {
+        display: none;
+    }
+
+    .tituloresponsivo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 350px;
+        z-index: 999;
+        background-color: #000;
+    }
+    .bgimage2 {
+        display: none;
+    }
+
+    .container-grid {
+        display: none;
+    }
+
+    .container-gridresp {
+        display: grid;
+        grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+        column-gap: 0;
+    }
+
+    .servicos-card {
+        margin: 10px 0; /* Add margin to separate stacked cards */
+        height: 600px;
+    }
+    .btn-1 {
+        margin-bottom: 70px;
+    }
+    .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .descricaodetalhe {
+        width: 100%;
+        padding: 2rem;
+    }
 }
