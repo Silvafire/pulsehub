@@ -7,6 +7,10 @@ h2, h1, h5{
     font-family: 'HT Modern Hand Sans', sans-serif;
 }
 
+p{
+    font-family: var(--ff--Roboto)
+}
+
 html,
 body {
     height: 100%;
