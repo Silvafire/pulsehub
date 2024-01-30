@@ -15,11 +15,14 @@
             </div>
             <div class="hero-buttons">
                 <a class="button" href="#">Subscrição</a>
-                <a class="button outline" href="#"><img style="width: 25px; height:25px;"
-                        src="{{ 'img/svg-branco-clip.svg' }}" alt="clip">Video</a>
+                <button class="button outline" href="#"><img style="width: 25px; height:25px;"
+                        src="{{ 'img/svg-branco-clip.svg' }}" alt="clip"  onclick="openVideoModal()">Video</button>
             </div>
         </div>
     </section>
+
+
+
 
     <section class="services">
         <div class="container flex-center gap-4-5">
@@ -211,6 +214,7 @@
         function closeModal() {
             document.getElementById('myModal').style.display = 'none';
         }
+
     </script>
 
     <!-- opcional -->
