@@ -204,7 +204,7 @@
         <section class="loja">
             <div class="container-loja">
                 <h2>Visita a nossa loja</h2>
-                <buttton class="loja-cta"> Compra Agora! </buttton>
+                <button class="loja-cta"> Compra Agora! </button>
             </div>
         </section>
 
