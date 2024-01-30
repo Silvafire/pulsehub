@@ -190,23 +190,10 @@
                 <a href="{{ route('staff') }}" class="button modalidade-ver">Ver Mais</a>
             </div>
         </section>
-        <section class="video">
-            <div class="video-container">
-                <h2>Video Promocional</h2>
-                <iframe width="660" height="400" src="https://www.youtube.com/watch?v=f2cJ01fHkBE"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                {{--  <video width="640" height="360" controls poster="{{asset('img/')}}">
-                    <source src="{{asset('video/pulsehub_videopromo.mp4')}}" type="video/mp4">
-                    Seu navegador não suporta a tag de vídeo.
-                </video> --}}
-            </div>
-        </section>
         <section class="loja">
             <div class="container-loja">
                 <h2>Visita a nossa loja</h2>
-                <button class="loja-cta"> Compra Agora! </button>
+                <button class="loja-cta"><a href="https://wordpress.g3.dwm2023.fun/"> Agora! </a> </button>
             </div>
         </section>
 
@@ -247,11 +234,11 @@
 @section('moreScripts')
 <script>
   $(document).ready(function () {
-    
+
     $('#exampleModal').on('hidden.bs.modal', function () {
       var youtubeVideo = document.getElementById('youtubeVideo');
       var iframeSrc = youtubeVideo.src;
-      youtubeVideo.src = iframeSrc; 
+      youtubeVideo.src = iframeSrc;
     });
 
     function openModal() {

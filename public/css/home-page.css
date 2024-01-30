@@ -625,18 +625,28 @@ h6 {
     align-items: center;
     border: 2px solid white;
     cursor: pointer;
-    color: #FFF;
+    color: #ffffff;
     font-family: var(--ff--Roboto);
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.135rem;
     transition: all .3s ease;
     text-transform: uppercase;
-
+    text-decoration: none;
 }
-.loja-cta:hover{
+
+.loja-cta a {
+    color: #000000;
+}
+
+.loja-cta:hover {
     background-color: #FFF;
     color: #000000;
+}
+
+.loja-cta:hover a{
+    text-decoration: none;
+    color:#000;
 }
 
   button {
