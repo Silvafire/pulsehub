@@ -83,7 +83,8 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
-    font-family: var(--ff--montserrat);
+    /*font-family: var(--ff--montserrat);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
     color: var(--cl--yellow);
 }
 
@@ -126,7 +127,8 @@ h6 {
 }
 
 .title {
-    font-family: var(--ff--montserrat);
+    /*font-family: var(--ff--montserrat);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
     font-size: 64pt;
     font-style: normal;
     font-weight: var(--fw--900);
@@ -138,7 +140,8 @@ h6 {
 
 
 .subtitle {
-    font-family: var(--ff--montserrat);
+    /*font-family: var(--ff--montserrat);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
     font-size: 24pt;
     text-align: center;
     font-style: normal;
@@ -149,7 +152,8 @@ h6 {
 
 .erro-message{
     font-size: 1rem;
-    font-family: var(--ff--montserrat);
+    /*font-family: var(--ff--montserrat);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
     text-align: center;
     color: var(--cl--black);
     font-weight: var(--fw--900);
@@ -187,15 +191,17 @@ h6 {
 
 #nomepost2{
     font-size: 20pt;
-    font-weight: var(--fw--900);
+    font-weight: var(--fw--400);
     color: #000;
-    font-family: var(--ff--Volkhov);
+    /*font-family: var(--ff--Volkhov);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
 }
 
 #tipopost2{
     font-size: 15pt;
     color: #000;
-    font-family: var(--ff--Roboto);
+    /*font-family: var(--ff--Roboto);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
 }
 
 .divisorbloco {
@@ -230,11 +236,12 @@ h6 {
 
 .vermais2 {
     color: #ff8606;
-    font-weight: var(--fw--900);
+    font-weight: var(--fw--400);
     text-decoration: none;
     font-size: 20px;
     cursor: pointer;
-    font-family: var(--ff--Roboto);
+    /*font-family: var(--ff--Roboto);*/
+    font-family: 'HT Modern Hand Sans', sans-serif;
 }
 
 .vermais2:hover {
