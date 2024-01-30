@@ -1,4 +1,8 @@
 /* Reset de margens e preenchimentos */
+*{
+    font-family: 'HT Modern Hand Sans', sans-serif;
+}
+
 html,
 body {
     height: 100%;
