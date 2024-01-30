@@ -10,7 +10,7 @@
 <!-- Custom styles for this page -->
 <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
-<nav class="barra-nav">
+<nav  class="barra-nav">
     <div class="container-nav">
         <a href="{{ route('index') }}">
             <div class="logo">

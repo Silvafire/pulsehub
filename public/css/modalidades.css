@@ -1,5 +1,6 @@
 /* Reset de margens e preenchimentos */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -7,27 +8,29 @@ html, body {
 /* Estilo para o banner */
 .banner {
     position: relative;
+    padding-top: 100px;
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
-.banner img.darken {
+.banner #img {
     width: 100%;
-    height: auto;
     display: block;
     filter: brightness(70%);
 }
 
-/* Estilo para o título no meio da imagem */
+/* Estilo para o título no meio do banner */
 .middle-title {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     z-index: 1;
+    width: 100%;
+    /* Ensure the title doesn't go beyond the width of the banner */
 }
 
 .middle-title h1 {
@@ -38,7 +41,8 @@ html, body {
 /* Estilo para o botão */
 .button-container {
     position: absolute;
-    top: 90%;
+    bottom: 5%;
+    /* Adjusted to 5% from 10% for a bit more space at the bottom */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -69,7 +73,8 @@ html, body {
     /* Cor do texto preto */
     /* Outros estilos conforme necessário */
 }
-.card{
+
+.card {
     height: 300px;
     border-radius: 5px;
     border-color: #FF8606;
@@ -83,7 +88,7 @@ html, body {
     height: 100px;
     margin-top: 10%;
     margin-bottom: 20%;
-    object-fit: fill; /* Manter a proporção da imagem */
+    object-fit: fill;
 }
 
 /* Estilo para remover o fundo dos botões */
@@ -99,57 +104,81 @@ html, body {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     display: inline-block;
-    width: 20px; /* Largura das setas */
-    height: 20px; /* Altura das setas */
+    width: 20px;
+    height: 20px;
     background-size: 100% 100%;
     background-color: none;
     background-repeat: no-repeat;
 }
 
-.modalidade {
+
+
+/*modalidades informação*/
+.modalidades {
     padding-top: 50px;
     padding-bottom: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Para alinhar verticalmente */
-    text-align: center; /* Para alinhar o texto centralmente */
+    flex-direction: column;
+    /* Para alinhar verticalmente */
+    text-align: center;
+    /* Para alinhar o texto centralmente */
     background-color: rgb(34, 34, 34);
+    width: 100%;
 }
+
+.modalidade {
+    width: 80%;
+
+}
+
 
 .modalidade .image {
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-.modalidade .image img {
-    width: 400px;
+    width: 30%;
     height: auto;
 }
 
-.modalidade .content-1,  .modalidade .content-2{
+.modalidade .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalidade .image,
+.modalidade .text {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.modalidade .content-1,
+.modalidade .content-2 {
     display: flex;
-    align-items: center
+    align-items: center;
+    padding-bottom: 30px;
 }
 
-.modalidade .text{
-    text-align: left; /* Para alinhar o texto esquerda */
+.modalidade .text {
+    text-align: left;
     color: white;
-    margin-top: -30px;
+    width: 70%;
 
 }
 
-.modalidade .content-1 .image, .modalidade .content-2 .text{
+.modalidade .content-1 .image,
+.modalidade .content-2 .text {
     order: 1;
 }
 
-.modalidade .content-2 .image, .modalidade .content-1 .text{
+.modalidade .content-2 .image,
+.modalidade .content-1 .text {
     order: 2;
 }
 
-.modalidade .text p{
+.modalidade .text p {
     padding-top: 30px;
-    padding-bottom: 90px;
+    padding-bottom: 40px;
 }
 
 .modalidade button {
@@ -164,4 +193,284 @@ html, body {
 
 .modalidade button:hover {
     background-color: #e67905;
+}
+
+.modalidade a {
+    color: inherit;
+    /* This inherits the color from the parent (button) */
+    text-decoration: none;
+    /* Removes the underline from the link */
+}
+
+.modalidade a:hover {
+    color: inherit;
+    /* You can customize the color on hover if needed */
+    text-decoration: none;
+    /* Removes the underline from the link */
+}
+
+
+
+/*showmodalidades*/
+
+.showmodalidades {
+    padding-top: 100px;
+}
+
+.categoriashow {
+    padding-top: 3%;
+    padding-left: 15%;
+    font-size: 18px;
+}
+
+.categoriashow p {
+    color: #FF8606 !important;
+    /* Cor do texto */
+}
+
+.nomeshow {
+    padding-left: 15%;
+
+}
+
+.nomeshow h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.showmodalidades .image {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.showmodalidades .image img {
+    width: 45%;
+    display: block;
+    height: 70%;
+    filter: brightness(70%);
+    padding-bottom: 30px;
+}
+
+.modalidadeshows {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.descricao {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.plan-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    text-align: right;
+    /* Align the group to the right */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    /* Reset text alignment within the list */
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.staff-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.staff-cards .card {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.staff-cards .card img {
+    width: 100%;
+    height: 240px;
+    /* Set a fixed height for all images */
+    object-fit: cover;
+}
+
+.staff-cards .card-body {
+    padding: 20px;
+}
+
+.showsatff {
+    padding-bottom: 30px;
+}
+
+.showplanos {
+    padding-bottom: 30px;
+}
+
+
+/* Responsivo */
+
+@media only screen and (max-width: 1160px) {
+
+    .banner {
+        padding-top: 60px;
+        height: 550px;
+    }
+
+    .middle-title {
+        top: 30%;
+    }
+
+    .middle-title h1 {
+        font-size: 3em;
+    }
+
+    /* Estilo para o botão */
+    .button-container {
+        bottom: 10%;
+    }
+
+    .custom-button img {
+        width: 40px;
+    }
+
+    .showmodalidades .image img {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width: 870px) {
+
+    .plan-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+
+    .card {
+        width: 150px;
+        height: 250px;
+        padding-bottom: 5px;
+    }
+
+    .card-img-top {
+        height: 100px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important;
+    }
+
+    .categorias {
+        margin-top: -30% !important;
+    }
+
+    .modalidade .content-1 .image,
+    .modalidade .content-2 .image {
+        order: 1;
+    }
+
+    .modalidade .content-1 .text,
+    .modalidade .content-2 .text {
+        order: 2;
+    }
+
+    .modalidadeshows .card {
+        height: 300px;
+    }
+}
+
+
+
+@media only screen and (max-width: 750px) {
+    .middle-title {
+        top: 30%;
+    }
+
+    .middle-title h1 {
+        font-size: 2em;
+    }
+
+    /* Estilo para o botão */
+    .button-container {
+        bottom: 10%;
+    }
+
+    .bottom-title {
+        padding-top: 10px !important;
+    }
+
+    .banner{
+        height: 450px;
+    }
+
+    .custom-button img {
+        width: 30px;
+    }
+
+    .modalidade .content-1,
+    .modalidade .content-2 {
+        display: block;
+        padding-bottom: 60px;
+    }
+
+    .modalidade .image {
+        width: 100%;
+        height: auto;
+    }
+
+    .modalidade .image img {
+        height: 300px !important;
+        object-fit: cover;
+    }
+
+    .modalidade .text {
+        padding-top: 10px !important;
+        width: 100%;
+    }
+
+    .modalidade .text h2 {
+        padding-left: 20px !important;
+    }
+
+    .modalidade .text p {
+        padding-top: 0px !important;
+        padding-left: 20px !important;
+        padding-bottom: 10px !important;
+        width: 100% !important;
+    }
+
+    .modalidade .text button {
+        margin-left: 20px !important;
+    }
+
+    .showmodalidades .image img {
+        width: 80%;
+    }
+
+    .categoriashow,
+    .nomeshow {
+        padding-left: 10% !important;
+    }
+
+    .modalidadeshows {
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
 }

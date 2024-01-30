@@ -103,6 +103,7 @@ class PageController extends Controller
         $count_mod_per_type = Modalidade::select('tipo_eventos_mod_id', DB::raw('count(*) as
         count'))->groupBy('tipo_eventos_mod_id')->get();
 
+
         $count_planos = Plano::count();
         $count_planos_per_type = Plano::select('tipo_plano_id', DB::raw('count(*) as
         count'))->groupBy('tipo_plano_id')->get();

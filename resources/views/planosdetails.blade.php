@@ -20,7 +20,7 @@
 
 <div class="descdet">
 
-<h1>Detalhes do Tipo de Plano</h1>
+<h1>Descrição do Plano</h1>
 <p>{{ $tipoplano->descricao }}</p>
 
 </div>
@@ -28,7 +28,7 @@
 
 <div class="segparte">
 <div class="cardetalhe">
-    <h1>Planos Relacionados</h1>
+    <h1>Exercicios do Plano</h1>
     <div class="card-row2">
         @if(!is_null($planos) && count($planos) > 0)
             @foreach ($planos as $plano)
@@ -47,7 +47,7 @@
                 </div>
             @endforeach
         @else
-            <p>Nenhum detalhe disponível no momento.</p>
+            <p>Nenhum exericio disponível no momento.</p>
         @endif
     </div>
 </div>

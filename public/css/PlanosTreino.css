@@ -165,8 +165,8 @@ h6 {
 }
 
 .cardtreino {
-    max-width: 420px;
-    height: 620px;
+    max-width: 100%;
+    height: auto;
     gap: 1rem;
     transition: transform 1s ease;
 }
@@ -451,10 +451,28 @@ padding-top: 40px;
 /* ////////////////////Responsivo ///////////////////*/
 
 @media (max-width: 1320px) {
+    .descdet p{
+     width: 950px;
+    margin: auto;
+    }
     .card-row {
-        flex-direction: column;
+
         align-items: center;
         padding-bottom: 10px;
+        grid-template-columns: repeat(2, minmax(270px, 5fr));
+        margin-inline: auto;
+        max-width: 950px;
+
+    }
+
+    .card-row2 {
+
+        align-items: center;
+        padding-bottom: 10px;
+        grid-template-columns: repeat(1, minmax(270px, 5fr));
+        margin-inline: auto;
+        max-width: 650px;
+
     }
 
     .cardtreino {
@@ -468,6 +486,11 @@ padding-top: 40px;
         object-fit: cover;
     }
 
+    .cardex{
+        max-width: 600px;
+        height: 250px;
+    }
+
 }
     @media (max-width: 1000px) {
     .cardprof {
@@ -476,9 +499,22 @@ padding-top: 40px;
     padding-top: 20px;
     }
 
+    .descdet p{
+        width: 700px;
+       margin: auto;
+       }
+
     .profimg img {
         height: 100%;
         width: 100%;
         object-fit: cover;
+    }
+
+    .card-row {
+        align-items: center;
+        padding-bottom: 10px;
+        grid-template-columns: repeat(1, minmax(270px, 5fr));
+        margin-inline: auto;
+        max-width: 450px;
     }
 }
