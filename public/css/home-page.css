@@ -521,7 +521,7 @@ h6 {
 .container-staff h2 {
     color: #000;
     font-family: var(--ff--montserrat);
-    font-size: 3.25rem;
+    font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 2rem;
@@ -677,3 +677,20 @@ h6 {
     cursor: pointer;
   }
 /* ---------------Video Modal---------- */
+.video-container h2{
+    color: #000;
+    font-family: var(--ff--montserrat);
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+.video-container{
+    max-width: 1280px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+}
+.video-container video{
+    margin-inline: auto;
+    border-radius: .5rem;
+}
