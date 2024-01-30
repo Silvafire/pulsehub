@@ -74,6 +74,23 @@
                     </div>
                 </div>
             </div>
+            <div class="col-3">
+                <div class="card shadow">
+                    <div class="card-header p-4">
+                        <h1 style="display:inline;"> {{ $count_posts }} </h1>
+                        <h3 style="display:inline;"> {{ $count_posts == 1 ? 'Post' : 'Posts' }} no Blog </h3>
+                    </div>
+                    <div class="card-body">
+                        @foreach ($count_posts_per_type as $item)
+                            @if ($item->tipo_post->nome)
+                                <p>{{ $item->tipo_post->nome }} : {{ $item->count }} {{ $item->count == 1 ? 'Post' : 'Posts' }}</p>
+                            @else
+                                <p>Post não disponível</p>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

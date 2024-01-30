@@ -19,13 +19,15 @@
 
 <div class="form-group">
     <label for="inputDescription">Descrição</label>
-    <input type="text" class="form-control" name="descricao" id="descricao" value="{{old('descricao',$post->descricao)}}" />
+    {{--<input type="text" class="form-control" name="descricao" id="descricao" value="{{old('descricao',$post->descricao)}}" />--}}
+    <textarea class="form-control" name="descricao" id="descricao">{{ old('descricao',$post->descricao)}}</textarea>
+
 </div>
 
 <div class="form-group">
     <label for="inputDescription">Informação</label>
-    <input type="text" class="form-control" name="informacao" id="informacao" value="{{old('informacao',$post->informacao)}}" />
-
+    {{--<input type="text" class="form-control" name="informacao" id="informacao" value="{{old('informacao',$post->informacao)}}" />--}}
+    <textarea class="form-control" name="informacao" id="informacao">{{ old('informacao',$post->informacao)}}</textarea>
 </div>
 
 <div class="form-group">

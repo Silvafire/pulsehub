@@ -23,8 +23,8 @@ class PostRequest extends FormRequest
     return [
         "img" => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         "titulo" => 'required|min:3|max:100|unique:post,titulo,' . $currentId . '|regex:/^[A-ZÀ-úa-z0-9\s:\-_\.,?!]+$/',
-        "descricao" => 'required|min:15|max:255|unique:post,descricao,'. $currentId . '|regex:/^[A-ZÀ-úa-z\s:\-_\.,?!]+$/',
-        "informacao" => 'nullable|min:3|max:255|unique:post,informacao,'. $currentId . '|regex:/^[A-ZÀ-úa-z\s:\-_\.,?!]+$/',
+        "descricao" => 'required|min:15|max:255|unique:post,descricao,'. $currentId . '|regex:/^[A-ZÀ-úa-z\s:\-_\.,?!<br>]+$/',
+        "informacao" => 'nullable|min:3|unique:post,informacao,'. $currentId . '|regex:/^[A-Za-zÀ-ú\d\s:\-_\.,?!<br>"%]+$/',
         "tipo_post_id" => 'required',
     ];
 }

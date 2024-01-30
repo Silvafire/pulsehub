@@ -32,9 +32,9 @@
             @foreach($post as $post)
             <tr>
             <td> <img height='100' src="{{asset('storage/post_imagens/'. $post->imagem )}}" alt="Imagem do Post"></td>
-              <td>{{$post->titulo}}</td>
-              <td>{{$post->descricao}}</td>
-              <td>{{$post->informacao}}</td>
+            <td>{{ Str::of($post->titulo)->limit(50) }}</td>
+              <td>{{ Str::of($post->descricao)->limit(50) }}</td>
+              <td>{{ Str::of($post->informacao)->limit(30) }}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.post.show',$post)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.post.edit',$post)}}"><i class="fas fa-pen fa-xs"></i></a>
@@ -58,21 +58,24 @@
 </div>
 @endsection
 
-@section("scripts")
-
-<script>
-  $('#dataTable').dataTable({
-    destroy: true,
-    "order": [
-      [0, 'asc']
-    ],
-    "columns": [
-      null,
-      null,
-      {
-        "orderable": false
-      }
-    ]
-  });
-</script>
+@section('scripts')
+    <script>
+        $('#dataTable').dataTable({
+            destroy: true,
+            "order": [
+                [1, 'asc']
+            ],
+            "columns": [
+                {
+                    "orderable": false
+                },
+                null,
+                null,
+                null,
+                {
+                    "orderable": false
+                }
+            ]
+        });
+    </script>
 @endsection

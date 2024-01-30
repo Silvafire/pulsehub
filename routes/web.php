@@ -42,6 +42,7 @@ Route::get('post', [PageController::class, 'post'])->name('post');
 Route::get('servicosshow/{service}', [PageController::class, 'servicosshow'])->name('servicosshow');
 Route::get('eventshow/{event}', [PageController::class, 'eventshow'])->name('eventshow');
 Route::get('planosdetails/{tipoplano}', [PageController::class, 'planosdetails'])->name('planosdetails');
+Route::get('postdetails/{post}', [PageController::class, 'postdetails'])->name('postdetails');
 Route::get('modalidadeshow/{modalidade}', [PageController::class, 'modalidadeshow'])->name('modalidadeshow');
 
 /* Route::group(['middleware' => ['auth', 'verified'] , 'as' => 'admin.','prefix' => 'admin'], function () {

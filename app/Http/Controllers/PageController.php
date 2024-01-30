@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Service;
 use App\Models\Staff;
 use App\Models\Post;
+use App\Models\TipoPost;
 use App\Models\TiposPlano;
 use App\Models\Plano;
 use App\Models\Tipo_eventos_mod;
@@ -42,6 +43,12 @@ class PageController extends Controller
         $posts = Post::all();
         return view('blog', compact('posts'));
     }
+
+    public function postdetails(Post $post)
+    {
+    return view('postdetails', compact('post'));
+    }
+
 
     public function modalidades()
     {
@@ -100,6 +107,10 @@ class PageController extends Controller
         $count_planos_per_type = Plano::select('tipo_plano_id', DB::raw('count(*) as
         count'))->groupBy('tipo_plano_id')->get();
 
+        $count_posts = Post::count();
+        $count_posts_per_type = Post::select('tipo_post_id', DB::raw('count(*) as
+        count'))->groupBy('tipo_post_id')->get();
+
 
         $count_services = Service::count();
         $count_services_per_image = ImageService::select('imagem_id', DB::raw('count(*) as
@@ -110,6 +121,6 @@ class PageController extends Controller
         $count_users_per_role = User::select('perm', DB::raw('count(*) as
        count'))->groupBy('perm')->get();
 
-        return view('_admin.dashboard', compact('count_events', 'count_events_per_type', 'count_users', 'count_users_per_role', 'count_modalidades', 'count_mod_per_type', 'count_services', 'count_services_per_image', 'count_planos', 'count_planos_per_type'));
+        return view('_admin.dashboard', compact('count_events', 'count_events_per_type', 'count_users', 'count_users_per_role', 'count_modalidades', 'count_mod_per_type', 'count_services', 'count_services_per_image', 'count_planos', 'count_planos_per_type', 'count_posts', 'count_posts_per_type'));
     }
 }

@@ -43,7 +43,6 @@
     */
 body {
     line-height: 1.5;
-    background-color: #eeeeee !important;
 
 }
 
@@ -102,94 +101,51 @@ h6 {
 
 /*---CONTEÚDO---*/
 
-/*---BANNER---*/
-
-.banner {
-    background-image: url('../img/banner1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.title {
-    font-family: var(--ff--montserrat);
-    font-size: 64pt;
-    font-style: normal;
-    font-weight: var(--fw--900);
-    color: #fff;
-
-}
-
-/*---RESTANTE PÁGINA---*/
-
-
-.subtitle {
-    font-family: var(--ff--montserrat);
-    font-size: 24pt;
-    text-align: center;
-    font-style: normal;
-    font-weight: var(--fw--900);
-    color: #ff8606;
-    margin-top: 100px;
-}
-
 .erro-message{
     font-size: 1rem;
     font-family: var(--ff--montserrat);
     text-align: center;
     color: var(--cl--black);
-    font-weight: var(--fw--900);
+    font-weight: 900;
     text-transform: uppercase;
 }
 
+.content {
+    max-width: 1280px;
+    margin-inline: auto;
+    height: 100%;
+    overflow-wrap: break-word;
+}
 
 /*---POST---*/
 
 #main2{
     padding-top: 50px;
     padding-bottom: 50px;
-    max-width: 1440px;
     margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 #post2 {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
+	align-items: center;
+	justify-content: space-between;
     margin-top: 50px;
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
-
 
 #infopost2{
     max-width: 650px;
     padding-left: 80px;
-    padding: 20px;
-    padding-left: 30px;
+    max-width: 1280px;
 }
 
 #nomepost2{
     font-size: 20pt;
-    font-weight: var(--fw--900);
+    font-weight: 900;
     color: #000;
     font-family: var(--ff--Volkhov);
+    text-align: left;
 }
 
 #tipopost2{
@@ -213,15 +169,28 @@ h6 {
     float: left;
 }
 
-#descricaopost2{
-    font-size: 20px;
+#descricaopost2,#informacaopost2{
+    font-size: 16px;
     color: #000;
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: var(--ff--Roboto);
 }
 
-#imgpost2 {
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.todainformacao{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.imgpost2 {
     max-width: 600px;
     max-height: 350px;
     width: 100%;
@@ -230,7 +199,7 @@ h6 {
 
 .vermais2 {
     color: #ff8606;
-    font-weight: var(--fw--900);
+    font-weight: bold;
     text-decoration: none;
     font-size: 20px;
     cursor: pointer;
@@ -242,27 +211,3 @@ h6 {
     text-decoration: none;
 }
 
-
-#container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-/*--RESPONSIVO--*/
-@media (min-width: 768px) {
-    #post2 {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    #imgpost2 {
-        max-width: 600px;
-        max-height: 350px;
-        width: auto;
-        height: 100%;
-    }
-}

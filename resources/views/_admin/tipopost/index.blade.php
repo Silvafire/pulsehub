@@ -49,21 +49,19 @@
 </div>
 @endsection
 
-@section("scripts")
-
-<script>
-  $('#dataTable').dataTable({
+@section('scripts')
+    <script>
+        $('#dataTable').dataTable({
     destroy: true,
     "order": [
-      [1, 'asc']
+      [0, 'asc']
     ],
     "columns": [
-      null,
       null,
       {
         "orderable": false
       }
     ]
   });
-</script>
+    </script>
 @endsection

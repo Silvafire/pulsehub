@@ -11,7 +11,6 @@
 <div class="banner">
     <div class="content">
         <div class="title">BLOG</div>
-        <div class="subtitle">EXPLORE OS BASTIDORES DO SUCESSO FITNESS NO NOSSO BLOG.</div>
     </div>
 </div>
 
@@ -32,27 +31,30 @@
     </div>
     </section> --}}
 
+    <div class="subtitle">EXPLORE OS BASTIDORES DO SUCESSO FITNESS NO NOSSO BLOG.</div>
     <section id="main2">
-    @if(count($posts) > 0)
-    @foreach($posts as $post)
-    <div id="post2">
-        <div id="infopost2">
-            <h6 id="nomepost2">{{$post->titulo}}</h6>
-            <div class="divisorbloco">
-                <div class="linha"></div>
-            </div>
-            <div id="descricaopost2">
-                <p>{{$post->descricao}}</p>
-            </div>
-            <a href="#" class="vermais2">Ver mais ></a>
-        </div>
-        <img src="{{ asset('storage/post_imagens/' . $post->imagem) }}" alt="Personal Trainer" id="imgpost2">
-    </div>
-    @endforeach
-    @else
-    <p class="erro-message">Não existem posts no nosso blog.</p>
-    @endif
+        @if(count($posts) > 0)
+            @foreach($posts as $post)
+                <div id="post2">
+                    <div id="infopost2">
+                        <h6 id="nomepost2">{{$post->titulo}}</h6>
+                        <p id="tipopost2">{{$post->tipo_post->nome}}</p>
+                        <div class="divisorbloco">
+                            <div class="linha"></div>
+                        </div>
+                        <div id="descricaopost2">
+                            <p>{{$post->descricao}}</p>
+                        </div>
+                        <a href="{{ route('postdetails', $post) }}" class="vermais2">Ver mais</a>
+                    </div>
+                    <img src="{{ asset('storage/post_imagens/' . $post->imagem) }}" alt="Personal Trainer" id="imgpost2">
+                </div>
+            @endforeach
+        @else
+            <p class="erro-message">Não existem posts no nosso blog.</p>
+        @endif
     </section>
+
 
 {{-- <section id="main2">
 <div id="post2">
@@ -119,9 +121,9 @@
     </div>
 </section> --}}
 
-<div id="container">
+{{-- <div id="container">
 <a href="#" class="mostrarmais">MOSTRAR MAIS</a>
-</div>
+</div> --}}
 
 @endsection
 
