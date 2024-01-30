@@ -16,10 +16,11 @@
             <div class="hero-buttons">
                 <a class="button" href="#">Subscrição</a>
                 <button class="button outline" href="#"><img style="width: 25px; height:25px;"
-                        src="{{ 'img/svg-branco-clip.svg' }}" alt="clip"  onclick="openVideoModal()">Video</button>
+                        src="{{ 'img/svg-branco-clip.svg' }}" alt="clip"   id="openModalBtn">Video</button>
             </div>
         </div>
     </section>
+
 
 
 
@@ -187,6 +188,15 @@
                 <a href="{{ route('staff') }}" class="button modalidade-ver">Ver Mais</a>
             </div>
         </section>
+        <section class="video">
+            <div class="video-container">
+                <h2>Video Promocional</h2>
+                <video width="640" height="360" controls poster="{{asset('img/')}}">
+                    <source src="{{asset('video/pulsehub_videopromo.mp4')}}" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+            </div>
+        </section>
         <section class="loja">
             <div class="container-loja">
                 <h2>Visita a nossa loja</h2>
@@ -214,6 +224,9 @@
         function closeModal() {
             document.getElementById('myModal').style.display = 'none';
         }
+
+
+
 
     </script>
 
