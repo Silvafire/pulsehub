@@ -16,7 +16,7 @@
             <div class="hero-buttons">
                 <a class="button" href="#">Subscrição</a>
                 <button class="button outline" href="#"><img style="width: 25px; height:25px;"
-                        src="{{ 'img/svg-branco-clip.svg' }}" alt="clip"   id="openModalBtn">Video</button>
+                        src="{{ 'img/svg-branco-clip.svg' }}" alt="clip" id="openModalBtn">Video</button>
             </div>
         </div>
     </section>
@@ -77,7 +77,7 @@
                                 <p>Desde</p>
                                 <span>55€</span>
                             </div>
-                            <button class="button-cta"  onclick="openModal()">Inscrever</button>
+                            <button class="button-cta" onclick="openModal()">Inscrever</button>
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@
                                 <p>Desde</p>
                                 <span>40€</span>
                             </div>
-                            <button class="button-cta"  onclick="openModal()">Inscrever</button>
+                            <button class="button-cta" onclick="openModal()">Inscrever</button>
                         </div>
                     </div>
 
@@ -107,7 +107,7 @@
                                 <p>Desde</p>
                                 <span>55€</span>
                             </div>
-                            <button class="button-cta"  onclick="openModal()">Inscrever</button>
+                            <button class="button-cta" onclick="openModal()">Inscrever</button>
                         </div>
                     </div>
                 </div>
@@ -191,10 +191,14 @@
         <section class="video">
             <div class="video-container">
                 <h2>Video Promocional</h2>
-                <video width="640" height="360" controls poster="{{asset('img/')}}">
+                <iframe width="660" height="400" src="https://www.youtube.com/watch?v=f2cJ01fHkBE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                {{--  <video width="640" height="360" controls poster="{{asset('img/')}}">
                     <source src="{{asset('video/pulsehub_videopromo.mp4')}}" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
-                </video>
+                </video> --}}
             </div>
         </section>
         <section class="loja">
@@ -206,7 +210,7 @@
 
         <div id="myModal" class="modal-overlay">
             <div class="modal-content-home">
-                <img style="width:200px" src="{{asset('img/Logo-PulseHub-Branco.png')}}" alt="logo">
+                <img style="width:200px" src="{{ asset('img/Logo-PulseHub-Branco.png') }}" alt="logo">
                 <p>Página em Desenvolvimento!</p>
 
                 <button class="close-btn" onclick="closeModal()">Fechar</button>
@@ -224,10 +228,6 @@
         function closeModal() {
             document.getElementById('myModal').style.display = 'none';
         }
-
-
-
-
     </script>
 
     <!-- opcional -->
