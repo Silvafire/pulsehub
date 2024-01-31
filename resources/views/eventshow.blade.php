@@ -25,7 +25,8 @@
         </tr>
     </div>
     <div class="descricaodetalhe">
-        <p>{!! $event->descricao !!}</p>
+        <h2>{!! $event->descricao !!}</h2>
+        <p>{!! $event->data !!}</p>
     </div>
   
 @endsection
